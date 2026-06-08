@@ -9,6 +9,9 @@
     <meta name="description" content="Privacy Policy for KeTu Playhouse games and services, including Keyboard Escape: Speed Up.">
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" href="assets/icon.png">
+    
+    <!-- Language Translation Library -->
+    <script src="lang.js" defer></script>
 </head>
 <body>
     <div class="bg-glow bg-glow-1"></div>
@@ -23,18 +26,26 @@
                     <span class="logo-text">KeTu Playhouse</span>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="index.html#games">Juegos</a></li>
-                    <li><a href="index.html#about">Nosotros</a></li>
-                    <li><a href="index.html#contact">Soporte</a></li>
+                    <li><a href="index.html" data-i18n="nav-home">Inicio</a></li>
+                    <li><a href="index.html#games" data-i18n="nav-games">Juegos</a></li>
+                    <li><a href="index.html#about" data-i18n="nav-about">Nosotros</a></li>
+                    <li><a href="index.html#contact" data-i18n="nav-support">Soporte</a></li>
                 </ul>
+                <div class="lang-selector">
+                    <button onclick="changeLanguage('es')" id="lang-btn-es" class="lang-btn active">
+                        <span class="flag">🇪🇸</span> <span class="lang-code">ES</span>
+                    </button>
+                    <button onclick="changeLanguage('en')" id="lang-btn-en" class="lang-btn">
+                        <span class="flag">🇺🇸</span> <span class="lang-code">EN</span>
+                    </button>
+                </div>
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="container doc-page">
-        <a href="index.html" class="back-btn">
+        <a href="index.html" class="back-btn" data-i18n="back-btn-text">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="19" y1="12" x2="5" y2="12"></line>
                 <polyline points="12 19 5 12 12 5"></polyline>
@@ -44,53 +55,53 @@
         
         <article class="doc-content">
             <header class="doc-header">
-                <h1>Política de Privacidad</h1>
-                <div class="doc-meta">Última actualización: 7 de Junio, 2026</div>
+                <h1 data-i18n="privacy-header">Política de Privacidad</h1>
+                <div class="doc-meta" data-i18n="privacy-last-updated">Última actualización: 8 de Junio, 2026</div>
             </header>
             
             <div class="doc-body">
-                <p>En <strong>KeTu Playhouse</strong>, valoramos tu privacidad. Esta Política de Privacidad explica cómo se recopila, utiliza y divulga la información cuando utilizas nuestro juego móvil <strong>Keyboard Escape: Speed Up</strong> y cualquier otro servicio relacionado.</p>
+                <p data-i18n="privacy-intro">En <strong>KeTu Playhouse</strong>, valoramos tu privacidad. Esta Política de Privacidad explica cómo se recopila, utiliza y divulga la información cuando utilizas nuestro juego móvil <strong>Keyboard Escape: Speed Up</strong> y cualquier otro servicio relacionado.</p>
                 
-                <h2>1. Recopilación de Información</h2>
-                <p>Nuestras aplicaciones están diseñadas para no recopilar información de identificación personal directamente de los usuarios. No solicitamos registros de cuentas, nombres, correos electrónicos ni números de teléfono para jugar.</p>
-                <p>Sin embargo, para monetizar y mantener nuestros servicios gratuitos, integramos herramientas de terceros que sí recopilan información técnica de manera automática.</p>
+                <h2 data-i18n="privacy-sec1-title">1. Recopilación de Información</h2>
+                <p data-i18n="privacy-sec1-p1">Nuestras aplicaciones están diseñadas para no recopilar información de identificación personal directamente de los usuarios. No solicitamos registros de cuentas, nombres, correos electrónicos ni números de teléfono para jugar.</p>
+                <p data-i18n="privacy-sec1-p2">Sin embargo, para monetizar y mantener nuestros servicios gratuitos, integramos herramientas de terceros que sí recopilan información técnica de manera automática.</p>
 
-                <h2>2. Servicios de Terceros (Publicidad y Monetización)</h2>
-                <p>Este juego utiliza <strong>Google AdMob</strong> para mostrar anuncios. AdMob puede recopilar y procesar información sobre ti de forma automática. Esta información incluye, entre otros:</p>
+                <h2 data-i18n="privacy-sec2-title">2. Servicios de Terceros (Publicidad y Monetización)</h2>
+                <p data-i18n="privacy-sec2-p1">Este juego utiliza <strong>Google AdMob</strong> para mostrar anuncios. AdMob puede recopilar y procesar información sobre ti de forma automática. Esta información incluye, entre otros:</p>
                 <ul>
-                    <li>Identificadores únicos de publicidad del dispositivo (como el ID de publicidad de Google o el IDFA de Apple).</li>
-                    <li>Datos sobre el dispositivo (fabricante, modelo, sistema operativo, idioma y resolución de pantalla).</li>
-                    <li>Datos sobre la interacción con los anuncios (clics, impresiones y visualizaciones).</li>
-                    <li>Información de diagnóstico del sistema (informes de fallos o crash logs, rendimiento de la app y uso de memoria).</li>
-                    <li>Ubicación aproximada (a nivel de ciudad o país) derivada de la dirección IP.</li>
+                    <li data-i18n="privacy-sec2-li1">Identificadores únicos de publicidad del dispositivo (como el ID de publicidad de Google o el IDFA de Apple).</li>
+                    <li data-i18n="privacy-sec2-li2">Datos sobre el dispositivo (fabricante, modelo, sistema operativo, idioma y resolución de pantalla).</li>
+                    <li data-i18n="privacy-sec2-li3">Datos sobre la interacción con los anuncios (clics, impresiones y visualizaciones).</li>
+                    <li data-i18n="privacy-sec2-li4">Información de diagnóstico del sistema (informes de fallos o crash logs, rendimiento de la app y uso de memoria).</li>
+                    <li data-i18n="privacy-sec2-li5">Ubicación aproximada (a nivel de ciudad o país) derivada de la dirección IP.</li>
                 </ul>
-                <p>Puedes consultar la política de privacidad de Google relacionada con la publicidad en el siguiente enlace: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Políticas y Principios de Publicidad de Google</a>.</p>
+                <p data-i18n="privacy-sec2-p2">Puedes consultar la política de privacidad de Google relacionada con la publicidad en el siguiente enlace: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Políticas y Principios de Publicidad de Google</a>.</p>
 
-                <h2>3. Uso de la Información</h2>
-                <p>La información técnica recopilada automáticamente se utiliza únicamente para:</p>
+                <h2 data-i18n="privacy-sec3-title">3. Uso de la Información</h2>
+                <p data-i18n="privacy-sec3-p1">La información técnica recopilada automáticamente se utiliza únicamente para:</p>
                 <ul>
-                    <li>Mostrar anuncios personalizados o no personalizados según corresponda y lo permita tu configuración.</li>
-                    <li>Prevenir fraudes y actividades maliciosas dentro del sistema de publicidad.</li>
-                    <li>Analizar el rendimiento de las campañas publicitarias.</li>
-                    <li>Diagnosticar problemas técnicos, corregir fallos del sistema y optimizar la experiencia de juego.</li>
-                </ul>
-
-                <h2>4. Opciones de Privacidad del Usuario</h2>
-                <p>Si deseas limitar la publicidad personalizada en tu dispositivo móvil, puedes ajustar la configuración en tu teléfono:</p>
-                <ul>
-                    <li><strong>En Android:</strong> Abre Ajustes > Privacidad > Anuncios y selecciona "Restablecer ID de publicidad" o "Inhabilitar personalización de anuncios".</li>
-                    <li><strong>En iOS:</strong> Ve a Ajustes > Privacidad > Rastreo y desactiva la opción de permitir que las aplicaciones soliciten rastrearte.</li>
+                    <li data-i18n="privacy-sec3-li1">Mostrar anuncios personalizados o no personalizados según corresponda y lo permita tu configuración.</li>
+                    <li data-i18n="privacy-sec3-li2">Prevenir fraudes y actividades maliciosas dentro del sistema de publicidad.</li>
+                    <li data-i18n="privacy-sec3-li3">Analizar el rendimiento de las campañas publicitarias.</li>
+                    <li data-i18n="privacy-sec3-li4">Diagnosticar problemas técnicos, corregir fallos del sistema y optimizar la experiencia de juego.</li>
                 </ul>
 
-                <h2>5. Privacidad de los Niños</h2>
-                <p>Nuestros juegos no están dirigidos intencionalmente a niños menores de 13 años. No recopilamos conscientemente información personal de niños. Si eres padre o tutor y crees que hemos recopilado información sin tu consentimiento, por favor contáctanos de inmediato.</p>
+                <h2 data-i18n="privacy-sec4-title">4. Opciones de Privacidad del Usuario</h2>
+                <p data-i18n="privacy-sec4-p1">Si deseas limitar la publicidad personalizada en tu dispositivo móvil, puedes ajustar la configuración en tu teléfono:</p>
+                <ul>
+                    <li data-i18n="privacy-sec4-li1"><strong>En Android:</strong> Abre Ajustes > Privacidad > Anuncios y selecciona "Restablecer ID de publicidad" o "Inhabilitar personalización de anuncios".</li>
+                    <li data-i18n="privacy-sec4-li2"><strong>En iOS:</strong> Ve a Ajustes > Privacidad > Rastreo y desactiva la opción de permitir que las aplicaciones soliciten rastrearte.</li>
+                </ul>
 
-                <h2>6. Cambios en esta Política</h2>
-                <p>Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Cualquier cambio será publicado en esta página con la fecha de actualización correspondiente.</p>
+                <h2 data-i18n="privacy-sec5-title">5. Privacidad de los Niños</h2>
+                <p data-i18n="privacy-sec5-p1">Nuestros juegos no están dirigidos intencionalmente a niños menores de 13 años. No recopilamos conscientemente información personal de niños. Si eres padre o tutor y crees que hemos recopilado información sin tu consentimiento, por favor contáctanos de inmediato.</p>
 
-                <h2>7. Contacto</h2>
-                <p>Si tienes alguna pregunta sobre esta Política de Privacidad o el tratamiento de tus datos, puedes ponerte en contacto con nosotros a través del correo electrónico:</p>
-                <p style="font-weight: 600; color: var(--primary);">ketuplayhouse@gmail.com</p>
+                <h2 data-i18n="privacy-sec6-title">6. Cambios en esta Política</h2>
+                <p data-i18n="privacy-sec6-p1">Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Cualquier cambio será publicado en esta página con la fecha de actualización correspondiente.</p>
+
+                <h2 data-i18n="privacy-sec7-title">7. Contacto</h2>
+                <p data-i18n="privacy-sec7-p1">Si tienes alguna pregunta sobre esta Política de Privacidad o el tratamiento de tus datos, puedes ponerte en contacto con nosotros a través del correo electrónico:</p>
+                <p style="font-weight: 600; color: var(--primary);">ketusoporte@gmail.com</p>
             </div>
         </article>
     </main>
@@ -100,13 +111,13 @@
         <div class="container footer-content">
             <img src="assets/logo.png" alt="KeTu Playhouse Logo" class="footer-logo">
             <ul class="footer-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#games">Juegos</a></li>
-                <li><a href="index.html#about">Nosotros</a></li>
-                <li><a href="index.html#contact">Soporte</a></li>
-                <li><a href="privacy-policy.html">Política de Privacidad</a></li>
+                <li><a href="index.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="index.html#games" data-i18n="nav-games">Juegos</a></li>
+                <li><a href="index.html#about" data-i18n="nav-about">Nosotros</a></li>
+                <li><a href="index.html#contact" data-i18n="nav-support">Soporte</a></li>
+                <li><a href="privacy-policy.html" id="link-privacy" data-i18n="link-privacy">Política de Privacidad</a></li>
             </ul>
-            <p class="footer-copy">&copy; 2026 KeTu Playhouse. Todos los derechos reservados.</p>
+            <p class="footer-copy" data-i18n="footer-copy">&copy; 2026 KeTu Playhouse. Todos los derechos reservados.</p>
         </div>
     </footer>
 </body>
