@@ -833,17 +833,26 @@ footer {
 }
 
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  .container {
+    padding: 0 1rem; /* Give more width to content on mobile */
+  }
+
   nav {
     height: auto;
-    min-height: 80px;
+    min-height: 70px;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0.75rem 0;
-    gap: 0.5rem;
+    padding: 0.5rem 0;
+    gap: 0.35rem;
   }
 
   .logo-container {
-    flex: 1 1 auto;
+    flex: 0 1 auto; /* Don't expand, let language selector sit next to it */
   }
 
   .logo-text {
@@ -851,24 +860,25 @@ footer {
   }
 
   .logo-img {
-    height: 38px;
+    height: 36px;
   }
 
   .nav-links {
-    flex: 0 0 100%; /* Force nav links to a full row underneath */
+    flex: 0 0 100%; /* Force nav links to a centered row underneath logo */
     justify-content: center;
     order: 3;
-    margin-top: 0.5rem;
-    gap: 1.5rem;
+    margin-top: 0.35rem;
+    gap: 1.25rem;
   }
 
   .lang-selector {
     order: 2;
+    flex: 0 0 auto;
   }
 
   /* Offset fixed wrapped header on mobile */
   section[id], main.doc-page {
-    scroll-margin-top: 130px;
+    scroll-margin-top: 120px;
   }
   
   .hero-title {
@@ -880,9 +890,17 @@ footer {
     padding: 0 1rem;
   }
   
+  .game-card {
+    min-width: 0;
+    width: 100%;
+  }
+
   .game-card-content {
-    padding: 1.75rem;
-    margin-top: -50px;
+    padding: 1.25rem; /* Shrunk padding to make content wider */
+    margin-top: -45px;
+    min-width: 0;
+    width: 100%;
+    overflow: hidden; /* Prevent horizontal stretch from children */
   }
   
   .game-header {
@@ -898,7 +916,26 @@ footer {
     border-radius: 20px;
     margin: 0 auto;
   }
+
+  .game-title {
+    font-size: 1.7rem;
+    word-wrap: break-word;
+    word-break: break-word;
+  }
   
+  .screenshot-gallery-container {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden; /* Constrain the horizontal scroller */
+  }
+
+  .screenshot-gallery {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
   .screenshot-item {
     width: 140px;
   }
@@ -927,7 +964,7 @@ footer {
   .about-content,
   .contact-content,
   .doc-content {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.25rem;
   }
   
   .about-stats {
@@ -943,23 +980,38 @@ footer {
 
 @media (max-width: 480px) {
   .logo-text {
-    font-size: 1.1rem;
+    font-size: 1rem; /* Tiny fit next to language selector */
   }
   
   .logo-img {
-    height: 32px;
+    height: 30px;
   }
   
   .nav-links {
-    gap: 1rem;
+    gap: 0.8rem;
   }
   
   .nav-links a {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
   
   .lang-btn {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.75rem;
+    padding: 0.25rem 0.45rem;
+    font-size: 0.7rem;
+  }
+
+  .lang-btn .flag {
+    font-size: 0.85rem;
+  }
+
+  .game-title {
+    font-size: 1.35rem;
+  }
+
+  .contact-email-btn {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    width: 100%; /* Stacks beautifully */
+    justify-content: center;
   }
 }
