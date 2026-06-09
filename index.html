@@ -273,7 +273,7 @@
         // --- CONFIGURACIÓN DE MAILERLITE ---
         // Pega aquí los identificadores que te dé MailerLite para tu formulario
         const MAILERLITE_ACCOUNT_ID = '2418828'; // Ejemplo: '123456'
-        const MAILERLITE_FORM_ID = '7Bwjab';    // Ejemplo: '987654'
+        const MAILERLITE_FORM_ID = '189770797592610253';    // Ejemplo: '987654'
         // ------------------------------------
 
         if (newsletterForm) {
@@ -291,7 +291,7 @@
                 if (!MAILERLITE_ACCOUNT_ID || !MAILERLITE_FORM_ID) {
                     setTimeout(() => {
                         newsletterMessage.className = 'newsletter-message success';
-                        const currentLang = localStorage.getItem('language') || 'es';
+                        const currentLang = localStorage.getItem('ketu_lang') || 'es';
                         newsletterMessage.textContent = currentLang === 'es' 
                             ? '¡Gracias por suscribirte! (Modo simulación activo)' 
                             : 'Thank you for subscribing! (Simulation mode active)';
@@ -300,36 +300,37 @@
                     return;
                 }
 
-                // Endpoint de suscripción JSONP de MailerLite
-                const url = `https://assets.mailerlite.com/jsonp/${MAILERLITE_ACCOUNT_ID}/forms/${MAILERLITE_FORM_ID}/subscribe?callback=ml_callback`;
+                // FormData para enviar al endpoint de MailerLite
+                const formData = new FormData();
+                formData.append('fields[email]', email);
+                formData.append('ml-submit', '1');
+                formData.append('anticsrf', 'true');
 
                 try {
-                    window.ml_callback = (response) => {
-                        if (response && response.success) {
-                            newsletterMessage.className = 'newsletter-message success';
-                            const currentLang = localStorage.getItem('language') || 'es';
-                            newsletterMessage.textContent = currentLang === 'es' 
-                                ? '¡Te has suscrito con éxito!' 
-                                : 'You have successfully subscribed!';
-                            emailInput.value = '';
-                        } else {
-                            newsletterMessage.className = 'newsletter-message error';
-                            const currentLang = localStorage.getItem('language') || 'es';
-                            newsletterMessage.textContent = currentLang === 'es' 
-                                ? 'Hubo un error. Inténtalo de nuevo.' 
-                                : 'There was an error. Please try again.';
-                        }
-                        document.body.removeChild(script);
-                        delete window.ml_callback;
-                    };
+                    const response = await fetch(`https://assets.mailerlite.com/jsonp/${MAILERLITE_ACCOUNT_ID}/forms/${MAILERLITE_FORM_ID}/subscribe`, {
+                        method: 'POST',
+                        body: formData
+                    });
 
-                    const script = document.createElement('script');
-                    script.src = `${url}&fields%5Bemail%5D=${encodeURIComponent(email)}`;
-                    document.body.appendChild(script);
+                    const data = await response.json();
 
+                    if (data && data.success) {
+                        newsletterMessage.className = 'newsletter-message success';
+                        const currentLang = localStorage.getItem('ketu_lang') || 'es';
+                        newsletterMessage.textContent = currentLang === 'es' 
+                            ? '¡Te has suscrito con éxito!' 
+                            : 'You have successfully subscribed!';
+                        emailInput.value = '';
+                    } else {
+                        newsletterMessage.className = 'newsletter-message error';
+                        const currentLang = localStorage.getItem('ketu_lang') || 'es';
+                        newsletterMessage.textContent = currentLang === 'es' 
+                            ? 'Hubo un error. Inténtalo de nuevo.' 
+                            : 'There was an error. Please try again.';
+                    }
                 } catch (error) {
                     newsletterMessage.className = 'newsletter-message error';
-                    const currentLang = localStorage.getItem('language') || 'es';
+                    const currentLang = localStorage.getItem('ketu_lang') || 'es';
                     newsletterMessage.textContent = currentLang === 'es' 
                         ? 'Error de conexión. Inténtalo más tarde.' 
                         : 'Connection error. Please try again later.';
