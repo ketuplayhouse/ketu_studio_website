@@ -4,8 +4,10 @@ const translations = {
     // Navigation
     "nav-home": "Inicio",
     "nav-games": "Juegos",
+    "nav-devlog": "Devlog",
     "nav-about": "Nosotros",
     "nav-support": "Soporte",
+    "nav-presskit": "Presskit",
 
     // Hero Section
     "hero-title": "Creamos mundos <span class=\"gradient-text\">rápidos</span>, dinámicos y <span class=\"gradient-text\">divertidos</span>",
@@ -71,14 +73,56 @@ const translations = {
     "privacy-sec6-title": "6. Cambios en esta Política",
     "privacy-sec6-p1": "Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Cualquier cambio será publicado en esta página con la fecha de actualización correspondiente.",
     "privacy-sec7-title": "7. Contacto",
-    "privacy-sec7-p1": "Si tienes alguna pregunta sobre esta Política de Privacidad o el tratamiento de tus datos, puedes ponerte en contacto con nosotros a través del correo electrónico:"
+    "privacy-sec7-p1": "Si tienes alguna pregunta sobre esta Política de Privacidad o el tratamiento de tus datos, puedes ponerte en contacto con nosotros a través del correo electrónico:",
+
+    // Devlog & Newsletter
+    "section-devlog-title": "Bitácora de Desarrollo",
+    "section-devlog-subtitle": "Notas del parche y actualizaciones de Keyboard Escape",
+    "devlog-post1-title": "Prueba Cerrada Iniciada",
+    "devlog-post1-text": "¡Hemos comenzado la fase de prueba cerrada con 12 testers! Esta actualización incluye optimizaciones en los controles de salto y correcciones en la renderización de la interfaz en dispositivos móviles.",
+    "devlog-post2-title": "Primer Lanzamiento en Google Play",
+    "devlog-post2-text": "La versión de Keyboard Escape: Speed Up ya está compilada y subida a la consola de desarrolladores. Todo listo para invitar a los testers y pulir los detalles finales de velocidad de escritura y mecánicas.",
+    "newsletter-title": "¡Únete a nuestra lista de correo!",
+    "newsletter-desc": "Recibe boletines de desarrollo, ofertas exclusivas de temporada y entérate antes que nadie de nuestros futuros lanzamientos.",
+    "newsletter-placeholder": "Tu correo electrónico",
+    "newsletter-btn": "Suscribirse",
+
+    // Press Kit specific translations
+    "pk-menu-factsheet": "Ficha Técnica",
+    "pk-menu-desc": "Descripción",
+    "pk-menu-history": "Historia",
+    "pk-menu-images": "Logos e Imágenes",
+    "pk-menu-contact": "Contacto",
+    "pk-title": "Press Kit / Kit de Prensa",
+    "pk-intro": "Aquí encontrarás todos los materiales promocionales, ficha técnica e información oficial de KeTu Playhouse y de nuestro juego <strong>Keyboard Escape: Speed Up</strong>.",
+    "pk-factsheet-title": "Ficha Técnica",
+    "pk-tbl-dev": "Desarrollador:",
+    "pk-tbl-date": "Fecha de lanzamiento:",
+    "pk-tbl-platforms": "Plataformas:",
+    "pk-tbl-website": "Sitio Web:",
+    "pk-tbl-price": "Precio:",
+    "pk-tbl-price-val": "Gratuito (Con anuncios de AdMob)",
+    "pk-tbl-contact": "Contacto:",
+    "pk-desc-title": "Descripción del Juego",
+    "pk-desc-p1": "<strong>Keyboard Escape: Speed Up</strong> es un frenético juego arcade para móviles donde controlas a una tecla rebelde que intenta escapar de un teclado que se desmorona a gran velocidad. El jugador debe saltar, esquivar obstáculos de voltaje eléctrico y correr contra el tiempo, requiriendo reflejos rápidos y precisión.",
+    "pk-hist-title": "Historia del Estudio",
+    "pk-hist-p1": "<strong>KeTu Playhouse</strong> se fundó en 2026 como un estudio de desarrollo de videojuegos indie enfocado en móviles. Su misión es crear mecánicas de juego rápidas, divertidas, inmersivas y con un estilo visual llamativo basado en neones, ofreciendo experiencias gratificantes y adictivas de calidad premium para jugar sobre la marcha.",
+    "pk-img-title": "Logotipos y Capturas de Pantalla",
+    "pk-img-desc": "Puedes descargar todas las imágenes oficiales del estudio y el juego. Incluye iconos, banners promocionales y capturas en alta resolución.",
+    "pk-btn-logo": "Descargar Logo Oficial",
+    "pk-btn-icon": "Descargar Icono (512x512)",
+    "pk-btn-banner": "Descargar Banner",
+    "pk-contact-title": "Contacto de Prensa",
+    "pk-contact-desc": "Para consultas sobre reseñas, entrevistas o solicitudes comerciales, puedes escribir directamente a nuestro correo oficial:"
   },
   en: {
     // Navigation
     "nav-home": "Home",
     "nav-games": "Games",
+    "nav-devlog": "Devlog",
     "nav-about": "About Us",
     "nav-support": "Support",
+    "nav-presskit": "Presskit",
 
     // Hero Section
     "hero-title": "We build <span class=\"gradient-text\">fast</span>, dynamic and <span class=\"gradient-text\">fun</span> worlds",
@@ -144,7 +188,47 @@ const translations = {
     "privacy-sec6-title": "6. Changes to this Policy",
     "privacy-sec6-p1": "We reserve the right to modify this Privacy Policy at any time. Any changes will be posted on this page with the corresponding update date.",
     "privacy-sec7-title": "7. Contact",
-    "privacy-sec7-p1": "If you have any questions about this Privacy Policy or the processing of your data, you can contact us via email:"
+    "privacy-sec7-p1": "If you have any questions about this Privacy Policy or the processing of your data, you can contact us via email:",
+
+    // Devlog & Newsletter
+    "section-devlog-title": "Development Log",
+    "section-devlog-subtitle": "Patch notes and updates for Keyboard Escape",
+    "devlog-post1-title": "Closed Testing Started",
+    "devlog-post1-text": "We have started the closed testing phase with 12 testers! This update includes optimizations for jump controls and fixes for UI rendering on mobile devices.",
+    "devlog-post2-title": "First Launch on Google Play",
+    "devlog-post2-text": "The version of Keyboard Escape: Speed Up is compiled and uploaded to the developer console. Everything is ready to invite testers and polish the final typing speed and mechanics.",
+    "newsletter-title": "Join our mailing list!",
+    "newsletter-desc": "Receive development logs, exclusive seasonal offers, and find out about our future releases before anyone else.",
+    "newsletter-placeholder": "Your email address",
+    "newsletter-btn": "Subscribe",
+
+    // Press Kit specific translations
+    "pk-menu-factsheet": "Fact Sheet",
+    "pk-menu-desc": "Description",
+    "pk-menu-history": "History",
+    "pk-menu-images": "Logos & Images",
+    "pk-menu-contact": "Contact",
+    "pk-title": "Press Kit",
+    "pk-intro": "Here you will find all the promotional materials, fact sheet, and official information of KeTu Playhouse and our game <strong>Keyboard Escape: Speed Up</strong>.",
+    "pk-factsheet-title": "Fact Sheet",
+    "pk-tbl-dev": "Developer:",
+    "pk-tbl-date": "Release Date:",
+    "pk-tbl-platforms": "Platforms:",
+    "pk-tbl-website": "Website:",
+    "pk-tbl-price": "Price:",
+    "pk-tbl-price-val": "Free (With AdMob Ads)",
+    "pk-tbl-contact": "Contact:",
+    "pk-desc-title": "Game Description",
+    "pk-desc-p1": "<strong>Keyboard Escape: Speed Up</strong> is a fast-paced mobile arcade game where you control a rebel key trying to escape a rapidly collapsing keyboard. The player must jump, dodge voltage obstacles, and race against the clock, requiring quick reflexes and precision.",
+    "pk-hist-title": "Studio History",
+    "pk-hist-p1": "<strong>KeTu Playhouse</strong> was founded in 2026 as an indie mobile game development studio. Its mission is to create fast, fun, immersive mechanics with an eye-catching neon visual style, offering premium-quality addictive experiences to play on the go.",
+    "pk-img-title": "Logos & Screenshots",
+    "pk-img-desc": "You can download all the official images of the studio and the game. Includes icons, promotional banners, and high-resolution screenshots.",
+    "pk-btn-logo": "Download Official Logo",
+    "pk-btn-icon": "Download Icon (512x512)",
+    "pk-btn-banner": "Download Banner",
+    "pk-contact-title": "Press Contact",
+    "pk-contact-desc": "For inquiries regarding reviews, interviews, or business requests, you can write directly to our official email:"
   }
 };
 
@@ -173,6 +257,14 @@ function updateContent(lang) {
     const key = element.getAttribute("data-i18n-alt");
     if (dictionary[key] !== undefined) {
       element.setAttribute("alt", dictionary[key]);
+    }
+  });
+
+  // Update input placeholders
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(element => {
+    const key = element.getAttribute("data-i18n-placeholder");
+    if (dictionary[key] !== undefined) {
+      element.setAttribute("placeholder", dictionary[key]);
     }
   });
 
