@@ -39,7 +39,7 @@ const translations = {
 
     // Privacy Policy Link & Footer
     "link-privacy": "Política de Privacidad",
-    "footer-copy": "&copy; 2026 KeTu Playhouse. Todos los derechos reservados.",
+    "footer-copy": "© 2026 KeTu Playhouse. Todos los derechos reservados.",
 
     // Privacy Policy Page specific strings
     "back-btn-text": "Volver al Inicio",
@@ -152,7 +152,7 @@ const translations = {
 
     // Privacy Policy Link & Footer
     "link-privacy": "Privacy Policy",
-    "footer-copy": "&copy; 2026 KeTu Playhouse. All rights reserved.",
+    "footer-copy": "© 2026 KeTu Playhouse. All rights reserved.",
 
     // Privacy Policy Page specific strings
     "back-btn-text": "Back to Home",
