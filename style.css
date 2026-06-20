@@ -1878,3 +1878,206 @@ footer {
     font-size: 0.7rem;
   }
 }
+
+/* Discord Role Image Highlight */
+.discord-role-img {
+  height: 22px;
+  width: auto;
+  vertical-align: middle;
+  margin: 0 4px;
+  border-radius: 4px;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Discord Invite Widget Card Styling */
+.discord-invite-wrapper {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-top: 2.25rem;
+}
+
+.discord-invite-card {
+  width: 100%;
+  max-width: 400px;
+  background-color: #2f3136; /* Discord dark background */
+  border-radius: 5px; /* Discord standard rounded corners */
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.9rem;
+}
+
+/* Avatar positioned at the top center, slightly overlapping the card */
+.invite-header-avatar {
+  position: absolute;
+  top: -32px; /* Adjusted from -24px to match larger size */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px; /* Increased from 48px */
+  height: 64px; /* Increased from 48px */
+  border-radius: 50%;
+  background-color: #2f3136;
+  padding: 3px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+}
+
+.invite-header-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.invite-header-text {
+  color: #b9bbbe;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+  margin-top: 1.5rem; /* Adjusted for larger avatar overlap */
+  font-family: sans-serif;
+}
+
+.invite-server-info {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+}
+
+.invite-server-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  object-fit: cover;
+  background-color: #0a080c;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.invite-server-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.invite-server-name {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+
+.invite-server-members {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: #b9bbbe;
+  font-family: sans-serif;
+}
+
+.member-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.member-status .status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.member-status.online .status-dot {
+  background-color: #3ba55d; /* Discord Green */
+}
+
+.member-status.total .status-dot {
+  background-color: #747f8d; /* Discord Grey */
+}
+
+.invite-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.invite-btn {
+  display: block;
+  text-align: center;
+  padding: 0.65rem;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  font-family: sans-serif;
+  transition: background-color var(--transition-fast);
+}
+
+.invite-btn.primary {
+  background-color: #5865f2; /* Discord Blurple */
+  color: #ffffff;
+}
+
+.invite-btn.primary:hover {
+  background-color: #4752c4;
+}
+
+.invite-btn.secondary {
+  background-color: #4f545c;
+  color: #ffffff;
+}
+
+.invite-btn.secondary:hover {
+  background-color: #5d6269;
+}
+
+/* Mobile overrides for Discord Invite Widget */
+@media (max-width: 768px) {
+  .discord-invite-wrapper {
+    margin-top: 1.75rem;
+    padding-top: 1.75rem;
+  }
+  .discord-invite-card {
+    padding: 1.25rem 1rem;
+    max-width: 100%;
+    gap: 0.75rem;
+  }
+  .invite-header-avatar {
+    top: -26px;
+    width: 52px;
+    height: 52px;
+  }
+  .invite-header-text {
+    font-size: 0.7rem;
+    margin-top: 1rem;
+  }
+  .invite-server-info {
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+  .invite-server-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  .invite-server-name {
+    font-size: 0.92rem;
+  }
+  .invite-server-members {
+    font-size: 0.7rem;
+    gap: 0.5rem;
+  }
+  .invite-btn {
+    padding: 0.55rem;
+    font-size: 0.82rem;
+  }
+}

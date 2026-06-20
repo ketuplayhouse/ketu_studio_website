@@ -26,11 +26,15 @@ const translations = {
     "badge-alt": "Disponible en Google Play (Prueba Cerrada)",
     "cta-testing-web": "Unirse a la Prueba Cerrada (Discord)",
     "badge-testing-tag": "BETA CERRADA",
-    "testing-invite": "¿Te gustaría participar en nuestra prueba cerrada y jugar nuestros nuevos lanzamientos en acceso anticipado? <span class=\"highlight-cyan\">¡Únete a nuestro Discord y sigue las instrucciones!</span>",
+    "testing-invite": "¿Te gustaría participar en nuestra prueba cerrada y jugar nuestros nuevos lanzamientos en acceso anticipado?<br><span class=\"highlight-cyan\">¡Únete a nuestro Discord y sigue las instrucciones!</span>",
     "testing-step-1-title": "1. Comunidad y Rol de Tester",
-    "testing-step-1-desc": "Únete a nuestro servidor de Discord y, una vez completes el registro, obtendrás el rol de <strong>\"tester\"</strong> junto al acceso a nuestros canales para interactuar con otros testers y el creador del juego.",
+    "testing-step-1-desc": "Únete a nuestro servidor de Discord y, una vez completes el registro, obtendrás el rol de <code>[ 🧪 tester ]</code> junto al acceso a nuestros canales para interactuar con otros testers y el creador del juego.",
     "testing-step-2-title": "2. ¡A Jugar!",
     "testing-step-2-desc": "En el canal privado <code>#📲-instrucciones-test</code> encontrarás la guía para unirte al grupo de Google y descargar el juego directamente desde Play Store.",
+    "discord-invite-user": "ToyZ (toyzmaker) te invitó a unirte",
+    "discord-invite-online": "3 en línea",
+    "discord-invite-total": "5 miembros",
+    "discord-invite-join": "Unirme",
     "widget-title": "¡Conéctate!",
     "widget-hint": "Redes Sociales",
 
@@ -147,11 +151,15 @@ const translations = {
     "badge-alt": "Get it on Google Play (Closed Beta)",
     "cta-testing-web": "Join the Closed Beta (Discord)",
     "badge-testing-tag": "CLOSED BETA",
-    "testing-invite": "Would you like to participate in our closed beta and play our new releases in early access? <span class=\"highlight-cyan\">Join our Discord and follow the instructions!</span>",
+    "testing-invite": "Would you like to participate in our closed beta and play our new releases in early access?<br><span class=\"highlight-cyan\">Join our Discord and follow the instructions!</span>",
     "testing-step-1-title": "1. Community & Tester Role",
-    "testing-step-1-desc": "Join our Discord server and, once you complete registration, you will get the <strong>\"tester\"</strong> role along with access to our channels to interact with other testers and the game creator.",
+    "testing-step-1-desc": "Join our Discord server and, once you complete registration, you will get the <code>[ 🧪 tester ]</code> role along with access to our channels to interact with other testers and the game creator.",
     "testing-step-2-title": "2. Let's Play!",
     "testing-step-2-desc": "In the private channel <code>#📲-instrucciones-test</code> you will find the guide to join the Google Group and download the game directly from the Play Store.",
+    "discord-invite-user": "ToyZ (toyzmaker) invited you to join",
+    "discord-invite-online": "3 Online",
+    "discord-invite-total": "5 Members",
+    "discord-invite-join": "Join",
     "widget-title": "Let's Connect!",
     "widget-hint": "Socials",
 
@@ -256,7 +264,7 @@ function updateContent(lang) {
       // Check if tag requires setting HTML or text
       if (element.tagName === "A" && key === "link-privacy") {
         element.innerHTML = dictionary[key];
-      } else if (dictionary[key].includes("<span") || dictionary[key].includes("<strong") || dictionary[key].includes("<a")) {
+      } else if (dictionary[key].includes("<span") || dictionary[key].includes("<strong") || dictionary[key].includes("<a") || dictionary[key].includes("<code") || dictionary[key].includes("<img")) {
         element.innerHTML = dictionary[key];
       } else {
         element.textContent = dictionary[key];
