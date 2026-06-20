@@ -1359,6 +1359,63 @@ footer {
   bottom: 2rem;
   right: 2rem;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Widget Hint Capsule Tag */
+.social-widget-hint {
+  position: absolute;
+  right: 72px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  box-shadow: var(--glow-pink), var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  pointer-events: none;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.hint-text {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hint-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  box-shadow: var(--glow-cyan);
+  animation: hint-blink 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes hint-blink {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Hide hint when widget is open */
+.social-widget.open .social-widget-hint {
+  opacity: 0;
+  transform: translateX(10px) scale(0.9);
 }
 
 /* Toggle Button (Cute Cat Keycap) */
@@ -1624,5 +1681,14 @@ footer {
     max-width: 280px;
     padding: 1.35rem 1rem 1rem;
     border-radius: 18px;
+  }
+
+  .social-widget-hint {
+    right: 62px;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .hint-text {
+    font-size: 0.7rem;
   }
 }

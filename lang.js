@@ -30,6 +30,7 @@ const translations = {
     "testing-step-2": "<strong>Paso 2: Regístrate con el Bot:</strong> Ve al canal <code>#🤖-registro-tester</code> y pulsa el botón para obtener tu rol.",
     "testing-step-3": "<strong>Paso 3: Descarga el Juego:</strong> Sigue los pasos en el canal privado <code>#📲-instrucciones-test</code> (Google Group y Play Store).",
     "widget-title": "¡Conéctate!",
+    "widget-hint": "Redes",
 
     // About Section
     "about-title": "Sobre el Estudio",
@@ -148,6 +149,7 @@ const translations = {
     "testing-step-2": "<strong>Step 2: Register with the Bot:</strong> Go to the <code>#🤖-registro-tester</code> channel and click the button to get your role.",
     "testing-step-3": "<strong>Step 3: Download the Game:</strong> Follow the guide in the private <code>#📲-instrucciones-test</code> channel (Google Group & Play Store).",
     "widget-title": "Let's Connect!",
+    "widget-hint": "Socials",
 
     // About Section
     "about-title": "About the Studio",
