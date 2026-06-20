@@ -1353,75 +1353,234 @@ footer {
   color: var(--accent);
 }
 
-/* Social Media Sidebar */
-.social-sidebar {
+/* Social Media Interactive Widget */
+.social-widget {
   position: fixed;
-  top: 50%;
+  bottom: 2rem;
   right: 2rem;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
   z-index: 1000;
-  padding: 0.75rem 0.5rem;
-  background: rgba(10, 8, 12, 0.6);
-  border: 1px solid var(--border-color);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 30px;
-  box-shadow: var(--shadow-md);
 }
 
-.social-item {
+/* Toggle Button (Cute Cat Keycap) */
+.social-widget-toggle {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: rgba(22, 17, 28, 0.8);
-  border: 1px solid var(--border-color);
-  color: var(--text-muted);
-  transition: all var(--transition-normal);
-  cursor: pointer;
+  user-select: none;
 }
 
-.social-item svg {
-  width: 20px;
-  height: 20px;
+.social-widget-toggle:hover {
+  transform: translateY(-4px) scale(1.05);
+  filter: drop-shadow(0 8px 16px rgba(255, 77, 148, 0.4));
+}
+
+.social-widget-toggle:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Pulsing subtle glow for toggle when closed */
+.social-widget:not(.open) .social-widget-toggle svg {
+  animation: widget-breathe 3s infinite alternate ease-in-out;
+}
+
+@keyframes widget-breathe {
+  0% {
+    filter: drop-shadow(0 0 4px rgba(255, 77, 148, 0.2));
+  }
+  100% {
+    filter: drop-shadow(0 0 16px rgba(255, 77, 148, 0.6));
+  }
+}
+
+/* Social Menu Popup Card */
+.social-widget-card {
+  position: absolute;
+  bottom: 75px;
+  right: 0;
+  width: 250px;
+  background: rgba(22, 17, 28, 0.95);
+  border: 2px solid var(--primary);
+  border-radius: 20px;
+  padding: 1.5rem 1.25rem 1.25rem;
+  box-shadow: var(--glow-pink), var(--shadow-lg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 1001;
+  
+  /* Initial collapsed state */
+  opacity: 0;
+  transform: translateY(20px) scale(0.85);
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Open state */
+.social-widget.open .social-widget-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+/* Peeking Cat Character */
+.peeking-character {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  transition: transform 0.3s var(--transition-normal);
+}
+
+.social-widget.open .peeking-character {
+  transform: translateX(-50%) translateY(-3px);
+  animation: cat-bounce 4s infinite alternate ease-in-out 0.3s;
+}
+
+@keyframes cat-bounce {
+  0% {
+    transform: translateX(-50%) translateY(-3px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-6px);
+  }
+}
+
+/* Close Button (x) */
+.social-widget-close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.85rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  font-weight: 300;
+  cursor: pointer;
+  line-height: 1;
+  transition: var(--transition-fast);
+}
+
+.social-widget-close:hover {
+  color: var(--primary);
+  text-shadow: var(--glow-pink);
+}
+
+/* Card Title */
+.social-widget-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, var(--text-light) 40%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Grid Layout of Social Networks */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.social-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  padding: 0.85rem 0.5rem;
+  border-radius: 14px;
+  transition: all var(--transition-normal);
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+}
+
+.social-icon svg {
+  width: 24px;
+  height: 24px;
   fill: currentColor;
 }
 
-/* Individual Social Hover Aesthetics */
-.social-item.youtube:hover {
-  color: #ff0000;
-  border-color: rgba(255, 0, 0, 0.4);
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-  transform: scale(1.1);
+.social-icon .tiktok-svg {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
 }
 
-.social-item.instagram:hover {
-  color: #f72585;
-  border-color: rgba(247, 37, 133, 0.4);
-  box-shadow: 0 0 15px rgba(247, 37, 133, 0.5);
-  transform: scale(1.1);
+.social-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+  letter-spacing: 0.5px;
 }
 
-.social-item.tiktok:hover {
+/* Grid Hover Effects */
+.social-grid-item:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.social-grid-item:hover .social-label {
   color: var(--text-light);
+}
+
+/* Hover Colors & Glowing per Network */
+.social-grid-item.youtube:hover {
+  border-color: rgba(255, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
+}
+.social-grid-item.youtube:hover .social-icon {
+  color: #ff0000;
+  filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.6));
+}
+
+.social-grid-item.instagram:hover {
+  border-color: rgba(247, 37, 133, 0.4);
+  box-shadow: 0 4px 12px rgba(247, 37, 133, 0.2);
+}
+.social-grid-item.instagram:hover .social-icon {
+  color: #f72585;
+  filter: drop-shadow(0 0 6px rgba(247, 37, 133, 0.6));
+}
+
+.social-grid-item.tiktok:hover {
   border-color: rgba(76, 201, 240, 0.4);
-  box-shadow: -2px -2px 8px rgba(255, 0, 128, 0.5), 2px 2px 8px rgba(76, 201, 240, 0.5);
-  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(76, 201, 240, 0.15);
+}
+.social-grid-item.tiktok:hover .social-icon {
+  filter: drop-shadow(0 0 6px rgba(76, 201, 240, 0.5));
 }
 
-.social-item.discord:hover {
-  color: #5865f2;
+.social-grid-item.discord:hover {
   border-color: rgba(88, 101, 242, 0.4);
-  box-shadow: 0 0 15px rgba(88, 101, 242, 0.5);
-  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(88, 101, 242, 0.2);
+}
+.social-grid-item.discord:hover .social-icon {
+  color: #5865f2;
+  filter: drop-shadow(0 0 6px rgba(88, 101, 242, 0.6));
 }
 
-/* Mobile Responsiveness for Sidebar & Instructions */
+/* Mobile Responsiveness for Social Media Widget */
 @media (max-width: 768px) {
   .testing-instructions-card {
     padding: 1.5rem;
@@ -1441,28 +1600,29 @@ footer {
     font-size: 0.92rem;
   }
 
-  /* Reposition sidebar to bottom center floating bar */
-  .social-sidebar {
-    top: auto;
+  /* Make sure widget sits cleanly on mobile bottom-right */
+  .social-widget {
     bottom: 1.5rem;
-    right: 50%;
-    transform: translateX(50%);
-    flex-direction: row;
-    padding: 0.5rem 0.75rem;
-    gap: 1rem;
-    border-radius: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    background: rgba(10, 8, 12, 0.85);
-    border-color: rgba(255, 255, 255, 0.12);
+    right: 1.5rem;
   }
 
-  .social-item {
-    width: 40px;
-    height: 40px;
+  .social-widget-toggle {
+    width: 52px;
+    height: 52px;
   }
 
-  .social-item svg {
-    width: 18px;
-    height: 18px;
+  .social-widget-toggle svg {
+    width: 52px;
+    height: 52px;
+  }
+
+  /* Expand menu card above toggle horizontally on mobile */
+  .social-widget-card {
+    bottom: 68px;
+    right: 0;
+    width: calc(100vw - 3rem);
+    max-width: 280px;
+    padding: 1.35rem 1rem 1rem;
+    border-radius: 18px;
   }
 }

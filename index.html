@@ -264,29 +264,104 @@
         </div>
     </footer>
 
-    <!-- Social Media Sidebar -->
-    <aside class="social-sidebar">
-        <a href="https://youtube.com/@ketuplayhouse" target="_blank" rel="noopener noreferrer" class="social-item youtube" aria-label="YouTube">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+    <!-- Social Media Interactive Widget -->
+    <div class="social-widget">
+        <!-- Toggle Button (Cute Cat Keycap) -->
+        <div class="social-widget-toggle" aria-label="Abrir redes sociales">
+            <svg viewBox="0 0 60 60" width="60" height="60">
+                <defs>
+                    <linearGradient id="keycap-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#ff4d94" />
+                        <stop offset="100%" stop-color="#9d4edd" />
+                    </linearGradient>
+                    <filter id="shadow-filter" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#ff4d94" flood-opacity="0.3"/>
+                    </filter>
+                </defs>
+                <!-- Cat ears -->
+                <path d="M12,22 L6,10 L20,18 Z" fill="#ff4d94" />
+                <path d="M48,22 L54,10 L40,18 Z" fill="#ff4d94" />
+                <path d="M13,20 L8,12 L19,17 Z" fill="#9d4edd" />
+                <path d="M47,20 L52,12 L41,17 Z" fill="#9d4edd" />
+                
+                <!-- Keycap body -->
+                <path d="M8,22 L52,22 L56,52 L4,52 Z" fill="url(#keycap-grad)" filter="url(#shadow-filter)" />
+                <!-- Keycap top face -->
+                <path d="M12,24 L48,24 L45,42 L15,42 Z" fill="#16111c" stroke="rgba(255, 77, 148, 0.4)" stroke-width="1.5" />
+                <!-- ESC legend -->
+                <text x="30" y="36" font-family="'Outfit', sans-serif" font-weight="800" font-size="10" fill="#4cc9f0" text-anchor="middle" letter-spacing="0.5">ESC</text>
             </svg>
-        </a>
-        <a href="https://instagram.com/ketuplayhouse" target="_blank" rel="noopener noreferrer" class="social-item instagram" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-            </svg>
-        </a>
-        <a href="https://tiktok.com/@ketuplayhouse" target="_blank" rel="noopener noreferrer" class="social-item tiktok" aria-label="TikTok">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.86-.6-4.05-1.4-.49-.33-.94-.73-1.33-1.18v6.26c.12 2.44-.94 4.88-2.98 6.14-2.49 1.56-5.85 1.25-7.97-.73-2.45-2.29-2.26-6.42.42-8.47 1.62-1.24 3.84-1.57 5.75-.91V9.58c-1.62-.2-3.28.01-4.75.76-2.25 1.15-3.66 3.61-3.64 6.17.02 2.91 1.86 5.6 4.67 6.44 3.01.91 6.38-.45 7.74-3.17.47-.94.67-1.99.64-3.04V.02z"/>
-            </svg>
-        </a>
-        <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="social-item discord" aria-label="Discord">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.156-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.156 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.156-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.156 2.418z"/>
-            </svg>
-        </a>
-    </aside>
+        </div>
+
+        <!-- Social Menu Popup Card -->
+        <div class="social-widget-card">
+            <!-- Peeking Cat Character -->
+            <div class="peeking-character">
+                <svg viewBox="0 0 40 30" width="40" height="30">
+                    <!-- Cat head top half -->
+                    <path d="M6,30 L6,12 L11,3 L18,12 L22,12 L29,3 L34,12 L34,30 Z" fill="#ff4d94" />
+                    <!-- Inner ears -->
+                    <polygon points="8,11 11,5 15,11" fill="#9d4edd" />
+                    <polygon points="32,11 29,5 25,11" fill="#9d4edd" />
+                    <!-- Eyes -->
+                    <circle cx="14" cy="18" r="2.5" fill="#4cc9f0" />
+                    <circle cx="26" cy="18" r="2.5" fill="#4cc9f0" />
+                    <!-- Eye highlights -->
+                    <circle cx="15" cy="17" r="0.75" fill="white" />
+                    <circle cx="27" cy="17" r="0.75" fill="white" />
+                    <!-- Mouth -->
+                    <path d="M18,21 L20,23 L22,21" stroke="#16111c" stroke-width="1.5" fill="none" stroke-linecap="round" />
+                </svg>
+            </div>
+
+            <!-- Close Button -->
+            <button class="social-widget-close" aria-label="Cerrar redes sociales">&times;</button>
+
+            <!-- Card Title -->
+            <h4 class="social-widget-title" data-i18n="widget-title">¡Conéctate!</h4>
+
+            <!-- Grid Layout of Social Networks -->
+            <div class="social-grid">
+                <a href="https://youtube.com/@ketuplayhouse" target="_blank" rel="noopener noreferrer" class="social-grid-item youtube">
+                    <div class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </div>
+                    <span class="social-label">YouTube</span>
+                </a>
+                <a href="https://instagram.com/ketuplayhouse" target="_blank" rel="noopener noreferrer" class="social-grid-item instagram">
+                    <div class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                        </svg>
+                    </div>
+                    <span class="social-label">Instagram</span>
+                </a>
+                <a href="https://tiktok.com/@ketuplayhouse" target="_blank" rel="noopener noreferrer" class="social-grid-item tiktok">
+                    <div class="social-icon">
+                        <svg viewBox="0 0 24 24" class="tiktok-svg">
+                            <rect x="0" y="0" width="24" height="24" rx="5" fill="#000000" />
+                            <g transform="translate(4.8, 4.8) scale(0.6)">
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.86-.6-4.05-1.4-.49-.33-.94-.73-1.33-1.18v6.26c.12 2.44-.94 4.88-2.98 6.14-2.49 1.56-5.85 1.25-7.97-.73-2.45-2.29-2.26-6.42.42-8.47 1.62-1.24 3.84-1.57 5.75-.91V9.58c-1.62-.2-3.28.01-4.75.76-2.25 1.15-3.66 3.61-3.64 6.17.02 2.91 1.86 5.6 4.67 6.44 3.01.91 6.38-.45 7.74-3.17.47-.94.67-1.99.64-3.04V.02z" fill="#00f2fe" transform="translate(-0.6, -0.6)" />
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.86-.6-4.05-1.4-.49-.33-.94-.73-1.33-1.18v6.26c.12 2.44-.94 4.88-2.98 6.14-2.49 1.56-5.85 1.25-7.97-.73-2.45-2.29-2.26-6.42.42-8.47 1.62-1.24 3.84-1.57 5.75-.91V9.58c-1.62-.2-3.28.01-4.75.76-2.25 1.15-3.66 3.61-3.64 6.17.02 2.91 1.86 5.6 4.67 6.44 3.01.91 6.38-.45 7.74-3.17.47-.94.67-1.99.64-3.04V.02z" fill="#fe0979" transform="translate(0.6, 0.6)" />
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.86-.6-4.05-1.4-.49-.33-.94-.73-1.33-1.18v6.26c.12 2.44-.94 4.88-2.98 6.14-2.49 1.56-5.85 1.25-7.97-.73-2.45-2.29-2.26-6.42.42-8.47 1.62-1.24 3.84-1.57 5.75-.91V9.58c-1.62-.2-3.28.01-4.75.76-2.25 1.15-3.66 3.61-3.64 6.17.02 2.91 1.86 5.6 4.67 6.44 3.01.91 6.38-.45 7.74-3.17.47-.94.67-1.99.64-3.04V.02z" fill="#ffffff" />
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="social-label">TikTok</span>
+                </a>
+                <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="social-grid-item discord">
+                    <div class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.156-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.156 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.156-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.156 2.418z"/>
+                        </svg>
+                    </div>
+                    <span class="social-label">Discord</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Interactive script for navbar active state toggles -->
     <script>
@@ -396,6 +471,32 @@
                 }
             });
         }
+
+        // Social Media Interactive Widget Toggle Logic
+        const socialWidget = document.querySelector('.social-widget');
+        const widgetToggle = document.querySelector('.social-widget-toggle');
+        const widgetClose = document.querySelector('.social-widget-close');
+
+        if (widgetToggle && socialWidget) {
+            widgetToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                socialWidget.classList.toggle('open');
+            });
+        }
+
+        if (widgetClose && socialWidget) {
+            widgetClose.addEventListener('click', (e) => {
+                e.stopPropagation();
+                socialWidget.classList.remove('open');
+            });
+        }
+
+        // Close widget when clicking outside
+        document.addEventListener('click', (e) => {
+            if (socialWidget && socialWidget.classList.contains('open') && !socialWidget.contains(e.target)) {
+                socialWidget.classList.remove('open');
+            }
+        });
     </script>
 </body>
 </html>
