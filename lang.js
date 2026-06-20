@@ -30,7 +30,7 @@ const translations = {
     "testing-step-2": "<strong>Paso 2: Regístrate con el Bot:</strong> Ve al canal <code>#🤖-registro-tester</code> y pulsa el botón para obtener tu rol.",
     "testing-step-3": "<strong>Paso 3: Descarga el Juego:</strong> Sigue los pasos en el canal privado <code>#📲-instrucciones-test</code> (Google Group y Play Store).",
     "widget-title": "¡Conéctate!",
-    "widget-hint": "Redes",
+    "widget-hint": "Redes Sociales",
 
     // About Section
     "about-title": "Sobre el Estudio",
