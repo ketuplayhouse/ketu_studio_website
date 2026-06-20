@@ -24,7 +24,11 @@ const translations = {
     "game-feat-4": "Banda sonora retro synth-wave inmersiva",
     "gallery-title": "Capturas de Pantalla",
     "badge-alt": "Disponible en Google Play",
-    "cta-testing-web": "Unirse a la Prueba Abierta (Web)",
+    "cta-testing-web": "Unirse a la Prueba Cerrada (Discord)",
+    "testing-title": "🧪 ¿Cómo participar en la Prueba Cerrada?",
+    "testing-step-1": "<strong>Paso 1: Únete a Discord:</strong> Entra al servidor de KeTu Playhouse usando el botón o la barra lateral.",
+    "testing-step-2": "<strong>Paso 2: Regístrate con el Bot:</strong> Ve al canal <code>#🤖-registro-tester</code> y pulsa el botón para obtener tu rol.",
+    "testing-step-3": "<strong>Paso 3: Descarga el Juego:</strong> Sigue los pasos en el canal privado <code>#📲-instrucciones-test</code> (Google Group y Play Store).",
 
     // About Section
     "about-title": "Sobre el Estudio",
@@ -137,7 +141,11 @@ const translations = {
     "game-feat-4": "Immersive retro synth-wave soundtrack",
     "gallery-title": "Screenshots",
     "badge-alt": "Get it on Google Play",
-    "cta-testing-web": "Join Open Testing (Web)",
+    "cta-testing-web": "Join Closed Beta (Discord)",
+    "testing-title": "🧪 How to participate in the Closed Beta?",
+    "testing-step-1": "<strong>Step 1: Join Discord:</strong> Enter the KeTu Playhouse server using the button or the sidebar.",
+    "testing-step-2": "<strong>Step 2: Register with the Bot:</strong> Go to the <code>#🤖-registro-tester</code> channel and click the button to get your role.",
+    "testing-step-3": "<strong>Step 3: Download the Game:</strong> Follow the guide in the private <code>#📲-instrucciones-test</code> channel (Google Group & Play Store).",
 
     // About Section
     "about-title": "About the Studio",
