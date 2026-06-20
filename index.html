@@ -126,29 +126,45 @@
 
                     <!-- Download Badge / Links -->
                     <div class="game-cta-wrapper">
-                        <a href="https://play.google.com/store/apps/details?id=com.ketuplayhouse.keyboardescape" target="_blank" rel="noopener noreferrer" class="badge-link" id="cta-playstore">
-                            <img src="assets/google_play_badge.png" alt="Disponible en Google Play" data-i18n-alt="badge-alt">
-                        </a>
-                        <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="secondary-cta" id="cta-testing-web" data-i18n="cta-testing-web">
+                        <div class="badge-static" id="cta-playstore">
+                            <img src="assets/google_play_badge.png" alt="Disponible en Google Play (Prueba Cerrada)" data-i18n-alt="badge-alt">
+                        </div>
+                        <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="discord-cta-btn" id="cta-testing-web" data-i18n="cta-testing-web">
                             Unirse a la Prueba Cerrada (Discord)
                         </a>
                     </div>
 
                     <!-- Closed Beta Instructions Card -->
                     <div class="testing-instructions-card">
-                        <h4 class="testing-instructions-title" data-i18n="testing-title">🧪 ¿Cómo participar en la Prueba Cerrada?</h4>
-                        <div class="testing-steps">
-                            <div class="testing-step">
-                                <div class="step-number">1</div>
-                                <div class="step-text" data-i18n="testing-step-1"><strong>Paso 1: Únete a Discord:</strong> Entra al servidor de KeTu Playhouse usando el botón o la barra lateral.</div>
+                        <div class="testing-invite-text" data-i18n="testing-invite">
+                            ¿Te gustaría participar en nuestra prueba cerrada y jugar nuestros nuevos lanzamientos en acceso anticipado? ¡Únete a nuestro Discord y sigue las instrucciones!
+                        </div>
+                        <div class="testing-illustrated-steps">
+                            <div class="illustrated-step">
+                                <div class="step-icon-wrapper discord-color">
+                                    <svg class="step-icon-svg" viewBox="0 0 127.14 96.36">
+                                        <path fill="currentColor" d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a77.7,77.7,0,0,0,6.63-10.85,68.43,68.43,0,0,1-10.5-5c.87-.64,1.71-1.34,2.5-2.07a74.58,74.58,0,0,0,73.13,0c.8,0.73,1.64,1.43,2.5,2.07a68.43,68.43,0,0,1-10.5,5,77.7,77.7,0,0,0,6.63,10.85,105.73,105.73,0,0,0,31.06-18.83C129,54.65,123.48,31.58,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.83,46,53.83,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.07,46,96.07,53,91,65.69,84.69,65.69Z"/>
+                                    </svg>
+                                </div>
+                                <div class="illustrated-step-content">
+                                    <h5 class="step-title" data-i18n="testing-step-1-title">1. Comunidad y Rol de Tester</h5>
+                                    <p class="step-description" data-i18n="testing-step-1-desc">
+                                        Únete a nuestro servidor de Discord y, una vez completes el registro, obtendrás el rol de <strong>"tester"</strong> junto al acceso a nuestros canales para interactuar con otros testers y el creador del juego.
+                                    </p>
+                                </div>
                             </div>
-                            <div class="testing-step">
-                                <div class="step-number">2</div>
-                                <div class="step-text" data-i18n="testing-step-2"><strong>Paso 2: Regístrate con el Bot:</strong> Ve al canal <code>#🤖-registro-tester</code> y pulsa el botón para obtener tu rol.</div>
-                            </div>
-                            <div class="testing-step">
-                                <div class="step-number">3</div>
-                                <div class="step-text" data-i18n="testing-step-3"><strong>Paso 3: Descarga el Juego:</strong> Sigue los pasos en el canal privado <code>#📲-instrucciones-test</code> (Google Group y Play Store).</div>
+                            <div class="illustrated-step">
+                                <div class="step-icon-wrapper controller-color">
+                                    <svg class="step-icon-svg" viewBox="0 0 64 64">
+                                        <path fill="currentColor" d="M50.2,16H13.8C7.3,16,2,21.3,2,27.8v8.4c0,6.5,5.3,11.8,11.8,11.8h36.4c6.5,0,11.8-5.3,11.8-11.8v-8.4C62,21.3,56.7,16,50.2,16z M22,34h-4v4c0,1.1-0.9,2-2,2s-2-0.9-2-2v-4h-4c-1.1,0-2-0.9-2-2s0.9-2,2-2h4v-4c0-1.1,0.9-2,2-2s2,0.9,2,2v4h4c1.1,0,2,0.9,2,2S23.1,34,22,34z M44,32c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S45.7,32,44,32z M52,38c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S53.7,38,52,38z"/>
+                                    </svg>
+                                </div>
+                                <div class="illustrated-step-content">
+                                    <h5 class="step-title" data-i18n="testing-step-2-title">2. ¡A Jugar!</h5>
+                                    <p class="step-description" data-i18n="testing-step-2-desc">
+                                        En el canal privado <code>#📲-instrucciones-test</code> encontrarás la guía para unirte al grupo de Google y descargar el juego directamente desde Play Store.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
