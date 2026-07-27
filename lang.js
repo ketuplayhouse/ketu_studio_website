@@ -1,256 +1,169 @@
-// Centralized Language Translation System for KeTu Playhouse Website
+// Centralized Language & News Management System for KeTu Playhouse Website
 const translations = {
   es: {
     // Navigation
     "nav-home": "Inicio",
     "nav-games": "Juegos",
-    "nav-devlog": "Devlog",
+    "nav-egoball": "EGO BALL",
+    "nav-news": "Noticias",
     "nav-about": "Nosotros",
-    "nav-support": "Soporte",
 
     // Hero Section
     "hero-title": "Creamos mundos <span class=\"gradient-text\">rápidos</span>, dinámicos y <span class=\"gradient-text\">divertidos</span>",
-    "hero-subtitle": "KeTu Playhouse es un estudio independiente dedicado a diseñar experiencias de juego móviles únicas y electrizantes directamente en tu bolsillo.",
-    "hero-btn": "Ver Nuestros Juegos",
+    "hero-subtitle": "KeTu Playhouse es un estudio independiente dedicado a diseñar experiencias móviles arcade únicas directamente en tu bolsillo.",
+    "hero-btn": "Explorar Lanzamientos",
 
-    // Games Section
-    "section-games-title": "Nuestros Lanzamientos",
-    "section-games-subtitle": "Explora los juegos creados por KeTu Playhouse",
-    "game-studio-label": "KeTu Playhouse",
-    "game-desc": "¡Pon a prueba tus reflejos y velocidad de escritura! En <strong>Keyboard Escape: Speed Up</strong>, asumes el control de una pequeña tecla fugitiva atrapada en un teclado cibernético que se derrumba. Deberás esquivar obstáculos, saltar de tecla en tecla y utilizar potenciadores eléctricos para correr contra el tiempo. ¿Lograrás escapar del teclado antes del colapso total?",
-    "game-feat-1": "Acción arcade de ritmo ultra rápido",
-    "game-feat-2": "Diseño visual vibrante tipo dulce de neón",
-    "game-feat-3": "Niveles desafiantes que pondrán a prueba tus reflejos",
-    "game-feat-4": "Banda sonora retro synth-wave inmersiva",
+    // Keyboard Escape Section
+    "game1-status": "🎮 PUBLICADO EN GOOGLE PLAY",
+    "game1-title": "Keyboard Escape: Speed Up",
+    "game1-desc": "¡Pon a prueba tus reflejos y velocidad de reacción! En <strong>Keyboard Escape: Speed Up</strong>, asumes el control de una pequeña tecla fugitiva atrapada en un teclado cibernético que se derrumba. Esqueva obstáculos, salta de tecla en tecla y utiliza potenciadores eléctricos para escapar.",
+    "game1-feat-1": "Acción arcade de ritmo ultra rápido",
+    "game1-feat-2": "Diseño visual Candy Neon & Synthwave",
+    "game1-feat-3": "Niveles desafiantes y tablas de velocidad",
+    "game1-feat-4": "100% Optimizado para celulares Android",
+    "game1-trailer-btn": "▶ Ver Tráiler Oficial (YouTube)",
     "gallery-title": "Capturas de Pantalla",
-    "badge-alt": "Disponible en Google Play (Prueba Cerrada)",
-    "cta-testing-web": "Unirse a la Prueba Cerrada (Discord)",
-    "badge-testing-tag": "BETA CERRADA",
-    "testing-invite": "¿Te gustaría participar en nuestra prueba cerrada y jugar nuestros nuevos lanzamientos en acceso anticipado?<br><span class=\"highlight-cyan\">¡Únete a nuestro Discord y sigue las instrucciones!</span>",
-    "testing-step-1-title": "1. Comunidad y Rol de Tester",
-    "testing-step-1-desc": "Únete a nuestro servidor de Discord y, una vez completes el registro, obtendrás el rol de <code>[ 🧪 tester ]</code> junto al acceso a nuestros canales para interactuar con otros testers y el creador del juego.",
-    "testing-step-2-title": "2. ¡A Jugar!",
-    "testing-step-2-desc": "En el canal privado <code>#📲-instrucciones-test</code> encontrarás la guía para unirte al grupo de Google y descargar el juego directamente desde Play Store.",
-    "discord-invite-user": "ToyZ (toyzmaker) te invitó a unirte",
-    "discord-invite-online": "3 en línea",
-    "discord-invite-total": "5 miembros",
-    "discord-invite-join": "Unirme",
-    "widget-title": "¡Conéctate!",
-    "widget-hint": "Redes Sociales",
+    "badge-alt": "Disponible en Google Play Store",
 
-    // About Section
+    // EGO BALL Section (Reveal)
+    "egoball-status": "⚡ EN DESARROLLO TEMPRANO (UNITY 3D)",
+    "egoball-title": "EGO BALL",
+    "egoball-subtitle": "Arena Multijugador Arcade de Deflexión & Poderes Anime",
+    "egoball-desc": "Enfrenta la pelota teledirigida en duelos electrizantes de alta velocidad. Calcula el timing perfecto para devolver (deflect) los ataques con espadas coleccionables y desata auras neón al ritmo de música Phonk.",
+    "egoball-feat1-title": "Deflexión de Alta Velocidad",
+    "egoball-feat1-desc": "Mecánica estilo Dodgeball / Blade Ball con aceleración progresiva.",
+    "egoball-feat2-title": "Vibe Anime & Blue Lock",
+    "egoball-feat2-desc": "Superpoderes, auras de combate neón e intensidad competitiva.",
+    "egoball-feat3-title": "Colección de Espadas",
+    "egoball-feat3-desc": "Rarezas desde armas Comunes hasta SSS+ Heavenly Sick.",
+    "egoball-feat4-title": "PVP 3 Vidas & Co-op Boss Raid",
+    "egoball-feat4-desc": "Modos de eliminación directa y batallas cooperativas contra jefes.",
+    "egoball-cta": "👾 Unirse a la Alpha Privada (Discord)",
+
+    // News Section
+    "news-title": "Novedades & Anuncios",
+    "news-subtitle": "Notas del parche, actualizaciones y noticias de KeTu Playhouse",
+    "news-tab-all": "Todas",
+    "news-tab-announcements": "Anuncios",
+    "news-tab-releases": "Lanzamientos",
+    "news-tab-community": "Comunidad",
+    "news-more": "Ver Comunidad en Discord",
+
+    // Footer & Support
     "about-title": "Sobre el Estudio",
-    "about-text": "Nacimos con la pasión de llevar diversión directa, mecánica pulida y estilos artísticos vibrantes a los teléfonos móviles de todo el mundo. Creemos que los mejores juegos son aquellos que capturan tu atención al instante, ofreciendo desafíos gratificantes que puedes disfrutar en cualquier lugar.",
+    "about-text": "Nacimos con la pasión de llevar diversión directa, mecánica pulida y estilos artísticos vibrantes a los teléfonos móviles de todo el mundo. Creemos en juegos que capturan tu atención al instante con desafíos gratificantes.",
     "stat-1-lbl": "Juegos Publicados",
-    "stat-2-lbl": "Año de Fundación",
+    "stat-2-lbl": "En Desarrollo",
     "stat-3-lbl": "Desarrollo Indie",
-
-    // Contact Section
-    "contact-title": "¿Tienes preguntas o comentarios?",
-    "contact-desc": "Estamos siempre listos para escuchar a nuestra comunidad. Si tienes sugerencias, reportes de fallos o consultas comerciales, envíanos un correo electrónico.",
-
-    // Privacy Policy Link & Footer
+    "footer-support": "Soporte Técnico & Consultas:",
     "link-privacy": "Política de Privacidad",
-    "footer-copy": "© 2026 KeTu Playhouse. Todos los derechos reservados.",
-
-    // Privacy Policy Page specific strings
-    "back-btn-text": "Volver al Inicio",
-    "privacy-header": "Política de Privacidad",
-    "privacy-last-updated": "Última actualización: 8 de Junio, 2026",
-    "privacy-intro": "En <strong>KeTu Playhouse</strong>, valoramos tu privacidad. Esta Política de Privacidad explica cómo se recopila, utiliza y divulga la información cuando utilizas nuestro juego móvil <strong>Keyboard Escape: Speed Up</strong> y cualquier otro servicio relacionado.",
-    "privacy-sec1-title": "1. Recopilación de Información",
-    "privacy-sec1-p1": "Nuestras aplicaciones están diseñadas para no recopilar información de identificación personal directamente de los usuarios. No solicitamos registros de cuentas, nombres, correos electrónicos ni números de teléfono para jugar.",
-    "privacy-sec1-p2": "Sin embargo, para monetizar y mantener nuestros servicios gratuitos, integramos herramientas de terceros que sí recopilan información técnica de manera automática.",
-    "privacy-sec2-title": "2. Servicios de Terceros (Publicidad y Monetización)",
-    "privacy-sec2-p1": "Este juego utiliza <strong>Google AdMob</strong> para mostrar anuncios. AdMob puede recopilar y procesar información sobre ti de forma automática. Esta información incluye, entre otros:",
-    "privacy-sec2-li1": "Identificadores únicos de publicidad del dispositivo (como el ID de publicidad de Google o el IDFA de Apple).",
-    "privacy-sec2-li2": "Datos sobre el dispositivo (fabricante, modelo, sistema operativo, idioma y resolución de pantalla).",
-    "privacy-sec2-li3": "Datos sobre la interacción con los anuncios (clics, impresiones y visualizaciones).",
-    "privacy-sec2-li4": "Información de diagnóstico del sistema (informes de fallos o crash logs, rendimiento de la app y uso de memoria).",
-    "privacy-sec2-li5": "Ubicación aproximada (a nivel de ciudad o país) derivada de la dirección IP.",
-    "privacy-sec2-p2": "Puedes consultar la política de privacidad de Google relacionada con la publicidad en el siguiente enlace: <a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener noreferrer\">Políticas y Principios de Publicidad de Google</a>.",
-    "privacy-sec3-title": "3. Uso de la Información",
-    "privacy-sec3-p1": "La información técnica recopilada automáticamente se utiliza únicamente para:",
-    "privacy-sec3-li1": "Mostrar anuncios personalizados o no personalizados según corresponda y lo permita tu configuración.",
-    "privacy-sec3-li2": "Prevenir fraudes y actividades maliciosas dentro del sistema de publicidad.",
-    "privacy-sec3-li3": "Analizar el rendimiento de las campañas publicitarias.",
-    "privacy-sec3-li4": "Diagnosticar problemas técnicos, corregir fallos del sistema y optimizar la experiencia de juego.",
-    "privacy-sec4-title": "4. Opciones de Privacidad del Usuario",
-    "privacy-sec4-p1": "Si deseas limitar la publicidad personalizada en tu dispositivo móvil, puedes ajustar la configuración en tu teléfono:",
-    "privacy-sec4-li1": "<strong>En Android:</strong> Abre Ajustes > Privacidad > Anuncios y selecciona \"Restablecer ID de publicidad\" o \"Inhabilitar personalización de anuncios\".",
-    "privacy-sec4-li2": "<strong>En iOS:</strong> Ve a Ajustes > Privacidad > Rastreo y desactiva la opción de permitir que las aplicaciones soliciten rastrearte.",
-    "privacy-sec5-title": "5. Privacidad de los Niños",
-    "privacy-sec5-p1": "Nuestros juegos no están dirigidos intencionalmente a niños menores de 13 años. No recopilamos conscientemente información personal de niños. Si eres padre o tutor y crees que hemos recopilado información sin tu consentimiento, por favor contáctanos de inmediato.",
-    "privacy-sec6-title": "6. Cambios en esta Política",
-    "privacy-sec6-p1": "Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Cualquier cambio será publicado en esta página con la fecha de actualización correspondiente.",
-    "privacy-sec7-title": "7. Contacto",
-    "privacy-sec7-p1": "Si tienes alguna pregunta sobre esta Política de Privacidad o el tratamiento de tus datos, puedes ponerte en contacto con nosotros a través del correo electrónico:",
-
-    // Terms and Conditions Page specific strings (es)
     "link-terms": "Términos de Uso",
-    "terms-header": "Términos y Condiciones de Uso",
-    "terms-last-updated": "Última actualización: 15 de Junio, 2026",
-    "terms-intro": "Al acceder, descargar, instalar o utilizar los videojuegos (incluyendo <strong>Keyboard Escape: Speed Up</strong>), sitios web, servidores de comunidad (como Discord) y servicios de <strong>KeTu Playhouse</strong>, aceptas cumplir y quedar sujeto a estos Términos y Condiciones de Uso. Si no estás de acuerdo con estos términos, no utilices ni accedas a nuestros servicios.",
-    "terms-sec1-title": "1. Licencia de Uso Limitada",
-    "terms-sec1-p1": "KeTu Playhouse te concede una licencia personal, limitada, no exclusiva, no transferible, no sublicenciable y revocable para descargar, instalar y utilizar nuestros juegos y servicios únicamente para tu entretenimiento personal y no comercial en dispositivos compatibles de tu propiedad.",
-    "terms-sec2-title": "2. Propiedad Intelectual",
-    "terms-sec2-p1": "Todos los derechos, títulos e intereses relacionados con nuestros juegos y servicios, incluyendo el código fuente, gráficos, diseños, música, efectos de sonido, personajes, diálogos, nombres, logotipos y marcas comerciales, son propiedad exclusiva de <strong>KeTu Playhouse</strong>. Está prohibida la copia, reproducción o distribución no autorizada de cualquier recurso de nuestra propiedad.",
-    "terms-sec3-title": "3. Restricciones y Código de Conducta",
-    "terms-sec3-p1": "Al utilizar nuestros servicios, te comprometes a no realizar ni intentar realizar las siguientes acciones:",
-    "terms-sec3-li1": "Modificar, descompilar, realizar ingeniería inversa, desensamblar o intentar extraer el código fuente de los juegos o servicios.",
-    "terms-sec3-li2": "Utilizar trampas (cheats), automatizaciones (bots), hacks, mods o cualquier software de terceros no autorizado para alterar o influir en la experiencia de juego.",
-    "terms-sec3-li3": "Utilizar lenguaje ofensivo, abusivo, acosador o inapropiado en nuestros canales de comunidad oficial (como Discord) o sistemas de nombres en el juego.",
-    "terms-sec4-title": "4. Cuentas de Usuario y KeTu ID",
-    "terms-sec4-p1": "En futuras actualizaciones, es posible que puedas crear una cuenta de usuario o utilizar un identificador global (KeTu ID) para guardar tu progreso en línea. Eres el único responsable de mantener la seguridad y confidencialidad de tus credenciales de acceso. KeTu Playhouse no se hace responsable de pérdidas resultantes del acceso no autorizado a tu cuenta.",
-    "terms-sec5-title": "5. Compras Integradas y Moneda Virtual",
-    "terms-sec5-p1": "Nuestros juegos pueden incluir compras dentro de la aplicación (in-app purchases) utilizando dinero real para adquirir monedas virtuales, cosméticos u objetos digitales. Todas las transacciones son procesadas de forma segura por la tienda de aplicaciones correspondiente (como Google Play Store).",
-    "terms-sec5-p2": "Todos los artículos y monedas virtuales son licencias de uso digital intangibles, no tienen valor monetario en el mundo real y no son transferibles ni canjeables por dinero real. A menos que lo exija la ley local o las políticas de la tienda de aplicaciones, todas las compras son definitivas y no reembolsables.",
-    "terms-sec6-title": "6. Anuncios y Servicios de Terceros",
-    "terms-sec6-p1": "Nuestros juegos gratuitos pueden contener publicidad integrada gestionada a través de Google AdMob. Estos anuncios pueden interactuar con tu dispositivo según se detalla en nuestra Política de Privacidad. KeTu Playhouse no respalda ni se hace responsable del contenido, productos o servicios ofrecidos por anunciantes externos.",
-    "terms-sec7-title": "7. Limitación de Responsabilidad",
-    "terms-sec7-p1": "Nuestros juegos y servicios se proporcionan 'tal cual' y 'según disponibilidad'. En modos de juego sin conexión (offline), tu progreso se almacena localmente en tu dispositivo. KeTu Playhouse no se hace responsable de la pérdida de progreso, datos o compras si desinstalas la aplicación, borras la memoria caché, formateas tu dispositivo o si este sufre fallos de hardware.",
-    "terms-sec8-title": "8. Soporte Técnico y Contacto",
-    "terms-sec8-p1": "Para consultas legales, informes de fallos (bugs), comentarios o solicitudes de soporte técnico, puedes escribirnos directamente a nuestro correo oficial de atención al cliente:",
-
-
-    // Devlog & Newsletter
-    "section-devlog-title": "Bitácora de Desarrollo",
-    "section-devlog-subtitle": "Notas del parche y actualizaciones de Keyboard Escape",
-    "devlog-post1-title": "Prueba Cerrada Iniciada",
-    "devlog-post1-text": "¡Hemos comenzado la fase de prueba cerrada con 12 testers! Esta actualización incluye optimizaciones en los controles de salto y correcciones en la renderización de la interfaz en dispositivos móviles.",
-    "devlog-post2-title": "Primer Lanzamiento en Google Play",
-    "devlog-post2-text": "La versión de Keyboard Escape: Speed Up ya está compilada y subida a la consola de desarrolladores. Todo listo para invitar a los testers y pulir los detalles finales de velocidad de escritura y mecánicas.",
-    "newsletter-title": "¡Únete a nuestra lista de correo!",
-    "newsletter-desc": "Recibe boletines de desarrollo, ofertas exclusivas de temporada y entérate antes que nadie de nuestros futuros lanzamientos.",
-    "newsletter-placeholder": "Tu correo electrónico",
-    "newsletter-btn": "Suscribirse"
+    "footer-copy": "© 2026 KeTu Playhouse. Todos los derechos reservados."
   },
   en: {
     // Navigation
     "nav-home": "Home",
     "nav-games": "Games",
-    "nav-devlog": "Devlog",
+    "nav-egoball": "EGO BALL",
+    "nav-news": "News",
     "nav-about": "About Us",
-    "nav-support": "Support",
 
     // Hero Section
     "hero-title": "We build <span class=\"gradient-text\">fast</span>, dynamic and <span class=\"gradient-text\">fun</span> worlds",
-    "hero-subtitle": "KeTu Playhouse is an independent studio dedicated to designing unique and electrifying mobile gaming experiences right in your pocket.",
-    "hero-btn": "View Our Games",
+    "hero-subtitle": "KeTu Playhouse is an independent studio dedicated to designing unique mobile arcade experiences right in your pocket.",
+    "hero-btn": "Explore Releases",
 
-    // Games Section
-    "section-games-title": "Our Releases",
-    "section-games-subtitle": "Explore the games created by KeTu Playhouse",
-    "game-studio-label": "KeTu Playhouse",
-    "game-desc": "Test your reflexes and typing speed! In <strong>Keyboard Escape: Speed Up</strong>, you control a small runaway key trapped inside a collapsing cybernetic keyboard. You must dodge obstacles, jump from key to key, and use electric power-ups to race against the clock. Can you escape the keyboard before it completely collapses?",
-    "game-feat-1": "Ultra-fast-paced arcade action",
-    "game-feat-2": "Vibrant neon-candy visual design",
-    "game-feat-3": "Challenging levels to test your reflexes",
-    "game-feat-4": "Immersive retro synth-wave soundtrack",
+    // Keyboard Escape Section
+    "game1-status": "🎮 PUBLISHED ON GOOGLE PLAY",
+    "game1-title": "Keyboard Escape: Speed Up",
+    "game1-desc": "Test your reflexes and reaction speed! In <strong>Keyboard Escape: Speed Up</strong>, you control a runaway key trapped inside a collapsing cybernetic keyboard. Dodge obstacles, jump from key to key, and use electric power-ups to race against time.",
+    "game1-feat-1": "Ultra-fast-paced arcade action",
+    "game1-feat-2": "Vibrant Candy Neon & Synthwave style",
+    "game1-feat-3": "Challenging speed run levels",
+    "game1-feat-4": "100% Optimized for Android mobile",
+    "game1-trailer-btn": "▶ Watch Official Trailer (YouTube)",
     "gallery-title": "Screenshots",
-    "badge-alt": "Get it on Google Play (Closed Beta)",
-    "cta-testing-web": "Join the Closed Beta (Discord)",
-    "badge-testing-tag": "CLOSED BETA",
-    "testing-invite": "Would you like to participate in our closed beta and play our new releases in early access?<br><span class=\"highlight-cyan\">Join our Discord and follow the instructions!</span>",
-    "testing-step-1-title": "1. Community & Tester Role",
-    "testing-step-1-desc": "Join our Discord server and, once you complete registration, you will get the <code>[ 🧪 tester ]</code> role along with access to our channels to interact with other testers and the game creator.",
-    "testing-step-2-title": "2. Let's Play!",
-    "testing-step-2-desc": "In the private channel <code>#📲-instrucciones-test</code> you will find the guide to join the Google Group and download the game directly from the Play Store.",
-    "discord-invite-user": "ToyZ (toyzmaker) invited you to join",
-    "discord-invite-online": "3 Online",
-    "discord-invite-total": "5 Members",
-    "discord-invite-join": "Join",
-    "widget-title": "Let's Connect!",
-    "widget-hint": "Socials",
+    "badge-alt": "Get it on Google Play Store",
 
-    // About Section
+    // EGO BALL Section (Reveal)
+    "egoball-status": "⚡ EARLY DEVELOPMENT (UNITY 3D)",
+    "egoball-title": "EGO BALL",
+    "egoball-subtitle": "Multiplayer Arcade Deflection Arena & Anime Powers",
+    "egoball-desc": "Face the homing ball in electrifying high-speed duels. Master precision timing to deflect attacks using collectible swords and unleash neon auras to Phonk beats.",
+    "egoball-feat1-title": "High-Speed Deflection",
+    "egoball-feat1-desc": "Dodgeball / Blade Ball mechanics with progressive speed.",
+    "egoball-feat2-title": "Anime & Blue Lock Vibe",
+    "egoball-feat2-desc": "Superpowers, neon aura effects, and fierce competition.",
+    "egoball-feat3-title": "Sword Collection",
+    "egoball-feat3-desc": "Rarities ranging from Common weapons to SSS+ Heavenly Sick.",
+    "egoball-feat4-title": "PVP 3 Lives & Co-op Boss Raid",
+    "egoball-feat4-desc": "Direct elimination arena modes and cooperative boss battles.",
+    "egoball-cta": "👾 Join Alpha Testing (Discord)",
+
+    // News Section
+    "news-title": "News & Announcements",
+    "news-subtitle": "Patch notes, dev updates, and milestones from KeTu Playhouse",
+    "news-tab-all": "All",
+    "news-tab-announcements": "Announcements",
+    "news-tab-releases": "Releases",
+    "news-tab-community": "Community",
+    "news-more": "Join Discord Community",
+
+    // Footer & Support
     "about-title": "About the Studio",
-    "about-text": "We were born with the passion to bring instant fun, polished mechanics, and vibrant art styles to mobile phones worldwide. We believe the best games are those that capture your attention instantly, offering rewarding challenges you can enjoy anywhere.",
+    "about-text": "We were born with the passion to bring instant fun, polished mechanics, and vibrant art styles to mobile phones worldwide. We believe in games that capture your attention instantly with rewarding challenges.",
     "stat-1-lbl": "Published Games",
-    "stat-2-lbl": "Founding Year",
+    "stat-2-lbl": "In Development",
     "stat-3-lbl": "Indie Development",
-
-    // Contact Section
-    "contact-title": "Got questions or feedback?",
-    "contact-desc": "We are always ready to listen to our community. If you have suggestions, bug reports, or business inquiries, send us an email.",
-
-    // Privacy Policy Link & Footer
+    "footer-support": "Technical Support & Inquiries:",
     "link-privacy": "Privacy Policy",
-    "footer-copy": "© 2026 KeTu Playhouse. All rights reserved.",
-
-    // Privacy Policy Page specific strings
-    "back-btn-text": "Back to Home",
-    "privacy-header": "Privacy Policy",
-    "privacy-last-updated": "Last updated: June 8, 2026",
-    "privacy-intro": "At <strong>KeTu Playhouse</strong>, we value your privacy. This Privacy Policy explains how information is collected, used, and disclosed when you use our mobile game <strong>Keyboard Escape: Speed Up</strong> and any other related services.",
-    "privacy-sec1-title": "1. Information Collection",
-    "privacy-sec1-p1": "Our applications are designed not to collect personally identifiable information directly from users. We do not require account registration, names, emails, or phone numbers to play.",
-    "privacy-sec1-p2": "However, to monetize and keep our services free, we integrate third-party tools that do collect technical information automatically.",
-    "privacy-sec2-title": "2. Third-Party Services (Advertising & Monetization)",
-    "privacy-sec2-p1": "This game uses <strong>Google AdMob</strong> to display advertisements. AdMob may collect and process information about you automatically. This information includes, but is not limited to:",
-    "privacy-sec2-li1": "Unique device advertising identifiers (such as Google Advertising ID or Apple IDFA).",
-    "privacy-sec2-li2": "Device data (manufacturer, model, operating system, language, and screen resolution).",
-    "privacy-sec2-li3": "Ad interaction data (clicks, impressions, and views).",
-    "privacy-sec2-li4": "System diagnostic information (crash logs, app performance, and memory usage).",
-    "privacy-sec2-li5": "Approximate location (city or country level) derived from the IP address.",
-    "privacy-sec2-p2": "You can consult Google's privacy policy related to advertising at the following link: <a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener noreferrer\">Google's Advertising Policies and Principles</a>.",
-    "privacy-sec3-title": "3. Use of Information",
-    "privacy-sec3-p1": "The technical information automatically collected is used solely to:",
-    "privacy-sec3-li1": "Display personalized or non-personalized ads as appropriate and allowed by your settings.",
-    "privacy-sec3-li2": "Prevent fraud and malicious activity within the advertising system.",
-    "privacy-sec3-li3": "Analyze ad campaign performance.",
-    "privacy-sec3-li4": "Diagnose technical issues, fix system crashes, and optimize the gaming experience.",
-    "privacy-sec4-title": "4. User Privacy Choices",
-    "privacy-sec4-p1": "If you wish to limit personalized advertising on your mobile device, you can adjust the settings on your phone:",
-    "privacy-sec4-li1": "<strong>On Android:</strong> Open Settings > Privacy > Ads and select \"Reset advertising ID\" or \"Opt out of Ads Personalization\".",
-    "privacy-sec4-li2": "<strong>On iOS:</strong> Go to Settings > Privacy > Tracking and disable the option to allow apps to request to track you.",
-    "privacy-sec5-title": "5. Children's Privacy",
-    "privacy-sec5-p1": "Our games are not intentionally targeted at children under 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe we have collected information without your consent, please contact us immediately.",
-    "privacy-sec6-title": "6. Changes to this Policy",
-    "privacy-sec6-p1": "We reserve the right to modify this Privacy Policy at any time. Any changes will be posted on this page with the corresponding update date.",
-    "privacy-sec7-title": "7. Contact",
-    "privacy-sec7-p1": "If you have any questions about this Privacy Policy or the processing of your data, you can contact us via email:",
-
-    // Terms and Conditions Page specific strings (en)
     "link-terms": "Terms of Use",
-    "terms-header": "Terms and Conditions of Use",
-    "terms-last-updated": "Last updated: June 15, 2026",
-    "terms-intro": "By accessing, downloading, installing, or using the video games (including <strong>Keyboard Escape: Speed Up</strong>), websites, community servers (such as Discord), and services of <strong>KeTu Playhouse</strong>, you agree to comply with and be bound by these Terms and Conditions of Use. If you do not agree to these terms, please do not use or access our services.",
-    "terms-sec1-title": "1. Limited License",
-    "terms-sec1-p1": "KeTu Playhouse grants you a personal, limited, non-exclusive, non-transferable, non-sublicensable, and revocable license to download, install, and use our games and services solely for your personal, non-commercial entertainment on compatible devices owned by you.",
-    "terms-sec2-title": "2. Intellectual Property",
-    "terms-sec2-p1": "All rights, titles, and interests related to our games and services, including source code, graphics, designs, music, sound effects, characters, dialogues, names, logos, and trademarks, are the exclusive property of <strong>KeTu Playhouse</strong>. Unauthorized copying, reproduction, or distribution of any of our resources is strictly prohibited.",
-    "terms-sec3-title": "3. Restrictions and Code of Conduct",
-    "terms-sec3-p1": "When using our services, you agree not to perform or attempt to perform any of the following actions:",
-    "terms-sec3-li1": "Modify, decompile, reverse engineer, disassemble, or attempt to extract the source code of the games or services.",
-    "terms-sec3-li2": "Use cheats, bots, hacks, mods, or any unauthorized third-party software to alter or influence the gaming experience.",
-    "terms-sec3-li3": "Use offensive, abusive, harassing, or inappropriate language in our official community channels (such as Discord) or in-game naming systems.",
-    "terms-sec4-title": "4. User Accounts and KeTu ID",
-    "terms-sec4-p1": "In future updates, you may be able to create a user account or use a global identifier (KeTu ID) to save your progress online. You are solely responsible for maintaining the security and confidentiality of your login credentials. KeTu Playhouse is not responsible for any losses resulting from unauthorized access to your account.",
-    "terms-sec5-title": "5. In-App Purchases and Virtual Currency",
-    "terms-sec5-p1": "Our games may include in-app purchases using real money to acquire virtual currency, cosmetics, or digital items. All transactions are securely processed by the corresponding application store (such as Google Play Store).",
-    "terms-sec5-p2": "All virtual items and currencies are intangible digital licenses, have no real-world monetary value, and are non-transferable and non-exchangeable for real money. Unless required by local law or application store policies, all purchases are final and non-refundable.",
-    "terms-sec6-title": "6. Advertisements and Third-Party Services",
-    "terms-sec6-p1": "Our free games may contain integrated advertising managed through Google AdMob. These advertisements may interact with your device as detailed in our Privacy Policy. KeTu Playhouse does not endorse and is not responsible for the content, products, or services offered by external advertisers.",
-    "terms-sec7-title": "7. Limitation of Liability",
-    "terms-sec7-p1": "Our games and services are provided 'as is' and 'as available'. In offline game modes, your progress is stored locally on your device. KeTu Playhouse is not responsible for the loss of progress, data, or purchases if you uninstall the application, clear the cache, format your device, or if your device suffers a hardware failure.",
-    "terms-sec8-title": "8. Technical Support and Contact",
-    "terms-sec8-p1": "For legal inquiries, bug reports, feedback, or technical support requests, you can write to us directly at our official customer support email:",
-
-
-    // Devlog & Newsletter
-    "section-devlog-title": "Development Log",
-    "section-devlog-subtitle": "Patch notes and updates for Keyboard Escape",
-    "devlog-post1-title": "Closed Testing Started",
-    "devlog-post1-text": "We have started the closed testing phase with 12 testers! This update includes optimizations for jump controls and fixes for UI rendering on mobile devices.",
-    "devlog-post2-title": "First Launch on Google Play",
-    "devlog-post2-text": "The version of Keyboard Escape: Speed Up is compiled and uploaded to the developer console. Everything is ready to invite testers and polish the final typing speed and mechanics.",
-    "newsletter-title": "Join our mailing list!",
-    "newsletter-desc": "Receive development logs, exclusive seasonal offers, and find out about our future releases before anyone else.",
-    "newsletter-placeholder": "Your email address",
-    "newsletter-btn": "Subscribe"
+    "footer-copy": "© 2026 KeTu Playhouse. All rights reserved."
   }
 };
+
+// Fallback News Data in case news.json cannot be fetched
+const fallbackNewsData = [
+  {
+    id: "ego-ball-reveal",
+    category: "announcement",
+    date: "27 JUL 2026",
+    title_es: "⚡ ¡REVELADO EGO BALL! Nuestro segundo proyecto en desarrollo",
+    title_en: "⚡ EGO BALL REVEALED! Our second project in development",
+    summary_es: "Arena multijugador arcade de deflexión con espadas coleccionables (desde Común hasta SSS+ Heavenly Sick), auras neón y ritmo Phonk al estilo Blue Lock.",
+    summary_en: "Arcade multiplayer deflection arena with collectible swords (Common to SSS+ Heavenly Sick), neon auras, and Phonk music in Blue Lock style.",
+    badge_es: "Novedad",
+    badge_en: "New",
+    image: "assets/banner.png"
+  },
+  {
+    id: "keyboard-escape-launch",
+    category: "release",
+    date: "30 JUN 2026",
+    title_es: "🎮 Keyboard Escape: Speed Up ya disponible en Google Play Store",
+    title_en: "🎮 Keyboard Escape: Speed Up now available on Google Play Store",
+    summary_es: "¡Descarga la versión completa 0.1.5! Demuestra tu velocidad de reacción escapando del teclado cibernético.",
+    summary_en: "Download full version 0.1.5! Test your reaction speed escaping the cybernetic keyboard.",
+    badge_es: "Lanzamiento",
+    badge_en: "Release",
+    image: "assets/banner.png"
+  },
+  {
+    id: "discord-community-open",
+    category: "community",
+    date: "16 JUN 2026",
+    title_es: "👾 Comunidad KeTu Playhouse en Discord Oficial",
+    title_en: "👾 KeTu Playhouse Official Discord Community",
+    summary_es: "Únete a nuestro servidor de Discord para participar en pruebas alfa de EGO BALL y chatear directamente con los desarrolladores.",
+    summary_en: "Join our Discord server to participate in EGO BALL alpha testing and chat directly with developers.",
+    badge_es: "Comunidad",
+    badge_en: "Community",
+    image: "assets/banner.png"
+  }
+];
+
+let globalNews = fallbackNewsData;
+let activeNewsCategory = "all";
 
 // Main function to update UI strings based on the active language
 function updateContent(lang) {
@@ -261,10 +174,9 @@ function updateContent(lang) {
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.getAttribute("data-i18n");
     if (dictionary[key] !== undefined) {
-      // Check if tag requires setting HTML or text
-      if (element.tagName === "A" && key === "link-privacy") {
+      if (element.tagName === "A" && (key === "link-privacy" || key === "link-terms")) {
         element.innerHTML = dictionary[key];
-      } else if (dictionary[key].includes("<span") || dictionary[key].includes("<strong") || dictionary[key].includes("<a") || dictionary[key].includes("<code") || dictionary[key].includes("<img")) {
+      } else if (dictionary[key].includes("<span") || dictionary[key].includes("<strong") || dictionary[key].includes("<a") || dictionary[key].includes("<code")) {
         element.innerHTML = dictionary[key];
       } else {
         element.textContent = dictionary[key];
@@ -280,14 +192,6 @@ function updateContent(lang) {
     }
   });
 
-  // Update input placeholders
-  document.querySelectorAll("[data-i18n-placeholder]").forEach(element => {
-    const key = element.getAttribute("data-i18n-placeholder");
-    if (dictionary[key] !== undefined) {
-      element.setAttribute("placeholder", dictionary[key]);
-    }
-  });
-
   // Highlight active button in language selector
   document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.classList.remove("active");
@@ -299,6 +203,122 @@ function updateContent(lang) {
 
   // Update HTML lang attribute
   document.documentElement.setAttribute("lang", lang);
+
+  // Re-render News Board with the active language
+  renderNewsBoard(activeNewsCategory);
+}
+
+// Fetch News Data from JSON with fallback protection
+async function loadNewsData() {
+  try {
+    const response = await fetch('data/news.json');
+    if (response.ok) {
+      const data = await response.json();
+      if (Array.isArray(data) && data.length > 0) {
+        globalNews = data;
+      }
+    }
+  } catch (err) {
+    console.warn("Using fallback news data due to network or CORS restriction:", err);
+  }
+  const currentLang = localStorage.getItem('ketu_lang') || 'es';
+  renderNewsBoard('all');
+}
+
+// Render News Board Component (ChillyRoom style 2-Column layout)
+function renderNewsBoard(category = 'all') {
+  activeNewsCategory = category;
+  const container = document.getElementById('news-board-content');
+  if (!container) return;
+
+  const currentLang = localStorage.getItem('ketu_lang') || 'es';
+
+  // Filter items
+  const filtered = category === 'all' 
+    ? globalNews 
+    : globalNews.filter(item => item.category === category);
+
+  if (filtered.length === 0) {
+    container.innerHTML = `<div class="news-empty">${currentLang === 'es' ? 'No hay noticias en esta categoría.' : 'No news found in this category.'}</div>`;
+    return;
+  }
+
+  const activeItem = filtered[0]; // Featured item on left
+  const title = activeItem[`title_${currentLang}`] || activeItem.title_es;
+  const summary = activeItem[`summary_${currentLang}`] || activeItem.summary_es;
+  const badge = activeItem[`badge_${currentLang}`] || activeItem.badge_es;
+
+  // Build Left Banner View
+  const leftHTML = `
+    <div class="news-featured-card">
+      <div class="news-banner-wrapper">
+        <img src="${activeItem.image}" alt="${title}" class="news-featured-img">
+        <span class="news-badge">${badge}</span>
+      </div>
+      <div class="news-featured-info">
+        <span class="news-date">${activeItem.date}</span>
+        <h4 class="news-featured-title">${title}</h4>
+        <p class="news-featured-summary">${summary}</p>
+      </div>
+    </div>
+  `;
+
+  // Build Right Items List
+  let rightListHTML = '<ul class="news-list">';
+  filtered.forEach((item, index) => {
+    const itemTitle = item[`title_${currentLang}`] || item.title_es;
+    const itemBadge = item[`badge_${currentLang}`] || item.badge_es;
+    const isActiveClass = index === 0 ? 'active' : '';
+    rightListHTML += `
+      <li class="news-item ${isActiveClass}" onclick="selectFeaturedNews('${item.id}')">
+        <div class="news-item-meta">
+          <span class="news-item-badge">${itemBadge}</span>
+          <span class="news-item-date">${item.date}</span>
+        </div>
+        <div class="news-item-title">${itemTitle}</div>
+      </li>
+    `;
+  });
+  rightListHTML += '</ul>';
+
+  container.innerHTML = `
+    <div class="news-board-grid">
+      <div class="news-col-left">${leftHTML}</div>
+      <div class="news-col-right">${rightListHTML}</div>
+    </div>
+  `;
+}
+
+// Select a specific news item to showcase on the left banner
+function selectFeaturedNews(newsId) {
+  const item = globalNews.find(n => n.id === newsId);
+  if (!item) return;
+
+  const currentLang = localStorage.getItem('ketu_lang') || 'es';
+  const title = item[`title_${currentLang}`] || item.title_es;
+  const summary = item[`summary_${currentLang}`] || item.summary_es;
+  const badge = item[`badge_${currentLang}`] || item.badge_es;
+
+  const leftCol = document.querySelector('.news-col-left');
+  if (leftCol) {
+    leftCol.innerHTML = `
+      <div class="news-featured-card">
+        <div class="news-banner-wrapper">
+          <img src="${item.image}" alt="${title}" class="news-featured-img">
+          <span class="news-badge">${badge}</span>
+        </div>
+        <div class="news-featured-info">
+          <span class="news-date">${item.date}</span>
+          <h4 class="news-featured-title">${title}</h4>
+          <p class="news-featured-summary">${summary}</p>
+        </div>
+      </div>
+    `;
+  }
+
+  // Highlight active item in list
+  document.querySelectorAll('.news-item').forEach(el => el.classList.remove('active'));
+  event?.currentTarget?.classList?.add('active');
 }
 
 // Set active language and save to local storage
@@ -308,20 +328,57 @@ function changeLanguage(lang) {
   updateContent(lang);
 }
 
-// Auto-detect browser language or load from cache
+// Hybrid YouTube Video Player Handler (PC Embed / Mobile App Deep Link)
+function openYouTubeTrailer() {
+  const videoId = "5XQYpU8MBPI";
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+
+  if (isMobile) {
+    // Try opening native YouTube App via Deep Link or web URL
+    window.location.href = `https://youtu.be/${videoId}`;
+  } else {
+    // Open slick Lightbox Modal on Desktop
+    let modal = document.getElementById('youtube-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'youtube-modal';
+      modal.className = 'video-modal-overlay';
+      modal.innerHTML = `
+        <div class="video-modal-card">
+          <button class="video-modal-close" onclick="closeYouTubeTrailer()">&times;</button>
+          <div class="video-iframe-wrapper">
+            <iframe id="youtube-iframe" src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+    } else {
+      const iframe = document.getElementById('youtube-iframe');
+      if (iframe) iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+      modal.style.display = 'flex';
+    }
+  }
+}
+
+function closeYouTubeTrailer() {
+  const modal = document.getElementById('youtube-modal');
+  if (modal) {
+    modal.style.display = 'none';
+    const iframe = document.getElementById('youtube-iframe');
+    if (iframe) iframe.src = '';
+  }
+}
+
+// Auto-detect browser language & initialize
 document.addEventListener("DOMContentLoaded", () => {
   let savedLang = localStorage.getItem("ketu_lang");
   
   if (!savedLang) {
-    // Detect system/browser language
     const browserLang = navigator.language || navigator.userLanguage;
-    if (browserLang.startsWith("es")) {
-      savedLang = "es";
-    } else {
-      savedLang = "en"; // Default to English for other locales
-    }
+    savedLang = browserLang.startsWith("es") ? "es" : "en";
   }
 
-  // Apply language
+  // Load news data & apply language
+  loadNewsData();
   updateContent(savedLang);
 });

@@ -6,30 +6,66 @@
     <title>KeTu Playhouse - Estudio de Videojuegos Móviles</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Bienvenido a KeTu Playhouse, un estudio independiente de desarrollo de videojuegos móviles. Descubre y descarga nuestro último lanzamiento: Keyboard Escape: Speed Up.">
-    <meta name="keywords" content="KeTu Playhouse, Keyboard Escape, Speed Up, videojuegos moviles, android games, juego de teclado, arcade, accion">
+    <meta name="description" content="Bienvenido a KeTu Playhouse, estudio indie creador de Keyboard Escape: Speed Up (Google Play) y EGO BALL. Descubre nuestros juegos móviles arcade.">
+    <meta name="keywords" content="KeTu Playhouse, Keyboard Escape, EGO BALL, videojuegos moviles, android games, arcade, blade ball, anime game, synthwave">
     <meta name="author" content="KeTu Playhouse">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="KeTu Playhouse - Estudio de Videojuegos Móviles">
-    <meta property="og:description" content="Creadores de juegos móviles dinámicos y adictivos. ¡Prueba Keyboard Escape: Speed Up hoy mismo!">
+    <meta property="og:description" content="Creadores de juegos móviles dinámicos y electrizantes. ¡Prueba Keyboard Escape y descubre EGO BALL!">
     <meta property="og:image" content="assets/banner.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="KeTu Playhouse - Estudio de Videojuegos Móviles">
-    <meta property="twitter:description" content="Creadores de juegos móviles dinámicos y adictivos. ¡Prueba Keyboard Escape: Speed Up hoy mismo!">
+    <meta property="twitter:description" content="Creadores de juegos móviles dinámicos y electrizantes. ¡Prueba Keyboard Escape y descubre EGO BALL!">
     <meta property="twitter:image" content="assets/banner.png">
 
-    <!-- Stylesheets & Fonts -->
+    <!-- Preload Critical Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap">
+
+    <!-- Stylesheets & Favicon -->
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="canonical" href="https://ketuplayhouse.com/">
 
-    
-    <!-- Language Translation Library -->
+    <!-- JSON-LD Structured Data (SEO 1000% Boost) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "KeTu Playhouse",
+      "url": "https://ketuplayhouse.com",
+      "logo": "https://ketuplayhouse.com/assets/logo.png",
+      "sameAs": [
+        "https://youtube.com/@ketuplayhouse",
+        "https://instagram.com/ketuplayhouse",
+        "https://tiktok.com/@ketuplayhouse",
+        "https://discord.gg/FvvgfS37GY"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Keyboard Escape: Speed Up",
+      "operatingSystem": "Android",
+      "applicationCategory": "GameApplication",
+      "url": "https://play.google.com/store/apps/details?id=com.ketuplayhouse.keyboardescape",
+      "author": {
+        "@type": "Organization",
+        "name": "KeTu Playhouse"
+      }
+    }
+    </script>
+
+    <!-- Language & News Management Library -->
     <script src="lang.js" defer></script>
 </head>
 <body>
@@ -48,9 +84,9 @@
                 <ul class="nav-links">
                     <li><a href="#inicio" id="link-inicio" class="active" data-i18n="nav-home">Inicio</a></li>
                     <li><a href="#games" id="link-juegos" data-i18n="nav-games">Juegos</a></li>
-                    <li><a href="#devlog" id="link-devlog" data-i18n="nav-devlog">Devlog</a></li>
+                    <li><a href="#egoball" id="link-egoball" data-i18n="nav-egoball">EGO BALL</a></li>
+                    <li><a href="#news" id="link-news" data-i18n="nav-news">Noticias</a></li>
                     <li><a href="#about" id="link-nosotros" data-i18n="nav-about">Nosotros</a></li>
-                    <li><a href="#contact" id="link-soporte" data-i18n="nav-support">Soporte</a></li>
                 </ul>
                 <div class="lang-selector">
                     <button onclick="changeLanguage('es')" id="lang-btn-es" class="lang-btn active">
@@ -64,493 +100,235 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="container">
-            <h1 class="hero-title" data-i18n="hero-title">Creamos mundos <span class="gradient-text">rápidos</span>, dinámicos y <span class="gradient-text">divertidos</span></h1>
-            <p class="hero-subtitle" data-i18n="hero-subtitle">KeTu Playhouse es un estudio independiente dedicado a diseñar experiencias de juego móviles únicas y electrizantes directamente en tu bolsillo.</p>
-            <a href="#games" class="hero-btn" id="cta-hero" data-i18n="hero-btn">Ver Nuestros Juegos</a>
-        </div>
-    </section>
+    <!-- Floating Dot Navigation Indicators (Vertical Scrollytelling) -->
+    <div class="scroll-dots" aria-label="Navegación por secciones">
+        <div class="dot-item active" onclick="scrollToSection('inicio')" title="Inicio"></div>
+        <div class="dot-item" onclick="scrollToSection('games')" title="Keyboard Escape"></div>
+        <div class="dot-item" onclick="scrollToSection('egoball')" title="EGO BALL"></div>
+        <div class="dot-item" onclick="scrollToSection('news')" title="Noticias"></div>
+        <div class="dot-item" onclick="scrollToSection('about')" title="Nosotros"></div>
+    </div>
 
+    <!-- Main Full-Page Sections Flow -->
     <main>
-        <!-- Games Section -->
-        <section class="games container" id="games">
-            <div class="section-header">
-                <h2 class="section-title" data-i18n="section-games-title">Nuestros Lanzamientos</h2>
-                <p class="section-subtitle" data-i18n="section-games-subtitle">Explora los juegos creados por KeTu Playhouse</p>
+        <!-- Section 1: Hero -->
+        <section class="scroll-section hero" id="inicio">
+            <div class="container">
+                <h1 class="hero-title" data-i18n="hero-title">Creamos mundos <span class="gradient-text">rápidos</span>, dinámicos y <span class="gradient-text">divertidos</span></h1>
+                <p class="hero-subtitle" data-i18n="hero-subtitle">KeTu Playhouse es un estudio independiente dedicado a diseñar experiencias móviles arcade únicas directamente en tu bolsillo.</p>
+                <a href="#games" class="hero-btn" id="cta-hero" data-i18n="hero-btn">Explorar Lanzamientos</a>
             </div>
+        </section>
 
-            <!-- Keyboard Escape Card -->
-            <article class="game-card" id="game-keyboard-escape">
-                <div class="game-banner-wrapper">
-                    <img src="assets/banner.png" alt="Keyboard Escape: Speed Up Banner" class="game-banner">
-                    <div class="game-banner-overlay"></div>
-                </div>
-                
-                <div class="game-card-content">
-                    <div class="game-header">
-                        <img src="assets/icon.png" alt="Keyboard Escape: Speed Up Icon" class="game-icon-img">
-                        <div class="game-title-meta">
-                            <h3 class="game-title">Keyboard Escape: Speed Up</h3>
-                            <span class="game-studio-label" data-i18n="game-studio-label">KeTu Playhouse</span>
-                        </div>
+        <!-- Section 2: Keyboard Escape (Published Game) -->
+        <section class="scroll-section games" id="games">
+            <div class="container">
+                <article class="game-card-content">
+                    <div class="game-status-tag">
+                        <span class="pulse-dot"></span>
+                        <span data-i18n="game1-status">🎮 PUBLICADO EN GOOGLE PLAY</span>
                     </div>
 
-                    <p class="game-description" data-i18n="game-desc">
-                        ¡Pon a prueba tus reflejos y velocidad de escritura! En <strong>Keyboard Escape: Speed Up</strong>, asumes el control de una pequeña tecla fugitiva atrapada en un teclado cibernético que se derrumba. Deberás esquivar obstáculos, saltar de tecla en tecla y utilizar potenciadores eléctricos para correr contra el tiempo. ¿Lograrás escapar del teclado antes del colapso total?
-                    </p>
+                    <div class="game-grid-layout">
+                        <div class="game-info-col">
+                            <h3 class="game-title" data-i18n="game1-title">Keyboard Escape: Speed Up</h3>
+                            <p class="game-description" data-i18n="game1-desc">
+                                ¡Pon a prueba tus reflejos y velocidad de reacción! En <strong>Keyboard Escape: Speed Up</strong>, asumes el control de una pequeña tecla fugitiva atrapada en un teclado cibernético que se derrumba. Esqueva obstáculos, salta de tecla en tecla y utiliza potenciadores eléctricos para escapar.
+                            </p>
 
-                    <ul class="game-features">
-                        <li class="game-feature-item" data-i18n="game-feat-1">Acción arcade de ritmo ultra rápido</li>
-                        <li class="game-feature-item" data-i18n="game-feat-2">Diseño visual vibrante tipo dulce de neón</li>
-                        <li class="game-feature-item" data-i18n="game-feat-3">Niveles desafiantes que pondrán a prueba tus reflejos</li>
-                        <li class="game-feature-item" data-i18n="game-feat-4">Banda sonora retro synth-wave inmersiva</li>
-                    </ul>
+                            <ul class="game-features-list">
+                                <li data-i18n="game1-feat-1">Acción arcade de ritmo ultra rápido</li>
+                                <li data-i18n="game1-feat-2">Diseño visual Candy Neon & Synthwave</li>
+                                <li data-i18n="game1-feat-3">Niveles desafiantes y tablas de velocidad</li>
+                                <li data-i18n="game1-feat-4">100% Optimizado para celulares Android</li>
+                            </ul>
 
-                    <!-- Screenshot Gallery -->
-                    <div class="screenshot-gallery-container">
-                        <h4 class="gallery-label" data-i18n="gallery-title">Capturas de Pantalla</h4>
-                        <div class="screenshot-gallery" id="gallery-keyboard-escape">
-                            <div class="screenshot-item">
+                            <button class="trailer-btn" onclick="openYouTubeTrailer()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                <span data-i18n="game1-trailer-btn">▶ Ver Tráiler Oficial (YouTube)</span>
+                            </button>
+
+                            <div class="game-cta-wrapper">
+                                <a href="https://play.google.com/store/apps/details?id=com.ketuplayhouse.keyboardescape" target="_blank" rel="noopener noreferrer" class="badge-link" id="cta-playstore">
+                                    <img src="assets/google_play_badge.png" alt="Disponible en Google Play Store" data-i18n-alt="badge-alt">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="game-gallery-col">
+                            <div class="screenshot-mini-gallery">
                                 <img src="assets/screenshot1.jpg" alt="Keyboard Escape Gameplay Screen 1">
-                            </div>
-                            <div class="screenshot-item">
                                 <img src="assets/screenshot2.jpg" alt="Keyboard Escape Gameplay Screen 2">
-                            </div>
-                            <div class="screenshot-item">
                                 <img src="assets/screenshot3.jpg" alt="Keyboard Escape Gameplay Screen 3">
                             </div>
                         </div>
                     </div>
+                </article>
+            </div>
+        </section>
 
-                    <!-- Download Badge / Links -->
-                    <div class="game-cta-wrapper">
-                        <a href="https://play.google.com/store/apps/details?id=com.ketuplayhouse.keyboardescape" target="_blank" rel="noopener noreferrer" class="badge-link" id="cta-playstore">
-                            <img src="assets/google_play_badge.png" alt="Disponible en Google Play" data-i18n-alt="badge-alt">
+        <!-- Section 3: EGO BALL (Reveal / In Development) -->
+        <section class="scroll-section egoball-section" id="egoball">
+            <div class="container">
+                <article class="game-card-content ego-ball-card">
+                    <div class="game-status-tag ego-status-tag">
+                        <span class="pulse-dot" style="background:var(--ego-blue);box-shadow:var(--glow-ego)"></span>
+                        <span data-i18n="egoball-status">⚡ EN DESARROLLO TEMPRANO (UNITY 3D)</span>
+                    </div>
+
+                    <h3 class="ego-title" data-i18n="egoball-title">EGO BALL</h3>
+                    <p class="ego-subtitle" data-i18n="egoball-subtitle">Arena Multijugador Arcade de Deflexión & Poderes Anime</p>
+                    <p class="game-description" data-i18n="egoball-desc">
+                        Enfrenta la pelota teledirigida en duelos electrizantes de alta velocidad. Calcula el timing perfecto para devolver (deflect) los ataques con espadas coleccionables y desata auras neón al ritmo de música Phonk.
+                    </p>
+
+                    <div class="ego-features-grid">
+                        <div class="ego-feat-box">
+                            <h5 data-i18n="egoball-feat1-title">Deflexión de Alta Velocidad</h5>
+                            <p data-i18n="egoball-feat1-desc">Mecánica estilo Dodgeball / Blade Ball con aceleración progresiva.</p>
+                        </div>
+                        <div class="ego-feat-box">
+                            <h5 data-i18n="egoball-feat2-title">Vibe Anime & Blue Lock</h5>
+                            <p data-i18n="egoball-feat2-desc">Superpoderes, auras de combate neón e intensidad competitiva.</p>
+                        </div>
+                        <div class="ego-feat-box">
+                            <h5 data-i18n="egoball-feat3-title">Colección de Espadas</h5>
+                            <p data-i18n="egoball-feat3-desc">Rarezas desde armas Comunes hasta SSS+ Heavenly Sick.</p>
+                        </div>
+                        <div class="ego-feat-box">
+                            <h5 data-i18n="egoball-feat4-title">PVP 3 Vidas & Co-op Boss Raid</h5>
+                            <p data-i18n="egoball-feat4-desc">Modos de eliminación directa y batallas cooperativas contra jefes.</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:1.5rem">
+                        <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="discord-cta-btn">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                            </svg>
+                            <span data-i18n="egoball-cta">👾 Unirse a la Alpha Privada (Discord)</span>
                         </a>
                     </div>
+                </article>
+            </div>
+        </section>
 
-                    <!-- Community / Discord Card -->
-                    <div class="testing-instructions-card">
-                        <div class="testing-badge-tag">
-                            <span class="pulse-dot"></span>
-                            <span data-i18n="badge-testing-tag">COMUNIDAD</span>
-                        </div>
-                        <div class="testing-invite-text" data-i18n="testing-invite">
-                            ¿Quieres ser parte del desarrollo? Únete a nuestro Discord oficial, comparte tus opiniones e interactúa con otros jugadores.
-                        </div>
-                        <div class="testing-illustrated-steps">
-                            <div class="illustrated-step discord-step">
-                                <div class="step-icon-wrapper discord-color">
-                                    <svg class="step-icon-svg" viewBox="0 0 127.14 96.36">
-                                        <path fill="currentColor" d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a77.7,77.7,0,0,0,6.63-10.85,68.43,68.43,0,0,1-10.5-5c.87-.64,1.71-1.34,2.5-2.07a74.58,74.58,0,0,0,73.13,0c.8,0.73,1.64,1.43,2.5,2.07a68.43,68.43,0,0,1-10.5,5,77.7,77.7,0,0,0,6.63,10.85,105.73,105.73,0,0,0,31.06-18.83C129,54.65,123.48,31.58,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.83,46,53.83,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.07,46,96.07,53,91,65.69,84.69,65.69Z"/>
-                                    </svg>
-                                </div>
-                                <div class="illustrated-step-content">
-                                    <h5 class="step-title" data-i18n="testing-step-1-title">1. Charlar y Competir</h5>
-                                    <p class="step-description" data-i18n="testing-step-1-desc">
-                                        Conéctate con otros jugadores de Keyboard Escape, comparte tus mejores puntuaciones de velocidad y sé parte de la fundación de nuestra comunidad.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="illustrated-step download-step">
-                                <div class="step-icon-wrapper controller-color">
-                                    <svg class="step-icon-svg" viewBox="0 0 64 64">
-                                        <path fill="currentColor" d="M50.2,16H13.8C7.3,16,2,21.3,2,27.8v8.4c0,6.5,5.3,11.8,11.8,11.8h36.4c6.5,0,11.8-5.3,11.8-11.8v-8.4C62,21.3,56.7,16,50.2,16z M22,34h-4v4c0,1.1-0.9,2-2,2s-2-0.9-2-2v-4h-4c-1.1,0-2-0.9-2-2s0.9-2,2-2h4v-4c0-1.1,0.9-2,2-2s2,0.9,2,2v4h4c1.1,0,2,0.9,2,2S23.1,34,22,34z M44,32c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S45.7,32,44,32z M52,38c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S53.7,38,52,38z"/>
-                                    </svg>
-                                </div>
-                                <div class="illustrated-step-content">
-                                    <h5 class="step-title" data-i18n="testing-step-2-title">2. Feedback y Bugs</h5>
-                                    <p class="step-description" data-i18n="testing-step-2-desc">
-                                        Habla directamente con los desarrolladores. Sugiere mecánicas para el ecosistema KeTu Playhouse o reporta errores para ayudarnos a pulir la experiencia.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+        <!-- Section 4: News Board (ChillyRoom Style 2-Columns) -->
+        <section class="scroll-section news-section" id="news">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="news-title">Novedades & Anuncios</h2>
+                    <p class="section-subtitle" data-i18n="news-subtitle">Notas del parche, actualizaciones y noticias de KeTu Playhouse</p>
+                </div>
 
-                        <!-- Discord Invite Widget -->
-                        <div class="discord-invite-wrapper">
-                            <div class="discord-invite-card">
-                                <div class="invite-header-avatar">
-                                    <img src="assets/social/toyz_avatar.jpg" alt="ToyZ Avatar">
-                                </div>
-                                <div class="invite-header-text" data-i18n="discord-invite-user">
-                                    ToyZ (toyzmaker) te invitó a unirte
-                                </div>
-                                <div class="invite-server-info">
-                                    <img src="assets/social/ketu_server_icon.jpg" alt="KeTu Playhouse Logo" class="invite-server-logo">
-                                    <div class="invite-server-details">
-                                        <div class="invite-server-name">KeTu Playhouse</div>
-                                        <div class="invite-server-members">
-                                            <span class="member-status online">
-                                                <span class="status-dot"></span>
-                                                <span class="member-count-text" data-i18n="discord-invite-online">3 en línea</span>
-                                            </span>
-                                            <span class="member-status total">
-                                                <span class="status-dot"></span>
-                                                <span class="member-count-text" data-i18n="discord-invite-total">5 miembros</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="invite-actions">
-                                    <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="invite-btn primary" data-i18n="discord-invite-join">Unirme</a>
-                                </div>
-                            </div>
-                        </div>
+                <div class="news-board-card">
+                    <div class="news-tabs-bar">
+                        <button class="news-tab-btn active" onclick="filterNewsCategory('all', this)" data-i18n="news-tab-all">Todas</button>
+                        <button class="news-tab-btn" onclick="filterNewsCategory('announcement', this)" data-i18n="news-tab-announcements">Anuncios</button>
+                        <button class="news-tab-btn" onclick="filterNewsCategory('release', this)" data-i18n="news-tab-releases">Lanzamientos</button>
+                        <button class="news-tab-btn" onclick="filterNewsCategory('community', this)" data-i18n="news-tab-community">Comunidad</button>
+                    </div>
+
+                    <div id="news-board-content">
+                        <!-- Loaded dynamically via lang.js renderNewsBoard() -->
+                    </div>
+
+                    <div class="news-footer-link">
+                        <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="news-more-btn" data-i18n="news-more">Ver Comunidad en Discord →</a>
                     </div>
                 </div>
-            </article>
-        </section>
-
-        <!-- Devlog Section -->
-        <section class="devlog container" id="devlog">
-            <div class="section-header">
-                <h2 class="section-title" data-i18n="section-devlog-title">Bitácora de Desarrollo (Devlog)</h2>
-                <p class="section-subtitle" data-i18n="section-devlog-subtitle">Notas del parche y actualizaciones de Keyboard Escape</p>
-            </div>
-            <div class="devlog-grid">
-                <!-- Devlog Post 1 -->
-                <article class="devlog-card">
-                    <div class="devlog-badge">Update v1.0.2</div>
-                    <div class="devlog-content">
-                        <span class="devlog-date">08 Jun 2026</span>
-                        <h3 class="devlog-card-title" data-i18n="devlog-post1-title">Prueba Cerrada Iniciada</h3>
-                        <p class="devlog-card-text" data-i18n="devlog-post1-text">
-                            ¡Hemos comenzado la fase de prueba cerrada con 12 testers! Esta actualización incluye optimizaciones en los controles de salto y correcciones en la renderización de la interfaz en dispositivos móviles.
-                        </p>
-                    </div>
-                </article>
-                <!-- Devlog Post 2 -->
-                <article class="devlog-card">
-                    <div class="devlog-badge">Beta v1.0.0</div>
-                    <div class="devlog-content">
-                        <span class="devlog-date">02 Jun 2026</span>
-                        <h3 class="devlog-card-title" data-i18n="devlog-post2-title">Primer Lanzamiento en Google Play</h3>
-                        <p class="devlog-card-text" data-i18n="devlog-post2-text">
-                            La versión de Keyboard Escape: Speed Up ya está compilada y subida a la consola de desarrolladores. Todo listo para invitar a los testers y pulir los detalles finales de velocidad de escritura y mecánicas.
-                        </p>
-                    </div>
-                </article>
             </div>
         </section>
 
-        <!-- About Us Section -->
-        <section class="about" id="about">
+        <!-- Section 5: About & Integrated Compact Footer -->
+        <section class="scroll-section footer-section" id="about">
             <div class="container">
-                <div class="about-content">
-                    <div class="about-logo-wrapper">
-                        <img src="assets/logo.png" alt="KeTu Playhouse Logo" class="about-logo">
-                    </div>
+                <div class="game-card-content" style="max-width:900px">
+                    <img src="assets/logo.png" alt="KeTu Playhouse Logo" style="height:60px;margin-bottom:1rem">
                     <h2 class="section-title" data-i18n="about-title">Sobre el Estudio</h2>
-                    <p class="about-text" data-i18n="about-text">
-                        Nacimos con la pasión de llevar diversión directa, mecánica pulida y estilos artísticos vibrantes a los teléfonos móviles de todo el mundo. Creemos que los mejores juegos son aquellos que capturan tu atención al instante, ofreciendo desafíos gratificantes que puedes disfrutar en cualquier lugar.
+                    <p style="color:var(--text-muted);font-size:0.95rem;max-width:700px;margin:0 auto 1.5rem" data-i18n="about-text">
+                        Nacimos con la pasión de llevar diversión directa, mecánica pulida y estilos artísticos vibrantes a los teléfonos móviles de todo el mundo. Creemos en juegos que capturan tu atención al instante con desafíos gratificantes.
                     </p>
-                    <div class="about-stats">
-                        <div class="stat-item">
+
+                    <div class="about-stats-row">
+                        <div class="stat-box">
                             <span class="stat-val">1</span>
                             <span class="stat-lbl" data-i18n="stat-1-lbl">Juegos Publicados</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-val">2026</span>
-                            <span class="stat-lbl" data-i18n="stat-2-lbl">Año de Fundación</span>
+                        <div class="stat-box">
+                            <span class="stat-val">1</span>
+                            <span class="stat-lbl" data-i18n="stat-2-lbl">En Desarrollo</span>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat-box">
                             <span class="stat-val">100%</span>
                             <span class="stat-lbl" data-i18n="stat-3-lbl">Desarrollo Indie</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Newsletter Section -->
-        <section class="newsletter container" id="newsletter">
-            <div class="newsletter-card">
-                <h3 class="newsletter-title" data-i18n="newsletter-title">¡Únete a nuestra lista de correo!</h3>
-                <p class="newsletter-desc" data-i18n="newsletter-desc">Recibe boletines de desarrollo, ofertas exclusivas de temporada y entérate antes que nadie de nuestros futuros lanzamientos.</p>
-                <form id="newsletter-form" class="newsletter-form">
-                    <input type="email" id="newsletter-email" name="email" placeholder="Tu correo electrónico" required class="newsletter-input" data-i18n-placeholder="newsletter-placeholder">
-                    <button type="submit" class="newsletter-submit-btn" id="newsletter-submit" data-i18n="newsletter-btn">Suscribirse</button>
-                </form>
-                <div id="newsletter-message" class="newsletter-message"></div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact" id="contact">
-            <div class="container">
-                <div class="contact-content">
-                    <h2 class="contact-title" data-i18n="contact-title">¿Tienes preguntas o comentarios?</h2>
-                    <p class="contact-desc" data-i18n="contact-desc">Estamos siempre listos para escuchar a nuestra comunidad. Si tienes sugerencias, reportes de fallos o consultas comerciales, envíanos un correo electrónico.</p>
-                    <a href="mailto:ketusoporte@gmail.com?subject=Soporte%20Keyboard%20Escape" class="contact-email-btn" id="cta-email">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                        ketusoporte@gmail.com
-                    </a>
+                    <div class="compact-footer-bar">
+                        <p class="footer-support-text">
+                            <span data-i18n="footer-support">Soporte Técnico & Consultas:</span> 
+                            <a href="mailto:ketusoporte@gmail.com?subject=Soporte%20KeTu%20Playhouse" class="footer-support-email">ketusoporte@gmail.com</a>
+                        </p>
+                        <ul class="footer-legal-links">
+                            <li><a href="privacy-policy.html" id="link-privacy" data-i18n="link-privacy">Política de Privacidad</a></li>
+                            <li><span style="color:var(--text-muted)">•</span></li>
+                            <li><a href="terms-of-service.html" id="link-terms" data-i18n="link-terms">Términos de Uso</a></li>
+                        </ul>
+                        <p class="footer-copyright" data-i18n="footer-copy">&copy; 2026 KeTu Playhouse. Todos los derechos reservados.</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-content">
-            <img src="assets/logo.png" alt="KeTu Playhouse Logo" class="footer-logo">
-            <ul class="footer-links">
-                <li><a href="#inicio" data-i18n="nav-home">Inicio</a></li>
-                <li><a href="#games" data-i18n="nav-games">Juegos</a></li>
-                <li><a href="#devlog" data-i18n="nav-devlog">Devlog</a></li>
-                <li><a href="#about" data-i18n="nav-about">Nosotros</a></li>
-                <li><a href="#contact" data-i18n="nav-support">Soporte</a></li>
-                <li><a href="privacy-policy.html" id="link-privacy" data-i18n="link-privacy">Política de Privacidad</a></li>
-                <li><a href="terms-of-service.html" id="link-terms" data-i18n="link-terms">Términos de Uso</a></li>
-            </ul>
-            <p class="footer-copy" data-i18n="footer-copy">&copy; 2026 KeTu Playhouse. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- Social Media Interactive Widget -->
-    <div class="social-widget open">
-        <!-- Widget Hint Tooltip/Tag -->
-        <div class="social-widget-hint">
-            <span class="hint-text" data-i18n="widget-hint">Redes Sociales</span>
-            <span class="hint-dot"></span>
-        </div>
-
-        <!-- Toggle Button (Cute Cat Keycap) -->
-        <div class="social-widget-toggle" aria-label="Abrir redes sociales">
-            <svg viewBox="0 0 60 60" width="60" height="60">
-                <defs>
-                    <linearGradient id="keycap-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#ff4d94" />
-                        <stop offset="100%" stop-color="#9d4edd" />
-                    </linearGradient>
-                    <filter id="shadow-filter" x="-20%" y="-20%" width="140%" height="140%">
-                        <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#ff4d94" flood-opacity="0.3"/>
-                    </filter>
-                </defs>
-                <!-- Cat ears -->
-                <path d="M12,22 L6,10 L20,18 Z" fill="#ff4d94" />
-                <path d="M48,22 L54,10 L40,18 Z" fill="#ff4d94" />
-                <path d="M13,20 L8,12 L19,17 Z" fill="#9d4edd" />
-                <path d="M47,20 L52,12 L41,17 Z" fill="#9d4edd" />
-                
-                <!-- Keycap body -->
-                <path d="M8,22 L52,22 L56,52 L4,52 Z" fill="url(#keycap-grad)" filter="url(#shadow-filter)" />
-                <!-- Keycap top face -->
-                <path d="M12,24 L48,24 L45,42 L15,42 Z" fill="#16111c" stroke="rgba(255, 77, 148, 0.4)" stroke-width="1.5" />
-                <!-- ESC legend -->
-                <text x="30" y="36" font-family="'Outfit', sans-serif" font-weight="800" font-size="10" fill="#4cc9f0" text-anchor="middle" letter-spacing="0.5">ESC</text>
-            </svg>
-        </div>
-
-        <!-- Social Menu Popup Card -->
-        <div class="social-widget-card">
-            <!-- Peeking Cat Character -->
-            <div class="peeking-character">
-                <svg viewBox="0 0 40 30" width="40" height="30">
-                    <!-- Cat head top half -->
-                    <path d="M6,30 L6,12 L11,3 L18,12 L22,12 L29,3 L34,12 L34,30 Z" fill="#ff4d94" />
-                    <!-- Inner ears -->
-                    <polygon points="8,11 11,5 15,11" fill="#9d4edd" />
-                    <polygon points="32,11 29,5 25,11" fill="#9d4edd" />
-                    <!-- Eyes -->
-                    <circle cx="14" cy="18" r="2.5" fill="#4cc9f0" />
-                    <circle cx="26" cy="18" r="2.5" fill="#4cc9f0" />
-                    <!-- Eye highlights -->
-                    <circle cx="15" cy="17" r="0.75" fill="white" />
-                    <circle cx="27" cy="17" r="0.75" fill="white" />
-                    <!-- Mouth -->
-                    <path d="M18,21 L20,23 L22,21" stroke="#16111c" stroke-width="1.5" fill="none" stroke-linecap="round" />
-                </svg>
-            </div>
-
-            <!-- Close Button -->
-            <button class="social-widget-close" aria-label="Cerrar redes sociales">&times;</button>
-
-            <!-- Card Title -->
-            <h4 class="social-widget-title" data-i18n="widget-title">¡Conéctate!</h4>
-
-            <!-- Grid Layout of Social Networks -->
-            <div class="social-grid">
-                <a href="https://youtube.com/@ketuplayhouse" target="_blank" rel="noopener noreferrer" class="social-grid-item youtube">
-                    <div class="social-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                        </svg>
-                    </div>
-                    <span class="social-label">YouTube</span>
-                </a>
-                <a href="https://instagram.com/ketuplayhouse" target="_blank" rel="noopener noreferrer" class="social-grid-item instagram">
-                    <div class="social-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-                        </svg>
-                    </div>
-                    <span class="social-label">Instagram</span>
-                </a>
-                <a href="https://tiktok.com/@ketuplayhouse" target="_blank" rel="noopener noreferrer" class="social-grid-item tiktok">
-                    <div class="social-icon">
-                        <svg viewBox="0 0 24 24" class="tiktok-svg">
-                            <rect x="0" y="0" width="24" height="24" rx="5" fill="#000000" />
-                            <!-- Cyan shadow layer -->
-                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.62 2.89 2.89 0 0 1 2.31-4.51c.36 0 .7.06 1.01.18V9.5a5.79 5.79 0 0 0-1-.09 5.79 5.79 0 0 0-5.78 5.78 5.82 5.82 0 0 0 9.87 4.14A5.79 5.79 0 0 0 15.82 15V8.04a8.28 8.28 0 0 0 5.48 2.2V6.8a8.1 8.1 0 0 1-1.71-.11z" fill="#00f2fe" transform="translate(-0.6, -0.6)" />
-                            <!-- Red shadow layer -->
-                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.62 2.89 2.89 0 0 1 2.31-4.51c.36 0 .7.06 1.01.18V9.5a5.79 5.79 0 0 0-1-.09 5.79 5.79 0 0 0-5.78 5.78 5.82 5.82 0 0 0 9.87 4.14A5.79 5.79 0 0 0 15.82 15V8.04a8.28 8.28 0 0 0 5.48 2.2V6.8a8.1 8.1 0 0 1-1.71-.11z" fill="#fe0979" transform="translate(0.6, 0.6)" />
-                            <!-- White main layer -->
-                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.62 2.89 2.89 0 0 1 2.31-4.51c.36 0 .7.06 1.01.18V9.5a5.79 5.79 0 0 0-1-.09 5.79 5.79 0 0 0-5.78 5.78 5.82 5.82 0 0 0 9.87 4.14A5.79 5.79 0 0 0 15.82 15V8.04a8.28 8.28 0 0 0 5.48 2.2V6.8a8.1 8.1 0 0 1-1.71-.11z" fill="#ffffff" />
-                        </svg>
-                    </div>
-                    <span class="social-label">TikTok</span>
-                </a>
-                <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="social-grid-item discord">
-                    <div class="social-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.156-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.156 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.156-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.156 2.418z"/>
-                        </svg>
-                    </div>
-                    <span class="social-label">Discord</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Interactive script for navbar active state toggles -->
+    <!-- Scroll & Nav Active State Toggle Script -->
     <script>
-        const sections = document.querySelectorAll('section[id], main');
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - 180)) {
-                    current = section.getAttribute('id') || 'inicio';
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                // Ignorar enlaces externos como presskit/ en el scroll highlight
-                if (link.getAttribute('href').startsWith('#') && link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Integración del formulario de Newsletter (Supabase + Beehiiv)
-        const newsletterForm = document.getElementById('newsletter-form');
-        const newsletterMessage = document.getElementById('newsletter-message');
-        
-        // --- CONFIGURACIÓN DE SUPABASE ---
-        const SUPABASE_FUNCTION_URL = 'https://auisiimmpttttfslijvx.supabase.co/functions/v1/subscribe';
-        // ---------------------------------
-
-        if (newsletterForm) {
-            newsletterForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const emailInput = document.getElementById('newsletter-email');
-                const email = emailInput.value.trim();
-                
-                if (!email) return;
-
-                const currentLang = localStorage.getItem('ketu_lang') || 'es';
-                newsletterMessage.className = 'newsletter-message';
-                newsletterMessage.textContent = currentLang === 'es' 
-                    ? 'Enviando...' 
-                    : 'Sending...';
-
-                // Si no está configurada la URL o sigue en modo por defecto, simulamos éxito
-                if (!SUPABASE_FUNCTION_URL || SUPABASE_FUNCTION_URL.includes('<tu-proyecto>')) {
-                    setTimeout(() => {
-                        newsletterMessage.className = 'newsletter-message success';
-                        newsletterMessage.textContent = currentLang === 'es' 
-                            ? '¡Gracias por suscribirte! (Modo simulación activo)' 
-                            : 'Thank you for subscribing! (Simulation mode active)';
-                        emailInput.value = '';
-                    }, 800);
-                    return;
-                }
-
-                try {
-                    const response = await fetch(SUPABASE_FUNCTION_URL, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            email: email,
-                            source: 'web'
-                        })
-                    });
-
-                    // Intentar decodificar JSON de respuesta
-                    let data = {};
-                    try {
-                        data = await response.json();
-                    } catch (jsonErr) {
-                        // Respuesta no es JSON válido
-                    }
-
-                    if (response.ok && data.success) {
-                        newsletterMessage.className = 'newsletter-message success';
-                        newsletterMessage.textContent = currentLang === 'es' 
-                            ? '¡Te has suscrito con éxito!' 
-                            : 'You have successfully subscribed!';
-                        emailInput.value = '';
-                    } else {
-                        newsletterMessage.className = 'newsletter-message error';
-                        const errMsg = data.error || '';
-                        const errDetails = data.details || '';
-                        
-                        // Validar si es un correo duplicado (Postgres unique constraint violation)
-                        if (errMsg.includes('duplicate') || errDetails.includes('duplicate') || errMsg.includes('already exists')) {
-                            newsletterMessage.textContent = currentLang === 'es' 
-                                ? 'Este correo ya está registrado.' 
-                                : 'This email is already registered.';
-                        } else {
-                            newsletterMessage.textContent = currentLang === 'es' 
-                                ? 'Hubo un error. Inténtalo de nuevo.' 
-                                : 'There was an error. Please try again.';
-                        }
-                    }
-                } catch (error) {
-                    newsletterMessage.className = 'newsletter-message error';
-                    newsletterMessage.textContent = currentLang === 'es' 
-                        ? 'Error de conexión. Inténtalo más tarde.' 
-                        : 'Connection error. Please try again later.';
-                }
-            });
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Social Media Interactive Widget Toggle Logic
-        const socialWidget = document.querySelector('.social-widget');
-        const widgetToggle = document.querySelector('.social-widget-toggle');
-        const widgetClose = document.querySelector('.social-widget-close');
-
-        if (widgetToggle && socialWidget) {
-            widgetToggle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                socialWidget.classList.toggle('open');
-            });
-        }
-
-        if (widgetClose && socialWidget) {
-            widgetClose.addEventListener('click', (e) => {
-                e.stopPropagation();
-                socialWidget.classList.remove('open');
-            });
-        }
-
-        // Close widget when clicking outside
-        document.addEventListener('click', (e) => {
-            if (socialWidget && socialWidget.classList.contains('open') && !socialWidget.contains(e.target)) {
-                socialWidget.classList.remove('open');
+        function filterNewsCategory(cat, btn) {
+            document.querySelectorAll('.news-tab-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            if (typeof renderNewsBoard === 'function') {
+                renderNewsBoard(cat);
             }
+        }
+
+        // Active State scroll observer
+        const sectionIds = ['inicio', 'games', 'egoball', 'news', 'about'];
+        window.addEventListener('scroll', () => {
+            let current = 'inicio';
+            sectionIds.forEach(id => {
+                const section = document.getElementById(id);
+                if (section) {
+                    const top = section.offsetTop;
+                    if (window.pageYOffset >= (top - 200)) {
+                        current = id;
+                    }
+                }
+            });
+
+            // Update Header nav active class
+            document.querySelectorAll('.nav-links a').forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === `#${current}`) {
+                    a.classList.add('active');
+                }
+            });
+
+            // Update Vertical Dots active class
+            const indexMap = { 'inicio': 0, 'games': 1, 'egoball': 2, 'news': 3, 'about': 4 };
+            document.querySelectorAll('.dot-item').forEach((dot, idx) => {
+                dot.classList.remove('active');
+                if (idx === indexMap[current]) {
+                    dot.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
