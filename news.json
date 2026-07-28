@@ -1,14 +1,14 @@
 [
   {
-    "id": "ego-ball-reveal",
+    "id": "ego-ball-teaser",
     "category": "announcement",
     "date": "27 JUL 2026",
-    "title_es": "⚡ ¡REVELADO EGO BALL! Nuestro segundo proyecto en desarrollo",
-    "title_en": "⚡ EGO BALL REVEALED! Our second project in development",
-    "summary_es": "Arena multijugador arcade de deflexión con espadas coleccionables (desde Común hasta SSS+ Heavenly Sick), auras neón y ritmo Phonk al estilo Blue Lock.",
-    "summary_en": "Arcade multiplayer deflection arena with collectible swords (Common to SSS+ Heavenly Sick), neon auras, and Phonk music in Blue Lock style.",
-    "badge_es": "Novedad",
-    "badge_en": "New",
+    "title_es": "⚡ Proyecto KeTu2: EGO BALL en Desarrollo Temprano",
+    "title_en": "⚡ Project KeTu2: EGO BALL in Early Development",
+    "summary_es": "Iniciamos la fase de prototipado en Unity 3D para nuestro segundo título: una arena multijugador arcade de deflexión con espadas coleccionables y ritmo Phonk.",
+    "summary_en": "We started early Unity 3D prototyping for our second title: an arcade multiplayer deflection arena with collectible swords and Phonk music.",
+    "badge_es": "En Desarrollo",
+    "badge_en": "In Dev",
     "image": "assets/banner.png"
   },
   {
@@ -17,8 +17,8 @@
     "date": "30 JUN 2026",
     "title_es": "🎮 Keyboard Escape: Speed Up ya disponible en Google Play Store",
     "title_en": "🎮 Keyboard Escape: Speed Up now available on Google Play Store",
-    "summary_es": "¡Descarga la versión completa 0.1.5! Demuestra tu velocidad de reacción escapando del teclado cibernético.",
-    "summary_en": "Download full version 0.1.5! Test your reaction speed escaping the cybernetic keyboard.",
+    summary_es: "¡Descarga la versión completa 0.1.5! Demuestra tu velocidad de reacción escapando del teclado cibernético.",
+    summary_en: "Download full version 0.1.5! Test your reaction speed escaping the cybernetic keyboard.",
     "badge_es": "Lanzamiento",
     "badge_en": "Release",
     "image": "assets/banner.png"
@@ -29,8 +29,8 @@
     "date": "16 JUN 2026",
     "title_es": "👾 Comunidad KeTu Playhouse en Discord Oficial",
     "title_en": "👾 KeTu Playhouse Official Discord Community",
-    "summary_es": "Únete a nuestro servidor de Discord para participar en pruebas alfa de EGO BALL y chatear directamente con los desarrolladores.",
-    "summary_en": "Join our Discord server to participate in EGO BALL alpha testing and chat directly with developers.",
+    summary_es: "Únete a nuestro servidor de Discord para estar al tanto de los avances del estudio y chatear directamente con el desarrollador.",
+    summary_en: "Join our Discord server to follow studio progress and chat directly with the developer.",
     "badge_es": "Comunidad",
     "badge_en": "Community",
     "image": "assets/banner.png"
