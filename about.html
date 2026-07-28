@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - KeTu Playhouse</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Sobre KeTu Playhouse: Estudio indie de videojuegos móviles enfocado en experiencias arcade ultrarrápidas y divertidas.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="assets/icon.png">
+    <link rel="canonical" href="https://ketuplayhouse.com/about.html">
+    <script src="lang.js" defer></script>
+</head>
+<body class="doc-body-page">
+    <!-- Studio Background Layer -->
+    <div class="bg-fixed-canvas">
+        <div class="bg-glow bg-glow-1"></div>
+        <div class="bg-glow bg-glow-2"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="assets/logo.png" alt="KeTu Playhouse Logo" class="logo-img">
+                <span class="logo-text">KeTu Playhouse</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="mailto:ketusoporte@gmail.com?subject=Soporte%20KeTu%20Playhouse" data-i18n="nav-support">Soporte</a></li>
+                <li><a href="about.html" class="active" data-i18n="nav-about">Sobre Nosotros</a></li>
+            </ul>
+            <div class="lang-selector">
+                <button onclick="changeLanguage('es')" id="lang-btn-es" class="lang-btn active">
+                    <span class="flag">🇪🇸</span> <span class="lang-code">ES</span>
+                </button>
+                <button onclick="changeLanguage('en')" id="lang-btn-en" class="lang-btn">
+                    <span class="flag">🇺🇸</span> <span class="lang-code">EN</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="doc-card-container">
+        <a href="index.html" class="back-btn-styled" data-i18n="back-btn-text">
+            ← Volver al Inicio
+        </a>
+        
+        <article class="doc-content">
+            <div class="doc-header">
+                <h1 data-i18n="about-page-title">Sobre KeTu Playhouse</h1>
+                <div class="doc-meta" data-i18n="about-page-subtitle">Estudio Independiente de Videojuegos Móviles</div>
+            </div>
+            
+            <div class="doc-body">
+                <p data-i18n="about-page-p1">
+                    En <strong>KeTu Playhouse</strong>, nacimos con la visión de diseñar experiencias móviles independientes que sean ultrarrápidas, dinámicas y adictivas directamente en la palma de tu mano.
+                </p>
+
+                <h2 data-i18n="about-page-h2-1">Nuestra Filosofía</h2>
+                <p data-i18n="about-page-p2">
+                    Creemos en el gameplay ágil, en controles pulidos al milisegundo y en estéticas visuales vibrantes (Candy Neón, Synthwave y Anime). Queremos que cada segundo que pases en nuestros juegos sea electrizante.
+                </p>
+
+                <h2 data-i18n="about-page-h2-2">Nuestros Proyectos</h2>
+                <ul>
+                    <li><strong style="color:var(--primary)">Keyboard Escape: Speed Up:</strong> Nuestro primer título publicado en Google Play Store. Un juego arcade contra el reloj donde debes escapar de un teclado cibernético a velocidad extrema.</li>
+                    <li><strong style="color:var(--accent)">EGO BALL:</strong> Actualmente en etapa temprana de prototipado en Unity 3D. Una arena multijugador arcade de deflexión de pelota con espadas coleccionables y auras neón.</li>
+                </ul>
+
+                <h2 data-i18n="about-page-h2-3">Contacto & Soporte</h2>
+                <p data-i18n="about-page-p3">
+                    Si deseas reportar un error, hacernos consultas o enviarnos tus comentarios, escríbenos directamente a nuestro correo oficial de soporte:
+                </p>
+                <p style="font-weight: 700; color: var(--primary); font-size: 1.1rem;">ketusoporte@gmail.com</p>
+            </div>
+        </article>
+    </main>
+
+    <!-- Studio Footer -->
+    <footer class="chillyroom-studio-footer">
+        <div class="footer-studio-line">
+            <span data-i18n="footer-developer">Developer: KeTu Playhouse Inc.</span>
+            <span>|</span>
+            <a href="privacy-policy.html" id="link-privacy" data-i18n="link-privacy">Política de Privacidad</a>
+            <span>|</span>
+            <a href="terms-of-service.html" id="link-terms" data-i18n="link-terms">Términos de Uso</a>
+            <span>|</span>
+            <span data-i18n="footer-copy">&copy; 2026 KeTu Playhouse Inc. Todos los derechos reservados.</span>
+        </div>
+    </footer>
+</body>
+</html>
