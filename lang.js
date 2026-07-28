@@ -5,6 +5,7 @@ const translations = {
     "nav-home": "Inicio",
     "nav-support": "Soporte",
     "nav-about": "Sobre Nosotros",
+    "back-btn-text": "← Volver al Inicio",
 
     // Games Data
     "game1-tag": "🎮 PUBLICADO EN GOOGLE PLAY",
@@ -15,6 +16,16 @@ const translations = {
     "game2-tag": "⚡ EN DESARROLLO TEMPRANO (UNITY 3D)",
     "game2-title": "EGO BALL",
     "game2-discord-btn": "👾 Comunidad Discord (Alpha)",
+
+    // About Us Page
+    "about-page-title": "Sobre KeTu Playhouse",
+    "about-page-subtitle": "Estudio Independiente de Videojuegos Móviles",
+    "about-page-p1": "En KeTu Playhouse, nacimos con la visión de diseñar experiencias móviles independientes que sean ultrarrápidas, dinámicas y adictivas directamente en la palma de tu mano.",
+    "about-page-h2-1": "Nuestra Filosofía",
+    "about-page-p2": "Creemos en el gameplay ágil, en controles pulidos al milisegundo y en estéticas visuales vibrantes (Candy Neón, Synthwave y Anime). Queremos que cada segundo que pases en nuestros juegos sea electrizante.",
+    "about-page-h2-2": "Nuestros Proyectos",
+    "about-page-h2-3": "Contacto & Soporte",
+    "about-page-p3": "Si deseas reportar un error, hacernos consultas o enviarnos tus comentarios, escríbenos directamente a nuestro correo oficial de soporte:",
 
     // Footer
     "footer-developer": "Developer: KeTu Playhouse Inc.",
@@ -27,6 +38,7 @@ const translations = {
     "nav-home": "Home",
     "nav-support": "Support",
     "nav-about": "About Us",
+    "back-btn-text": "← Back to Home",
 
     // Games Data
     "game1-tag": "🎮 PUBLISHED ON GOOGLE PLAY",
@@ -37,6 +49,16 @@ const translations = {
     "game2-tag": "⚡ IN EARLY DEV (UNITY 3D)",
     "game2-title": "EGO BALL",
     "game2-discord-btn": "👾 Discord Community (Alpha)",
+
+    // About Us Page
+    "about-page-title": "About KeTu Playhouse",
+    "about-page-subtitle": "Indie Mobile Game Development Studio",
+    "about-page-p1": "At KeTu Playhouse, we were born with the vision of designing independent mobile experiences that are ultra-fast, dynamic, and addictive right in the palm of your hand.",
+    "about-page-h2-1": "Our Philosophy",
+    "about-page-p2": "We believe in agile gameplay, millisecond-polished controls, and vibrant visual aesthetics (Candy Neon, Synthwave, and Anime). We want every second you spend in our games to be thrilling.",
+    "about-page-h2-2": "Our Projects",
+    "about-page-h2-3": "Contact & Support",
+    "about-page-p3": "If you want to report a bug, ask us questions, or send us your feedback, write to us directly at our official support email:",
 
     // Footer
     "footer-developer": "Developer: KeTu Playhouse Inc.",
@@ -53,7 +75,7 @@ function updateContent(lang) {
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.getAttribute("data-i18n");
     if (dictionary[key] !== undefined) {
-      if (element.tagName === "A" && (key === "link-privacy" || key === "link-terms")) {
+      if (element.tagName === "A" && (key === "link-privacy" || key === "link-terms" || key === "nav-about")) {
         element.innerHTML = dictionary[key];
       } else {
         element.textContent = dictionary[key];

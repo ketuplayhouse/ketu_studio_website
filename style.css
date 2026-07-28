@@ -28,16 +28,27 @@
 }
 
 html, body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
   background-color: var(--bg-main);
   color: var(--text-light);
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
-/* Studio Background Canvas (Candy Neon Pattern + Glow) */
+/* Single-Page Layout Lockdown for Main Index Hub */
+body.main-hub-body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Scrollable Layout for Standalone Document & About Pages */
+body.doc-body-page {
+  overflow-y: auto !important;
+  height: auto !important;
+}
+
+/* Studio Background Canvas */
 .bg-fixed-canvas {
   position: fixed !important;
   top: 0; left: 0; width: 100vw; height: 100vh;
@@ -62,7 +73,7 @@ html, body {
 }
 
 /* ----------------------------------------------------
-   HEADER NAVBAR (Chillyroom Style Roof Banner & Nav)
+   HEADER NAVBAR
    ---------------------------------------------------- */
 header {
   position: fixed; top: 0; left: 0; right: 0;
@@ -103,7 +114,7 @@ main.studio-hub {
 }
 
 /* ----------------------------------------------------
-   COVERFLOW 3D GAME CAROUSEL (Chillyroom Centerpiece)
+   COVERFLOW 3D GAME CAROUSEL
    ---------------------------------------------------- */
 .coverflow-section {
   flex: 1;
@@ -125,7 +136,6 @@ main.studio-hub {
   perspective: 1200px;
 }
 
-/* GIGANTIC DIRECTIONAL ARROW BUTTONS (Chillyroom Style 《 and 》) */
 .coverflow-arrow {
   position: absolute;
   top: 45%;
@@ -155,10 +165,8 @@ main.studio-hub {
 
 .coverflow-arrow.prev { left: -10px; }
 .coverflow-arrow.next { right: -10px; }
-
 .coverflow-arrow svg { width: 32px; height: 32px; fill: currentColor; }
 
-/* COVERFLOW CARDS STACK */
 .coverflow-cards-wrapper {
   display: flex;
   align-items: center;
@@ -195,21 +203,10 @@ main.studio-hub {
   z-index: 30;
 }
 
-.coverflow-card.side-prev {
-  transform: scale(0.88) rotateY(12deg);
-}
+.coverflow-card.side-prev { transform: scale(0.88) rotateY(12deg); }
+.coverflow-card.side-next { transform: scale(0.88) rotateY(-12deg); }
 
-.coverflow-card.side-next {
-  transform: scale(0.88) rotateY(-12deg);
-}
-
-.card-banner-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
+.card-banner-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .card-title-overlay {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -218,176 +215,138 @@ main.studio-hub {
   text-align: center;
 }
 
-.card-game-badge {
-  display: inline-block;
-  background: var(--primary);
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 900;
-  padding: 3px 10px;
-  border-radius: 50px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.4rem;
-}
+.card-game-badge { display: inline-block; background: var(--primary); color: white; font-size: 0.7rem; font-weight: 900; padding: 3px 10px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; }
+.card-game-title { font-size: 1.4rem; font-weight: 900; color: #ffffff; margin-bottom: 0.2rem; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8); }
 
-.card-game-title {
-  font-size: 1.4rem;
-  font-weight: 900;
-  color: #ffffff;
-  margin-bottom: 0.2rem;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-/* ----------------------------------------------------
-   ACTION BUTTONS BAR (Directly Under Active Center Card)
-   ---------------------------------------------------- */
-.active-actions-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-  z-index: 40;
-  min-height: 52px;
-}
-
-.action-btn-store img {
-  height: 48px;
-  width: auto;
-  display: block;
-  transition: transform var(--transition-fast);
-}
+/* ACTIONS BAR UNDER ACTIVE CARD */
+.active-actions-bar { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1rem; z-index: 40; min-height: 52px; }
+.action-btn-store img { height: 48px; width: auto; display: block; transition: transform var(--transition-fast); }
 .action-btn-store:hover img { transform: scale(1.06); }
 
 .action-btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, rgba(255, 77, 148, 0.2) 0%, rgba(157, 78, 221, 0.3) 100%);
+  border: 2px solid var(--primary); color: #ffffff; font-weight: 800; font-size: 0.92rem;
+  padding: 0.75rem 1.5rem; border-radius: 14px; cursor: pointer; text-decoration: none; box-shadow: var(--glow-pink); transition: var(--transition-fast);
+}
+.action-btn-secondary:hover { background: var(--primary); box-shadow: 0 0 30px rgba(255, 77, 148, 0.8); transform: translateY(-2px); }
+.discord-action-btn { background: #5865F2; border-color: #7983f5; box-shadow: 0 0 25px rgba(88, 101, 242, 0.5); }
+.discord-action-btn:hover { background: #4752c4; }
+
+/* FLOATING SOCIAL WIDGET */
+.chilly-floating-widget-left {
+  position: fixed; left: 25px; bottom: 25px; z-index: 1000;
+  display: flex; align-items: center; gap: 0.6rem; background: var(--bg-card);
+  border: 2px solid var(--primary); border-radius: 50px; padding: 6px 14px 6px 8px;
+  box-shadow: var(--glow-pink); backdrop-filter: blur(14px); animation: widgetFloat 4s ease-in-out infinite alternate;
+}
+@keyframes widgetFloat { 0% { transform: translateY(0); } 100% { transform: translateY(-6px); } }
+
+.widget-studio-badge { width: 36px; height: 36px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-size: 0.9rem; }
+.widget-social-icons { display: flex; align-items: center; gap: 0.5rem; }
+.widget-social-link { width: 30px; height: 30px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: var(--text-light); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: var(--transition-fast); }
+.widget-social-link:hover { background: var(--primary); transform: translateY(-2px); box-shadow: var(--glow-pink); }
+
+/* DISCREET STUDIO FOOTER */
+.chillyroom-studio-footer {
+  width: 100%; background: rgba(10, 7, 15, 0.95); border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 1.5rem; font-size: 0.8rem; color: var(--text-muted); text-align: center; z-index: 100;
+}
+.footer-studio-line { display: flex; align-items: center; justify-content: center; gap: 0.8rem; flex-wrap: wrap; }
+.footer-studio-line a { color: var(--text-muted); text-decoration: none; transition: var(--transition-fast); }
+.footer-studio-line a:hover { color: var(--primary); }
+
+/* ----------------------------------------------------
+   STANDALONE DOCUMENT & ABOUT PAGES (ELEGANT GLASS CARD)
+   ---------------------------------------------------- */
+.doc-card-container {
+  max-width: 850px;
+  margin: 100px auto 50px;
+  padding: 2.5rem;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: 24px;
+  box-shadow: var(--glow-pink);
+  backdrop-filter: blur(16px);
+  color: var(--text-light);
+}
+
+.doc-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.doc-header h1 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.doc-meta {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.doc-body {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: #e0d8eb;
+}
+
+.doc-body h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--gold-accent);
+  margin: 1.8rem 0 0.75rem;
+}
+
+.doc-body p {
+  margin-bottom: 1.1rem;
+}
+
+.doc-body ul {
+  margin: 0.5rem 0 1.2rem 1.5rem;
+}
+
+.doc-body li {
+  margin-bottom: 0.5rem;
+}
+
+.doc-body a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.back-btn-styled {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, rgba(255, 77, 148, 0.2) 0%, rgba(157, 78, 221, 0.3) 100%);
-  border: 2px solid var(--primary);
-  color: #ffffff;
-  font-weight: 800;
-  font-size: 0.92rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 14px;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: var(--glow-pink);
-  transition: var(--transition-fast);
-}
-
-.action-btn-secondary:hover {
-  background: var(--primary);
-  box-shadow: 0 0 30px rgba(255, 77, 148, 0.8);
-  transform: translateY(-2px);
-}
-
-.discord-action-btn {
-  background: #5865F2;
-  border-color: #7983f5;
-  box-shadow: 0 0 25px rgba(88, 101, 242, 0.5);
-}
-.discord-action-btn:hover { background: #4752c4; }
-
-/* ----------------------------------------------------
-   FLOATING SOCIAL WIDGET (Bottom-Left Corner)
-   ---------------------------------------------------- */
-.chilly-floating-widget-left {
-  position: fixed;
-  left: 25px;
-  bottom: 25px;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: var(--bg-card);
-  border: 2px solid var(--primary);
-  border-radius: 50px;
-  padding: 6px 14px 6px 8px;
-  box-shadow: var(--glow-pink);
-  backdrop-filter: blur(14px);
-  animation: widgetFloat 4s ease-in-out infinite alternate;
-}
-
-@keyframes widgetFloat {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-6px); }
-}
-
-.widget-studio-badge {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 900;
-  font-size: 0.9rem;
-}
-
-.widget-social-icons {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.widget-social-link {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: var(--transition-fast);
-}
-
-.widget-social-link:hover {
-  background: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: var(--glow-pink);
-}
-
-/* ----------------------------------------------------
-   DISCREET STUDIO FOOTER (1-Line Bottom Bar)
-   ---------------------------------------------------- */
-.chillyroom-studio-footer {
-  width: 100%;
-  background: rgba(10, 7, 15, 0.95);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 10px 1.5rem;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  text-align: center;
-  z-index: 100;
-}
-
-.footer-studio-line {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
-
-.footer-studio-line a {
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: var(--transition-fast);
-}
-
-.footer-studio-line a:hover {
   color: var(--primary);
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  padding: 6px 14px;
+  background: rgba(255, 77, 148, 0.12);
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  transition: var(--transition-fast);
 }
 
-/* ----------------------------------------------------
-   MODAL VIDEO LIGHTBOX
-   ---------------------------------------------------- */
+.back-btn-styled:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateX(-4px);
+}
+
+/* VIDEO LIGHTBOX MODAL */
 .video-modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.92); backdrop-filter: blur(14px); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 20px; }
 .video-modal-card { position: relative; width: 100%; max-width: 850px; background: #000; border-radius: 20px; border: 2px solid var(--primary); box-shadow: var(--glow-pink); overflow: hidden; }
 .video-modal-close { position: absolute; top: 12px; right: 16px; background: rgba(0, 0, 0, 0.75); border: 1px solid white; color: white; font-size: 1.5rem; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; }
@@ -403,4 +362,5 @@ main.studio-hub {
   .coverflow-arrow.prev { left: 0; }
   .coverflow-arrow.next { right: 0; }
   .chilly-floating-widget-left { left: 15px; bottom: 15px; padding: 4px 10px; }
+  .doc-card-container { margin: 85px 1rem 30px; padding: 1.5rem; }
 }

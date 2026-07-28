@@ -5,53 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - KeTu Playhouse</title>
     <link rel="stylesheet" href="style.css">
-    <!-- SEO Optimization -->
     <meta name="description" content="Terms of Service and Conditions of Use for KeTu Playhouse games and services, including Keyboard Escape: Speed Up.">
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="canonical" href="https://ketuplayhouse.com/terms-of-service.html">
-    
-    <!-- Language Translation Library -->
     <script src="lang.js" defer></script>
 </head>
-<body>
-    <div class="bg-glow bg-glow-1"></div>
-    <div class="bg-glow bg-glow-2"></div>
+<body class="doc-body-page">
+    <!-- Studio Background Layer -->
+    <div class="bg-fixed-canvas">
+        <div class="bg-glow bg-glow-1"></div>
+        <div class="bg-glow bg-glow-2"></div>
+    </div>
 
     <!-- Navigation Header -->
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo-container">
-                    <img src="assets/logo.png" alt="KeTu Playhouse Logo" class="logo-img">
-                    <span class="logo-text">KeTu Playhouse</span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html" data-i18n="nav-home">Inicio</a></li>
-                    <li><a href="index.html#games" data-i18n="nav-games">Juegos</a></li>
-                    <li><a href="index.html#about" data-i18n="nav-about">Nosotros</a></li>
-                    <li><a href="index.html#contact" data-i18n="nav-support">Soporte</a></li>
-                </ul>
-                <div class="lang-selector">
-                    <button onclick="changeLanguage('es')" id="lang-btn-es" class="lang-btn active">
-                        <span class="flag">🇪🇸</span> <span class="lang-code">ES</span>
-                    </button>
-                    <button onclick="changeLanguage('en')" id="lang-btn-en" class="lang-btn">
-                        <span class="flag">🇺🇸</span> <span class="lang-code">EN</span>
-                    </button>
-                </div>
-            </nav>
-        </div>
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="assets/logo.png" alt="KeTu Playhouse Logo" class="logo-img">
+                <span class="logo-text">KeTu Playhouse</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="mailto:ketusoporte@gmail.com?subject=Soporte%20KeTu%20Playhouse" data-i18n="nav-support">Soporte</a></li>
+                <li><a href="about.html" data-i18n="nav-about">Sobre Nosotros</a></li>
+            </ul>
+            <div class="lang-selector">
+                <button onclick="changeLanguage('es')" id="lang-btn-es" class="lang-btn active">
+                    <span class="flag">🇪🇸</span> <span class="lang-code">ES</span>
+                </button>
+                <button onclick="changeLanguage('en')" id="lang-btn-en" class="lang-btn">
+                    <span class="flag">🇺🇸</span> <span class="lang-code">EN</span>
+                </button>
+            </div>
+        </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="container doc-page">
-        <a href="index.html" class="back-btn" data-i18n="back-btn-text">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="19" y1="12" x2="5" y2="12"></line>
-                <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-            Volver al Inicio
+    <!-- Main Content Container -->
+    <main class="doc-card-container">
+        <a href="index.html" class="back-btn-styled" data-i18n="back-btn-text">
+            ← Volver al Inicio
         </a>
         
         <article class="doc-content">
@@ -92,23 +85,21 @@
 
                 <h2 data-i18n="terms-sec8-title">8. Soporte Técnico y Contacto</h2>
                 <p data-i18n="terms-sec8-p1">Para consultas legales, informes de fallos (bugs), comentarios o solicitudes de soporte técnico, puedes escribirnos directamente a nuestro correo oficial de atención al cliente:</p>
-                <p style="font-weight: 600; color: var(--primary);">ketusoporte@gmail.com</p>
+                <p style="font-weight: 700; color: var(--primary); font-size: 1.1rem;">ketusoporte@gmail.com</p>
             </div>
         </article>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-content">
-            <img src="assets/logo.png" alt="KeTu Playhouse Logo" class="footer-logo">
-            <ul class="footer-links">
-                <li><a href="index.html" data-i18n="nav-home">Inicio</a></li>
-                <li><a href="index.html#games" data-i18n="nav-games">Juegos</a></li>
-                <li><a href="index.html#about" data-i18n="nav-about">Nosotros</a></li>
-                <li><a href="index.html#contact" data-i18n="nav-support">Soporte</a></li>
-                <li><a href="privacy-policy.html" id="link-privacy" data-i18n="link-privacy">Política de Privacidad</a></li>
-            </ul>
-            <p class="footer-copy" data-i18n="footer-copy">&copy; 2026 KeTu Playhouse. Todos los derechos reservados.</p>
+    <!-- Studio Footer -->
+    <footer class="chillyroom-studio-footer">
+        <div class="footer-studio-line">
+            <span data-i18n="footer-developer">Developer: KeTu Playhouse Inc.</span>
+            <span>|</span>
+            <a href="privacy-policy.html" id="link-privacy" data-i18n="link-privacy">Política de Privacidad</a>
+            <span>|</span>
+            <a href="terms-of-service.html" id="link-terms" data-i18n="link-terms">Términos de Uso</a>
+            <span>|</span>
+            <span data-i18n="footer-copy">&copy; 2026 KeTu Playhouse Inc. Todos los derechos reservados.</span>
         </div>
     </footer>
 </body>
