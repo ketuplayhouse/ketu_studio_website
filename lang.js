@@ -2,16 +2,25 @@
 const translations = {
   es: {
     // Navigation
-    "nav-games": "Juegos",
+    "nav-overview": "Overview",
+    "nav-features": "Características",
     "nav-news": "Noticias",
     "nav-support": "Soporte",
 
-    // Keyboard Escape Showcase
-    "game1-status": "🎮 PUBLICADO EN GOOGLE PLAY",
-    "game1-title": "Keyboard Escape: Speed Up",
-    "game1-desc": "¡Escapa del teclado cibernético a ritmo ultra rápido esquivando obstáculos y saltando de tecla en tecla!",
-    "game1-trailer-btn": "▶ Ver Tráiler Oficial (YouTube)",
-    "badge-alt": "Disponible en Google Play Store",
+    // Overview Hero
+    "hero-tag": "🎮 PUBLICADO EN GOOGLE PLAY",
+    "hero-title-main": "Keyboard Escape: Speed Up",
+    "hero-subtitle-main": "¡Acción Arcade de Ritmo Ultra Rápido! Demuestra tus reflejos saltando de tecla en tecla antes del colapso cibernético.",
+
+    // Features Section
+    "features-tag": "🎮 DETALLES DE JUGABILIDAD",
+    "features-title": "Características del Juego",
+    "feat1-title": "Acción Arcade Ultra Rápida",
+    "feat1-desc": "Pon a prueba tus reflejos con saltos precisos y velocidad extrema.",
+    "feat2-title": "Power-Ups Eléctricos",
+    "feat2-desc": "Utiliza impulsos cibernéticos para superar las zonas más difíciles.",
+    "feat3-title": "Desafío Contra el Reloj",
+    "feat3-desc": "Compite por la puntuación más alta antes del colapso total.",
 
     // News Section
     "news-title": "Novedades & Anuncios",
@@ -31,16 +40,25 @@ const translations = {
   },
   en: {
     // Navigation
-    "nav-games": "Games",
+    "nav-overview": "Overview",
+    "nav-features": "Game Features",
     "nav-news": "News",
     "nav-support": "Support",
 
-    // Keyboard Escape Showcase
-    "game1-status": "🎮 PUBLISHED ON GOOGLE PLAY",
-    "game1-title": "Keyboard Escape: Speed Up",
-    "game1-desc": "Escape the collapsing cybernetic keyboard at ultra-fast pace, dodging obstacles and jumping key to key!",
-    "game1-trailer-btn": "▶ Watch Official Trailer (YouTube)",
-    "badge-alt": "Get it on Google Play Store",
+    // Overview Hero
+    "hero-tag": "🎮 PUBLISHED ON GOOGLE PLAY",
+    "hero-title-main": "Keyboard Escape: Speed Up",
+    "hero-subtitle-main": "Ultra-fast pace arcade action! Test your reaction speed jumping key to key before the cybernetic collapse.",
+
+    // Features Section
+    "features-tag": "🎮 GAMEPLAY DETAILS",
+    "features-title": "Game Features",
+    "feat1-title": "Ultra-Fast Arcade Action",
+    "feat1-desc": "Test your reflexes with precise jumps and extreme speed.",
+    "feat2-title": "Electric Power-Ups",
+    "feat2-desc": "Use cybernetic boosts to overcome the hardest obstacle zones.",
+    "feat3-title": "Time Trial Challenge",
+    "feat3-desc": "Compete for the highest score before total collapse.",
 
     // News Section
     "news-title": "News & Announcements",
