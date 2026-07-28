@@ -20,7 +20,7 @@ const translations = {
     // About Us Page
     "about-page-title": "Sobre KeTu Playhouse",
     "about-page-subtitle": "Estudio Independiente de Videojuegos Móviles",
-    "about-page-p1": "En KeTu Playhouse, nacimos con la visión de diseñar experiencias móviles independientes que sean ultrarrápidas, dinámicas y adictivas directamente en la palma de tu mano.",
+    "about-page-p1": "En <strong>KeTu Playhouse</strong>, nacimos con la visión de diseñar experiencias móviles independientes que sean ultrarrápidas, dinámicas y adictivas directamente en la palma de tu mano.",
     "about-page-h2-1": "Nuestra Filosofía",
     "about-page-p2": "Creemos en el gameplay ágil, en controles pulidos al milisegundo y en estéticas visuales vibrantes (Candy Neón, Synthwave y Anime). Queremos que cada segundo que pases en nuestros juegos sea electrizante.",
     "about-page-h2-2": "Nuestros Proyectos",
@@ -30,18 +30,18 @@ const translations = {
     // Privacy Policy
     "privacy-header": "Política de Privacidad",
     "privacy-last-updated": "Última actualización: 8 de Junio, 2026",
-    "privacy-intro": "En KeTu Playhouse, valoramos tu privacidad. Esta Política de Privacidad explica cómo se recopila, utiliza y divulga la información cuando utilizas nuestro juego móvil Keyboard Escape: Speed Up y cualquier otro servicio relacionado.",
+    "privacy-intro": "En <strong>KeTu Playhouse</strong>, valoramos tu privacidad. Esta Política de Privacidad explica cómo se recopila, utiliza y divulga la información cuando utilizas nuestro juego móvil <strong>Keyboard Escape: Speed Up</strong> y cualquier otro servicio relacionado.",
     "privacy-sec1-title": "1. Recopilación de Información",
     "privacy-sec1-p1": "Nuestras aplicaciones están diseñadas para no recopilar información de identificación personal directamente de los usuarios. No solicitamos registros de cuentas, nombres, correos electrónicos ni números de teléfono para jugar.",
     "privacy-sec1-p2": "Sin embargo, para monetizar y mantener nuestros servicios gratuitos, integramos herramientas de terceros que sí recopilan información técnica de manera automática.",
     "privacy-sec2-title": "2. Servicios de Terceros (Publicidad y Monetización)",
-    "privacy-sec2-p1": "Este juego utiliza Google AdMob para mostrar anuncios. AdMob puede recopilar y procesar información sobre ti de forma automática. Esta información incluye, entre otros:",
+    "privacy-sec2-p1": "Este juego utiliza <strong>Google AdMob</strong> para mostrar anuncios. AdMob puede recopilar y procesar información sobre ti de forma automática. Esta información incluye, entre otros:",
     "privacy-sec2-li1": "Identificadores únicos de publicidad del dispositivo (como el ID de publicidad de Google o el IDFA de Apple).",
     "privacy-sec2-li2": "Datos sobre el dispositivo (fabricante, modelo, sistema operativo, idioma y resolución de pantalla).",
     "privacy-sec2-li3": "Datos sobre la interacción con los anuncios (clics, impresiones y visualizaciones).",
     "privacy-sec2-li4": "Información de diagnóstico del sistema (informes de fallos o crash logs, rendimiento de la app y uso de memoria).",
     "privacy-sec2-li5": "Ubicación aproximada (a nivel de ciudad o país) derivada de la dirección IP.",
-    "privacy-sec2-p2": "Puedes consultar la política de privacidad de Google relacionada con la publicidad en el siguiente enlace: Políticas y Principios de Publicidad de Google.",
+    "privacy-sec2-p2": "Puedes consultar la política de privacidad de Google relacionada con la publicidad en el siguiente enlace: <a href='https://policies.google.com/technologies/ads' target='_blank' rel='noopener noreferrer'>Políticas y Principios de Publicidad de Google</a>.",
     "privacy-sec3-title": "3. Uso de la Información",
     "privacy-sec3-p1": "La información técnica recopilada automáticamente se utiliza únicamente para:",
     "privacy-sec3-li1": "Mostrar anuncios personalizados o no personalizados según corresponda y lo permita tu configuración.",
@@ -50,8 +50,8 @@ const translations = {
     "privacy-sec3-li4": "Diagnosticar problemas técnicos, corregir fallos del sistema y optimizar la experiencia de juego.",
     "privacy-sec4-title": "4. Opciones de Privacidad del Usuario",
     "privacy-sec4-p1": "Si deseas limitar la publicidad personalizada en tu dispositivo móvil, puedes ajustar la configuración en tu teléfono:",
-    "privacy-sec4-li1": "En Android: Abre Ajustes > Privacidad > Anuncios y selecciona 'Restablecer ID de publicidad' o 'Inhabilitar personalización de anuncios'.",
-    "privacy-sec4-li2": "En iOS: Ve a Ajustes > Privacidad > Rastreo y desactiva la opción de permitir que las aplicaciones soliciten rastrearte.",
+    "privacy-sec4-li1": "<strong>En Android:</strong> Abre Ajustes > Privacidad > Anuncios y selecciona 'Restablecer ID de publicidad' o 'Inhabilitar personalización de anuncios'.",
+    "privacy-sec4-li2": "<strong>En iOS:</strong> Ve a Ajustes > Privacidad > Rastreo y desactiva la opción de permitir que las aplicaciones soliciten rastrearte.",
     "privacy-sec5-title": "5. Privacidad de los Niños",
     "privacy-sec5-p1": "Nuestros juegos no están dirigidos intencionalmente a niños menores de 13 años. No recopilamos conscientemente información personal de niños. Si eres padre o tutor y crees que hemos recopilado información sin tu consentimiento, por favor contáctanos de inmediato.",
     "privacy-sec6-title": "6. Cambios en esta Política",
@@ -62,11 +62,11 @@ const translations = {
     // Terms of Service
     "terms-header": "Términos y Condiciones de Uso",
     "terms-last-updated": "Última actualización: 15 de Junio, 2026",
-    "terms-intro": "Al acceder, descargar, instalar o utilizar los videojuegos (incluyendo Keyboard Escape: Speed Up), sitios web, servidores de comunidad (como Discord) y servicios de KeTu Playhouse, aceptas cumplir y quedar sujeto a estos Términos y Condiciones de Uso.",
+    "terms-intro": "Al acceder, descargar, instalar o utilizar los videojuegos (incluyendo <strong>Keyboard Escape: Speed Up</strong>), sitios web, servidores de comunidad (como Discord) y servicios de <strong>KeTu Playhouse</strong>, aceptas cumplir y quedar sujeto a estos Términos y Condiciones de Uso.",
     "terms-sec1-title": "1. Licencia de Uso Limitada",
     "terms-sec1-p1": "KeTu Playhouse te concede una licencia personal, limitada, no exclusiva, no transferible, no sublicenciable y revocable para descargar, instalar y utilizar nuestros juegos y servicios únicamente para tu entretenimiento personal.",
     "terms-sec2-title": "2. Propiedad Intelectual",
-    "terms-sec2-p1": "Todos los derechos, títulos e intereses relacionados con nuestros juegos y servicios, incluyendo código fuente, gráficos, música, personajes y logotipos, son propiedad exclusiva de KeTu Playhouse.",
+    "terms-sec2-p1": "Todos los derechos, títulos e intereses relacionados con nuestros juegos y servicios, incluyendo código fuente, gráficos, música, personajes y logotipos, son propiedad exclusiva de <strong>KeTu Playhouse</strong>.",
     "terms-sec3-title": "3. Restricciones y Código de Conducta",
     "terms-sec3-p1": "Al utilizar nuestros servicios, te comprometes a no realizar ni intentar realizar las siguientes acciones:",
     "terms-sec3-li1": "Modificar, descompilar, realizar ingeniería inversa o desensamblar el código fuente.",
@@ -110,7 +110,7 @@ const translations = {
     // About Us Page
     "about-page-title": "About KeTu Playhouse",
     "about-page-subtitle": "Indie Mobile Game Development Studio",
-    "about-page-p1": "At KeTu Playhouse, we were born with the vision of designing independent mobile experiences that are ultra-fast, dynamic, and addictive right in the palm of your hand.",
+    "about-page-p1": "At <strong>KeTu Playhouse</strong>, we were born with the vision of designing independent mobile experiences that are ultra-fast, dynamic, and addictive right in the palm of your hand.",
     "about-page-h2-1": "Our Philosophy",
     "about-page-p2": "We believe in agile gameplay, millisecond-polished controls, and vibrant visual aesthetics (Candy Neon, Synthwave, and Anime). We want every second you spend in our games to be thrilling.",
     "about-page-h2-2": "Our Projects",
@@ -120,18 +120,18 @@ const translations = {
     // Privacy Policy
     "privacy-header": "Privacy Policy",
     "privacy-last-updated": "Last updated: June 8, 2026",
-    "privacy-intro": "At KeTu Playhouse, we value your privacy. This Privacy Policy explains how information is collected, used, and disclosed when you use our mobile game Keyboard Escape: Speed Up and any related service.",
+    "privacy-intro": "At <strong>KeTu Playhouse</strong>, we value your privacy. This Privacy Policy explains how information is collected, used, and disclosed when you use our mobile game <strong>Keyboard Escape: Speed Up</strong> and any related service.",
     "privacy-sec1-title": "1. Information Collection",
     "privacy-sec1-p1": "Our applications are designed not to collect personally identifiable information directly from users. We do not require account registration, names, emails, or phone numbers to play.",
     "privacy-sec1-p2": "However, to monetize and maintain our free services, we integrate third-party tools that automatically collect technical information.",
     "privacy-sec2-title": "2. Third-Party Services (Advertising & Monetization)",
-    "privacy-sec2-p1": "This game uses Google AdMob to display ads. AdMob may automatically collect and process technical info about you, including:",
+    "privacy-sec2-p1": "This game uses <strong>Google AdMob</strong> to display ads. AdMob may automatically collect and process technical info about you, including:",
     "privacy-sec2-li1": "Unique advertising identifiers of the device (such as Google Advertising ID or Apple IDFA).",
     "privacy-sec2-li2": "Device technical data (manufacturer, model, OS, language, screen resolution).",
     "privacy-sec2-li3": "Ad interaction data (clicks, impressions, and viewability).",
     "privacy-sec2-li4": "System diagnostic information (crash logs, app performance, and memory usage).",
     "privacy-sec2-li5": "Approximate location (city or country level) derived from IP address.",
-    "privacy-sec2-p2": "You can consult Google's advertising privacy policy at the following link: Google Advertising Policies & Principles.",
+    "privacy-sec2-p2": "You can consult Google's advertising privacy policy at the following link: <a href='https://policies.google.com/technologies/ads' target='_blank' rel='noopener noreferrer'>Google Advertising Policies & Principles</a>.",
     "privacy-sec3-title": "3. Use of Information",
     "privacy-sec3-p1": "The automatically collected technical information is used solely to:",
     "privacy-sec3-li1": "Display personalized or non-personalized ads as appropriate and allowed by your settings.",
@@ -140,8 +140,8 @@ const translations = {
     "privacy-sec3-li4": "Diagnose technical issues, fix system crashes, and optimize gameplay experience.",
     "privacy-sec4-title": "4. User Privacy Options",
     "privacy-sec4-p1": "If you wish to limit personalized advertising on your mobile device, you can adjust settings on your phone:",
-    "privacy-sec4-li1": "On Android: Open Settings > Privacy > Ads and select 'Reset advertising ID' or 'Opt out of Ads Personalization'.",
-    "privacy-sec4-li2": "On iOS: Go to Settings > Privacy > Tracking and toggle off permission for apps to track you.",
+    "privacy-sec4-li1": "<strong>On Android:</strong> Open Settings > Privacy > Ads and select 'Reset advertising ID' or 'Opt out of Ads Personalization'.",
+    "privacy-sec4-li2": "<strong>On iOS:</strong> Go to Settings > Privacy > Tracking and toggle off permission for apps to track you.",
     "privacy-sec5-title": "5. Children's Privacy",
     "privacy-sec5-p1": "Our games are not intentionally directed to children under 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe we collected information without consent, contact us immediately.",
     "privacy-sec6-title": "6. Changes to this Policy",
@@ -152,11 +152,11 @@ const translations = {
     // Terms of Service
     "terms-header": "Terms and Conditions of Use",
     "terms-last-updated": "Last updated: June 15, 2026",
-    "terms-intro": "By accessing, downloading, installing, or using the video games (including Keyboard Escape: Speed Up), websites, community servers (such as Discord), and services of KeTu Playhouse, you agree to be bound by these Terms.",
+    "terms-intro": "By accessing, downloading, installing, or using the video games (including <strong>Keyboard Escape: Speed Up</strong>), websites, community servers (such as Discord), and services of <strong>KeTu Playhouse</strong>, you agree to be bound by these Terms.",
     "terms-sec1-title": "1. Limited Use License",
     "terms-sec1-p1": "KeTu Playhouse grants you a personal, limited, non-exclusive, non-transferable, non-sublicensable, and revocable license to download and play our games for personal non-commercial entertainment.",
     "terms-sec2-title": "2. Intellectual Property",
-    "terms-sec2-p1": "All rights, title, and interest in our games and services, including source code, graphics, music, character designs, and logos, are the exclusive property of KeTu Playhouse.",
+    "terms-sec2-p1": "All rights, title, and interest in our games and services, including source code, graphics, music, character designs, and logos, are the exclusive property of <strong>KeTu Playhouse</strong>.",
     "terms-sec3-title": "3. Restrictions and Code of Conduct",
     "terms-sec3-p1": "When using our services, you agree not to undertake or attempt the following actions:",
     "terms-sec3-li1": "Modify, decompile, reverse engineer, or attempt to extract game source code.",
@@ -189,11 +189,7 @@ function updateContent(lang) {
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.getAttribute("data-i18n");
     if (dictionary[key] !== undefined) {
-      if (element.tagName === "A" && (key === "link-privacy" || key === "link-terms" || key === "nav-about")) {
-        element.innerHTML = dictionary[key];
-      } else {
-        element.textContent = dictionary[key];
-      }
+      element.innerHTML = dictionary[key];
     }
   });
 
