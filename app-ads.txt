@@ -1,5 +1,5 @@
 # KeTu Playhouse - Official app-ads.txt
-# Last Updated: 2026-08-03
+# Last Updated: 2026-08-05
 # Managed networks: Google AdMob, Odeeo, Adverty
 
 google.com, pub-8838761117101664, DIRECT, f08c47fec0942fa0
@@ -383,7 +383,7 @@ pubmatic.com, 156557, RESELLER
 videoheroes.tv, 212781, RESELLER, 064bc410192443d8
 video.unrulymedia.com, 685555114, RESELLER
 algorix.co, 604559, RESELLER, 5b394c12fea27a1d
-inventorypartnerdomain=admanmedia.com
+# inventorypartnerdomain=admanmedia.com
 onetag.com, 5dcfcdb41f0856c, RESELLER
 risecodes.com, 5857d2ee263dc90002000001, RESELLER
 pubmatic.com, 160925, RESELLER, 5d62403b186f2ace
@@ -421,7 +421,7 @@ adform.com, 3354, RESELLER, 9f5210a2f0999e32
 triplelift.com, 14566, RESELLER, 6c33edb13117fd86
 pubmatic.com, 156439, RESELLER, 5d62403b186f2ace
 pubmatic.com, 166464, RESELLER, 5d62403b186f2ace
-appads.in, 107606, RESELLER #LOOPME
+appads.in, 107606, RESELLER
 loopme.com, 14118, RESELLER, 6c8d5f95897a5a3b
 improvedigital.com, 2550, RESELLER
 rubiconproject.com, 27396, RESELLER, 0bfd66d529a55807
@@ -615,7 +615,7 @@ onetag.com, 59aa7be4921bac8, RESELLER
 adagio.io, 1482, RESELLER
 zmaticoo.com, 113149, RESELLER
 pubmatic.com, 163758, RESELLER, 5d62403b186f2ace
-inventorypartnerdomain=mangomob.net
+# inventorypartnerdomain=mangomob.net
 loopme.com, 9724, RESELLER, 6c8d5f95897a5a3b
 adyoulike.com, 283e6e26614a07d896da0933c3719127, DIRECT
 pubmatic.com, 167515, RESELLER, 5d62403b186f2ace
@@ -791,4 +791,16 @@ onetag.com, 7a07370227fc000, RESELLER
 smaato.com, 1100058368, RESELLER, 07bcf65f187117b4
 admanmedia.com,2425,DIRECT
 pixelpluses.com,236015,RESELLER
+adyoulike.com,4ad745ead2958bf7,RESELLER
+onetag.com,6edfae7c05e75eb,RESELLER
+sabio.us,100229,RESELLER,96ed93aaa9795702
+hax.ortb.net,657462,RESELLER
+adsmovil.com,JKHGrlkjds47,RESELLER
+admanmedia.com,2425,RESELLER
+admanmedia.com,2426,RESELLER
+iion.io,10029,RESELLER,013a29748465dc57
+lijit.com,564990,RESELLER,fafdf38b16bf6b2b
+appnexus.com,14416,RESELLER,f5ab79cb980f11d1
+33across.com,001Pg00001aSzL4IAK,RESELLER
+anzu.io,6a3922d7e4fda28e5502502c,RESELLER
 #Adverty app-ads.txt END
