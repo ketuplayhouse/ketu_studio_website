@@ -337,7 +337,7 @@ smartadserver.com, 5530, RESELLER
 pubmatic.com, 166553, RESELLER, 5d62403b186f2ace
 videoheroes.tv, 212781, RESELLER, 064bc410192443d8
 algorix.co, 604559, RESELLER, 5b394c12fea27a1d
-# inventorypartnerdomain=admanmedia.com
+inventorypartnerdomain=admanmedia.com
 onetag.com, 5dcfcdb41f0856c, RESELLER
 risecodes.com, 5857d2ee263dc90002000001, RESELLER
 pubmatic.com, 160925, RESELLER, 5d62403b186f2ace
@@ -531,7 +531,7 @@ smartadserver.com, 4318, RESELLER, 060d053dcf45cbf3
 freewheel.tv, 535659-r-524565, RESELLER
 zmaticoo.com, 5135082, RESELLER
 adagio.io, 1482, RESELLER
-# inventorypartnerdomain=mangomob.net
+inventorypartnerdomain=mangomob.net
 loopme.com, 9724, RESELLER, 6c8d5f95897a5a3b
 adyoulike.com, 283e6e26614a07d896da0933c3719127, DIRECT
 pubmatic.com, 167515, RESELLER, 5d62403b186f2ace
