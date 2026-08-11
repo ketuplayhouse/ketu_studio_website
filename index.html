@@ -108,10 +108,19 @@
 
                     <!-- Card 1: EGO BALL Reveal -->
                     <div class="coverflow-card side-next" onclick="selectGameIndex(1)">
-                        <img src="assets/banner.png" alt="EGO BALL Banner Art" class="card-banner-img" style="filter:hue-rotate(180deg)">
+                        <img src="assets/ego_ball_banner.jpg" alt="EGO BALL Concept Art Banner" class="card-banner-img">
                         <div class="card-title-overlay">
-                            <span class="card-game-badge" style="background:var(--accent);color:#0a080c" data-i18n="game2-tag">⚡ EN DESARROLLO TEMPRANO (UNITY 3D)</span>
-                            <h3 class="card-game-title" style="color:var(--accent)" data-i18n="game2-title">EGO BALL</h3>
+                            <span class="card-game-badge" style="background:#ff3b5c;color:#ffffff" data-i18n="game2-tag">⚡ EN DESARROLLO TEMPRANO (UNITY 3D)</span>
+                            <h3 class="card-game-title" style="color:#ff6b8b" data-i18n="game2-title">EGO BALL</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Coming Soon Portal -->
+                    <div class="coverflow-card side-prev" onclick="selectGameIndex(2)">
+                        <img src="assets/coming_soon_portal.jpg" alt="Coming Soon Portal" class="card-banner-img portal-card-img">
+                        <div class="card-title-overlay">
+                            <span class="card-game-badge" style="background:#8a2be2;color:#ffffff" data-i18n="game3-tag">🌀 PRÓXIMO PROYECTO SECRET</span>
+                            <h3 class="card-game-title" style="color:#d8b4fe" data-i18n="game3-title">Próximamente...</h3>
                         </div>
                     </div>
                 </div>
@@ -167,7 +176,7 @@
     <!-- COVERFLOW 3D SWITCHER SCRIPT -->
     <script>
         let activeIndex = 0;
-        const totalGames = 2;
+        const totalGames = 3;
 
         function moveCoverflow(direction) {
             let nextIndex = activeIndex + direction;
@@ -182,16 +191,38 @@
             
             cards.forEach((card, idx) => {
                 card.classList.remove('active', 'side-prev', 'side-next');
+                
                 if (idx === index) {
                     card.classList.add('active');
-                } else if (idx < index) {
+                } else if (idx === (index - 1 + totalGames) % totalGames) {
                     card.classList.add('side-prev');
                 } else {
                     card.classList.add('side-next');
                 }
             });
 
+            updateAmbientGlow(index);
             renderActiveActions(index);
+        }
+
+        function updateAmbientGlow(index) {
+            const glow1 = document.querySelector('.bg-glow-1');
+            const glow2 = document.querySelector('.bg-glow-2');
+            if (!glow1 || !glow2) return;
+
+            if (index === 0) {
+                // Keyboard Escape (KeTu Blue & Pink)
+                glow1.style.background = '#85cbf5';
+                glow2.style.background = '#f481ac';
+            } else if (index === 1) {
+                // EGO BALL (KeTu Purple & Pink)
+                glow1.style.background = '#bf82f4';
+                glow2.style.background = '#f481ac';
+            } else if (index === 2) {
+                // Coming Soon (KeTu Green & Purple)
+                glow1.style.background = '#82d66f';
+                glow2.style.background = '#bf82f4';
+            }
         }
 
         function renderActiveActions(index) {
@@ -225,8 +256,20 @@
                         </svg>
                         <span>${discordText}</span>
                     </a>
-                    <span style="color:var(--accent);font-weight:800;font-size:0.85rem;background:rgba(0,242,254,0.12);padding:6px 14px;border-radius:10px;border:1px solid var(--accent)">
+                    <span style="color:#ff6b8b;font-weight:800;font-size:0.85rem;background:rgba(255,42,95,0.15);padding:6px 14px;border-radius:10px;border:1px solid #ff2a5f">
                         ${badgeText}
+                    </span>
+                `;
+            } else if (index === 2) {
+                // Coming Soon Actions
+                const discordNewsText = lang === 'es' ? '🔔 Novedades en Discord' : '🔔 News on Discord';
+                const secretBadgeText = lang === 'es' ? '🌀 Proyecto Secreto' : '🌀 Secret Project';
+                actionsBar.innerHTML = `
+                    <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="action-btn-secondary" style="background:#8a2be2;border-color:#b15eff">
+                        <span>${discordNewsText}</span>
+                    </a>
+                    <span style="color:#d8b4fe;font-weight:800;font-size:0.85rem;background:rgba(138,43,226,0.18);padding:6px 14px;border-radius:10px;border:1px solid #8a2be2">
+                        ${secretBadgeText}
                     </span>
                 `;
             }

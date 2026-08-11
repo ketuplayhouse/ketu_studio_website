@@ -1,24 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-  --bg-main: #0c0912;
-  --bg-card: rgba(22, 16, 30, 0.94);
-  --bg-nav: rgba(12, 9, 18, 0.96);
-  --primary: #ff4d94;
-  --secondary: #9d4edd;
-  --accent: #4cc9f0;
+  --bg-main: #0a0710;
+  --bg-card: #130d21;
+  --bg-nav: rgba(10, 7, 16, 0.96);
+  
+  /* KeTu Official Logo Palette */
+  --ketu-blue: #85cbf5;   /* 'K' */
+  --ketu-pink: #f481ac;   /* 'e' & Stars */
+  --ketu-purple: #bf82f4; /* 'T' */
+  --ketu-green: #82d66f;  /* 'u' */
+
+  --primary: var(--ketu-pink);
+  --secondary: var(--ketu-purple);
+  --accent: var(--ketu-blue);
   --gold-accent: #ffd166;
+  
   --text-light: #f5f0fa;
   --text-muted: #a79cb5;
-  --border-color: rgba(255, 77, 148, 0.3);
+  --border-color: rgba(244, 129, 172, 0.25);
   
-  --glow-pink: 0 0 30px rgba(255, 77, 148, 0.55);
-  --glow-purple: 0 0 30px rgba(157, 78, 221, 0.55);
-  --glow-cyan: 0 0 30px rgba(76, 201, 240, 0.55);
-  --glow-gold: 0 0 25px rgba(255, 209, 102, 0.65);
+  --glow-pink: 0 0 25px rgba(244, 129, 172, 0.45);
+  --glow-purple: 0 0 25px rgba(191, 130, 244, 0.45);
+  --glow-blue: 0 0 25px rgba(133, 203, 245, 0.45);
   
-  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s ease;
 }
 
 * {
@@ -133,7 +140,7 @@ main.studio-hub {
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: 1200px;
+  padding: 20px 0;
 }
 
 .coverflow-arrow {
@@ -141,72 +148,82 @@ main.studio-hub {
   top: 45%;
   transform: translateY(-50%);
   z-index: 50;
-  background: linear-gradient(135deg, rgba(255, 77, 148, 0.35) 0%, rgba(157, 78, 221, 0.45) 100%);
-  border: 2px solid var(--primary);
+  background: rgba(16, 12, 24, 0.9);
+  border: 3px solid rgba(255, 255, 255, 0.25);
   color: #ffffff;
-  width: 58px;
-  height: 85px;
+  width: 60px;
+  height: 90px;
   border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: var(--glow-pink);
-  backdrop-filter: blur(10px);
-  transition: var(--transition-fast);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 .coverflow-arrow:hover {
-  background: var(--primary);
+  background: rgba(30, 22, 45, 0.95);
   border-color: #ffffff;
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 0 35px rgba(255, 77, 148, 0.8);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
 }
 
-.coverflow-arrow.prev { left: 0; }
-.coverflow-arrow.next { right: 0; }
-.coverflow-arrow svg { width: 32px; height: 32px; fill: currentColor; }
+.coverflow-arrow.prev { left: 10px; }
+.coverflow-arrow.next { right: 10px; }
+.coverflow-arrow svg { width: 34px; height: 34px; fill: currentColor; }
 
 .coverflow-cards-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2.2rem;
   width: 100%;
-  max-width: 980px;
-  padding: 10px 0;
+  max-width: 1080px;
+  padding: 20px 0;
 }
 
 .coverflow-card {
   flex: 0 0 340px;
   height: 420px;
-  background: var(--bg-card);
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  background: #140e20;
+  border: 3px solid rgba(255, 255, 255, 0.15);
   border-radius: 22px;
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease;
-  opacity: 0.55;
-  transform: scale(0.85) rotateY(15deg);
+  transition: transform 0.35s ease, opacity 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  opacity: 0.6;
+  transform: scale(0.85);
   display: flex;
   flex-direction: column;
+  user-select: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 .coverflow-card.active {
-  flex: 0 0 380px;
-  height: 460px;
+  flex: 0 0 400px;
+  height: 480px;
   opacity: 1;
-  transform: scale(1.05) rotateY(0deg);
-  border-color: var(--primary);
-  box-shadow: var(--glow-pink);
+  transform: scale(1.05);
+  border-color: #ffffff;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.85), 0 0 0 3px rgba(255, 255, 255, 0.2);
   z-index: 30;
+  order: 2;
 }
 
-.coverflow-card.side-prev { transform: scale(0.88) rotateY(12deg); }
-.coverflow-card.side-next { transform: scale(0.88) rotateY(-12deg); }
+.coverflow-card.side-prev { transform: scale(0.85); order: 1; }
+.coverflow-card.side-next { transform: scale(0.85); order: 3; }
 
 .card-banner-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.portal-card-img { transition: transform 0.8s ease; }
+.coverflow-card.active .portal-card-img { animation: portalPulse 6s ease-in-out infinite alternate; }
+
+@keyframes portalPulse {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.05) rotate(3deg); }
+  100% { transform: scale(1) rotate(-3deg); }
+}
 .card-title-overlay {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -225,13 +242,15 @@ main.studio-hub {
 
 .action-btn-secondary {
   display: inline-flex; align-items: center; gap: 8px;
-  background: linear-gradient(135deg, rgba(255, 77, 148, 0.2) 0%, rgba(157, 78, 221, 0.3) 100%);
-  border: 2px solid var(--primary); color: #ffffff; font-weight: 800; font-size: 0.92rem;
-  padding: 0.75rem 1.5rem; border-radius: 14px; cursor: pointer; text-decoration: none; box-shadow: var(--glow-pink); transition: var(--transition-fast);
+  background: #231a34;
+  border: 2px solid rgba(255, 255, 255, 0.4); color: #ffffff; font-weight: 800; font-size: 0.92rem;
+  padding: 0.75rem 1.5rem; border-radius: 14px; cursor: pointer; text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6); transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
 }
-.action-btn-secondary:hover { background: var(--primary); box-shadow: 0 0 30px rgba(255, 77, 148, 0.8); transform: translateY(-2px); }
-.discord-action-btn { background: #5865F2; border-color: #7983f5; box-shadow: 0 0 25px rgba(88, 101, 242, 0.5); }
-.discord-action-btn:hover { background: #4752c4; }
+.action-btn-secondary:hover { background: #32254b; border-color: #ffffff; transform: translateY(-2px); }
+.action-btn-secondary:active { transform: translateY(1px); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8); }
+.discord-action-btn { background: #5865F2; border-color: #7983f5; box-shadow: 0 6px 16px rgba(88, 101, 242, 0.4); }
+.discord-action-btn:hover { background: #4752c4; border-color: #ffffff; }
 
 /* FLOATING SOCIAL WIDGET */
 .chilly-floating-widget-left {

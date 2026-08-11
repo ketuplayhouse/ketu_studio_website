@@ -17,6 +17,10 @@ const translations = {
     "game2-title": "EGO BALL",
     "game2-discord-btn": "👾 Comunidad Discord (Alpha)",
 
+    "game3-tag": "🌀 PRÓXIMO PROYECTO SECRET",
+    "game3-title": "Próximamente...",
+    "game3-discord-btn": "🔔 Recibir Novedades en Discord",
+
     // About Us Page
     "about-page-title": "Sobre KeTu Playhouse",
     "about-page-subtitle": "Estudio Independiente de Videojuegos Móviles",
@@ -106,6 +110,10 @@ const translations = {
     "game2-tag": "⚡ IN EARLY DEV (UNITY 3D)",
     "game2-title": "EGO BALL",
     "game2-discord-btn": "👾 Discord Community (Alpha)",
+
+    "game3-tag": "🌀 NEXT SECRET PROJECT",
+    "game3-title": "Coming Soon...",
+    "game3-discord-btn": "🔔 Get News on Discord",
 
     // About Us Page
     "about-page-title": "About KeTu Playhouse",
