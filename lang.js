@@ -1,25 +1,33 @@
-// Centralized Language & Coverflow Controller for KeTu Playhouse
+// ==========================================================================
+// KeTu Playhouse - Official Studio Controller & Multi-Language Engine
+// ==========================================================================
+
 const translations = {
   es: {
-    // Navigation
+    // Header & Navigation
+    "nav-tagline": "Estudio de Videojuegos",
     "nav-home": "Inicio",
     "nav-support": "Soporte",
     "nav-about": "Sobre Nosotros",
     "back-btn-text": "← Volver al Inicio",
 
-    // Games Data
-    "game1-tag": "🎮 PUBLICADO EN GOOGLE PLAY",
-    "game1-title": "Keyboard Escape: Speed Up",
-    "game1-trailer-btn": "▶ Ver Tráiler Oficial (YouTube)",
-    "badge-alt": "Disponible en Google Play",
+    // Games Subtitles & Badges
+    "game2-subtext": "BLADE ARENA PVP (UNITY 3D)",
+    "game3-maintext": "Próximamente",
+    "game3-subtext": "PROYECTO SECRETO",
 
-    "game2-tag": "⚡ EN DESARROLLO TEMPRANO (UNITY 3D)",
-    "game2-title": "EGO BALL",
-    "game2-discord-btn": "👾 Comunidad Discord (Alpha)",
+    // Action Hub (CTAs)
+    "btn-watch-trailer": "Ver Tráiler Oficial",
+    "btn-discord-alpha": "Comunidad Discord (Alpha)",
+    "badge-unity-dev": "⚡ Prototipo Unity 3D",
+    "btn-discord-news": "Novedades en Discord",
+    "badge-secret-project": "🌀 Proyecto Secreto",
 
-    "game3-tag": "🌀 PRÓXIMO PROYECTO SECRET",
-    "game3-title": "Próximamente...",
-    "game3-discord-btn": "🔔 Recibir Novedades en Discord",
+    // Institutional Footer
+    "footer-developer": "KeTu Playhouse Inc.",
+    "link-privacy": "Política de Privacidad",
+    "link-terms": "Términos de Uso",
+    "footer-copy": "© 2026 KeTu Playhouse Inc. Todos los derechos reservados.",
 
     // About Us Page
     "about-page-title": "Sobre KeTu Playhouse",
@@ -86,34 +94,34 @@ const translations = {
     "terms-sec7-title": "7. Limitación de Responsabilidad",
     "terms-sec7-p1": "Nuestros juegos y servicios se proporcionan 'tal cual'. KeTu Playhouse no se hace responsable de la pérdida de datos por desinstalación o fallos de hardware.",
     "terms-sec8-title": "8. Soporte Técnico y Contacto",
-    "terms-sec8-p1": "Para consultas legales, informes de fallos o soporte técnico, contáctanos a:",
-
-    // Footer
-    "footer-developer": "Developer: KeTu Playhouse Inc.",
-    "link-privacy": "Política de Privacidad",
-    "link-terms": "Términos de Uso",
-    "footer-copy": "© 2026 KeTu Playhouse Inc. Todos los derechos reservados."
+    "terms-sec8-p1": "Para consultas legales, informes de fallos o soporte técnico, contáctanos a:"
   },
+
   en: {
-    // Navigation
+    // Header & Navigation
+    "nav-tagline": "Indie Game Studio",
     "nav-home": "Home",
     "nav-support": "Support",
     "nav-about": "About Us",
     "back-btn-text": "← Back to Home",
 
-    // Games Data
-    "game1-tag": "🎮 PUBLISHED ON GOOGLE PLAY",
-    "game1-title": "Keyboard Escape: Speed Up",
-    "game1-trailer-btn": "▶ Watch Official Trailer (YouTube)",
-    "badge-alt": "Get it on Google Play",
+    // Games Subtitles & Badges
+    "game2-subtext": "BLADE ARENA PVP (UNITY 3D)",
+    "game3-maintext": "Coming Soon",
+    "game3-subtext": "SECRET PROJECT",
 
-    "game2-tag": "⚡ IN EARLY DEV (UNITY 3D)",
-    "game2-title": "EGO BALL",
-    "game2-discord-btn": "👾 Discord Community (Alpha)",
+    // Action Hub (CTAs)
+    "btn-watch-trailer": "Watch Official Trailer",
+    "btn-discord-alpha": "Discord Community (Alpha)",
+    "badge-unity-dev": "⚡ Unity 3D Prototype",
+    "btn-discord-news": "Get News on Discord",
+    "badge-secret-project": "🌀 Secret Project",
 
-    "game3-tag": "🌀 NEXT SECRET PROJECT",
-    "game3-title": "Coming Soon...",
-    "game3-discord-btn": "🔔 Get News on Discord",
+    // Institutional Footer
+    "footer-developer": "KeTu Playhouse Inc.",
+    "link-privacy": "Privacy Policy",
+    "link-terms": "Terms of Service",
+    "footer-copy": "© 2026 KeTu Playhouse Inc. All rights reserved.",
 
     // About Us Page
     "about-page-title": "About KeTu Playhouse",
@@ -180,20 +188,169 @@ const translations = {
     "terms-sec7-title": "7. Limitation of Liability",
     "terms-sec7-p1": "Our games and services are provided 'as is'. KeTu Playhouse is not responsible for loss of progress or data due to uninstallation or hardware failure.",
     "terms-sec8-title": "8. Technical Support and Contact",
-    "terms-sec8-p1": "For legal inquiries, bug reports, or technical support, contact us at:",
-
-    // Footer
-    "footer-developer": "Developer: KeTu Playhouse Inc.",
-    "link-privacy": "Privacy Policy",
-    "link-terms": "Terms of Service",
-    "footer-copy": "© 2026 KeTu Playhouse Inc. All rights reserved."
+    "terms-sec8-p1": "For legal inquiries, bug reports, or technical support, contact us at:"
   }
 };
+
+// ==========================================================================
+// CINEMATIC SLIDER & INTERACTION CONTROLLER
+// ==========================================================================
+
+let activeGameIndex = 0;
+const totalGames = 3;
+
+// Game ambient spotlight palette mapping
+const spotlightColors = [
+  "rgba(244, 129, 172, 0.35)",  // Game 0: KeTu Pink & Cyan Spotlight
+  "rgba(191, 130, 244, 0.40)",  // Game 1: EGO BALL Cosmic Purple / Crimson
+  "rgba(130, 214, 111, 0.35)"   // Game 2: Secret Portal Green Aura
+];
+
+function selectGameIndex(index) {
+  if (index < 0 || index >= totalGames) return;
+  activeGameIndex = index;
+
+  // 1. Update Card Active States & Smooth Track Translate
+  const cards = document.querySelectorAll('.game-showcase-card');
+  const track = document.getElementById('showcase-track');
+
+  cards.forEach((card, idx) => {
+    if (idx === activeGameIndex) {
+      card.classList.add('active-card');
+    } else {
+      card.classList.remove('active-card');
+    }
+  });
+
+  // Mobile / Desktop Smooth Track Shift
+  if (track) {
+    if (window.innerWidth <= 768) {
+      // Centering offset calculation for mobile
+      const cardWidth = cards[0] ? cards[0].offsetWidth : 280;
+      const gap = 20;
+      const offset = - (activeGameIndex * (cardWidth + gap)) + (window.innerWidth - cardWidth) / 2 - gap;
+      track.style.transform = `translateX(${offset}px)`;
+    } else {
+      track.style.transform = `none`;
+    }
+  }
+
+  // 2. Smooth Ambient Spotlight Transition
+  const spotlight = document.getElementById('studio-spotlight');
+  if (spotlight && spotlightColors[activeGameIndex]) {
+    spotlight.style.background = spotlightColors[activeGameIndex];
+  }
+
+  // 3. Smooth Action Panel Crossfade
+  const panels = document.querySelectorAll('.cta-action-panel');
+  panels.forEach((panel, idx) => {
+    if (idx === activeGameIndex) {
+      panel.classList.add('panel-active');
+    } else {
+      panel.classList.remove('panel-active');
+    }
+  });
+}
+
+function moveSlide(direction) {
+  let next = activeGameIndex + direction;
+  if (next < 0) next = totalGames - 1;
+  if (next >= totalGames) next = 0;
+  selectGameIndex(next);
+}
+
+// Touch Gestures & Mouse Drag Support for Mobile & Desktop
+let touchStartX = 0;
+let touchEndX = 0;
+
+function initTouchControls() {
+  const viewport = document.getElementById('slider-viewport');
+  if (!viewport) return;
+
+  viewport.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  viewport.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  // Mouse Drag Support
+  let isMouseDown = false;
+  viewport.addEventListener('mousedown', (e) => {
+    isMouseDown = true;
+    touchStartX = e.clientX;
+  });
+
+  viewport.addEventListener('mouseup', (e) => {
+    if (!isMouseDown) return;
+    isMouseDown = false;
+    touchEndX = e.clientX;
+    handleSwipe();
+  });
+}
+
+function handleSwipe() {
+  const swipeThreshold = 45;
+  const diff = touchEndX - touchStartX;
+  if (Math.abs(diff) > swipeThreshold) {
+    if (diff < 0) {
+      moveSlide(1); // Swipe left -> Next game
+    } else {
+      moveSlide(-1); // Swipe right -> Prev game
+    }
+  }
+}
+
+// Keyboard Navigation
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') {
+    moveSlide(-1);
+  } else if (e.key === 'ArrowRight') {
+    moveSlide(1);
+  }
+});
+
+// Window Resize handling for slider alignment
+window.addEventListener('resize', () => {
+  selectGameIndex(activeGameIndex);
+});
+
+// ==========================================================================
+// LANGUAGE SYSTEM & DROPDOWN PILL
+// ==========================================================================
+
+function toggleLangDropdown(event) {
+  event.stopPropagation();
+  const pill = document.getElementById('lang-dropdown-pill');
+  if (pill) {
+    pill.classList.toggle('open');
+  }
+}
+
+function selectLanguage(lang) {
+  if (lang !== 'es' && lang !== 'en') return;
+  localStorage.setItem('ketu_lang', lang);
+  updateContent(lang);
+
+  const pill = document.getElementById('lang-dropdown-pill');
+  if (pill) pill.classList.remove('open');
+}
+
+// Close language dropdown on outside click
+document.addEventListener('click', (e) => {
+  const pill = document.getElementById('lang-dropdown-pill');
+  if (pill && !pill.contains(e.target)) {
+    pill.classList.remove('open');
+  }
+});
 
 function updateContent(lang) {
   const dictionary = translations[lang];
   if (!dictionary) return;
 
+  // In-place text injection
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.getAttribute("data-i18n");
     if (dictionary[key] !== undefined) {
@@ -201,25 +358,28 @@ function updateContent(lang) {
     }
   });
 
-  document.querySelectorAll("[data-i18n-alt]").forEach(element => {
-    const key = element.getAttribute("data-i18n-alt");
-    if (dictionary[key] !== undefined) {
-      element.setAttribute("alt", dictionary[key]);
+  // Current language indicator in dropdown pill
+  const currentLangText = document.getElementById('current-lang-text');
+  if (currentLangText) {
+    currentLangText.textContent = lang === 'es' ? 'Español' : 'English';
+  }
+
+  // Update active state in menu items
+  const menuItems = document.querySelectorAll('.lang-menu-item');
+  menuItems.forEach(item => {
+    if (item.getAttribute('onclick').includes(lang)) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
     }
   });
-
-  document.querySelectorAll(".lang-btn").forEach(btn => btn.classList.remove("active"));
-  const activeBtn = document.getElementById(`lang-btn-${lang}`);
-  if (activeBtn) activeBtn.classList.add("active");
 
   document.documentElement.setAttribute("lang", lang);
 }
 
-function changeLanguage(lang) {
-  if (lang !== "es" && lang !== "en") return;
-  localStorage.setItem("ketu_lang", lang);
-  updateContent(lang);
-}
+// ==========================================================================
+// YOUTUBE TRAILER MODAL
+// ==========================================================================
 
 function openYouTubeTrailer() {
   const videoId = "5XQYpU8MBPI";
@@ -235,7 +395,7 @@ function openYouTubeTrailer() {
       modal.className = 'video-modal-overlay';
       modal.innerHTML = `
         <div class="video-modal-card">
-          <button class="video-modal-close" onclick="closeYouTubeTrailer()">&times;</button>
+          <button class="video-modal-close" onclick="closeYouTubeTrailer()" aria-label="Cerrar">&times;</button>
           <div class="video-iframe-wrapper">
             <iframe id="youtube-iframe" src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
@@ -259,6 +419,15 @@ function closeYouTubeTrailer() {
   }
 }
 
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeYouTubeTrailer();
+});
+
+// ==========================================================================
+// INITIALIZATION
+// ==========================================================================
+
 document.addEventListener("DOMContentLoaded", () => {
   let savedLang = localStorage.getItem("ketu_lang");
   if (!savedLang) {
@@ -266,4 +435,6 @@ document.addEventListener("DOMContentLoaded", () => {
     savedLang = browserLang.startsWith("es") ? "es" : "en";
   }
   updateContent(savedLang);
+  selectGameIndex(0);
+  initTouchControls();
 });

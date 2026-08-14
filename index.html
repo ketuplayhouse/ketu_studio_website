@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KeTu Playhouse - Estudio de Videojuegos Móviles</title>
+    <title>KeTu Playhouse - Official Game Studio</title>
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="KeTu Playhouse: Estudio indie creador de Keyboard Escape: Speed Up (Google Play) y EGO BALL. Descubre nuestros juegos móviles arcade.">
@@ -11,16 +11,16 @@
     <meta name="author" content="KeTu Playhouse">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="KeTu Playhouse - Estudio de Videojuegos Móviles">
-    <meta property="og:description" content="Creadores de juegos móviles dinámicos y electrizantes. ¡Prueba Keyboard Escape y descubre EGO BALL!">
+    <meta property="og:title" content="KeTu Playhouse - Official Game Studio">
+    <meta property="og:description" content="Estudio de videojuegos independiente creador de experiencias móviles arcade electrizantes.">
     <meta property="og:image" content="assets/banner.png">
 
-    <!-- Fonts -->
+    <!-- Google Fonts Preconnect & Typographies -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Cinzel:wght@700;900&family=Teko:wght@700&display=swap">
 
     <!-- Stylesheets & Favicon -->
     <link rel="stylesheet" href="style.css">
@@ -44,240 +44,207 @@
     }
     </script>
 
-    <!-- Language & Script -->
+    <!-- Language & Interaction Controller -->
     <script src="lang.js" defer></script>
 </head>
 <body class="main-hub-body">
-    <!-- Studio Animated Candy Neon Background Layer -->
-    <div class="bg-fixed-canvas">
-        <div class="bg-glow bg-glow-1"></div>
-        <div class="bg-glow bg-glow-2"></div>
+
+    <!-- Studio Cinematic Stage Background & Ambient Spotlight -->
+    <div class="studio-background">
+        <div class="studio-spotlight" id="studio-spotlight"></div>
+        <div class="studio-vignette"></div>
     </div>
 
-    <!-- Header Navigation (Chillyroom Style Roof Bar) -->
-    <header>
-        <nav>
-            <a href="index.html" class="logo-container">
-                <img src="assets/logo.png" alt="KeTu Playhouse Logo" class="logo-img" id="nav-logo">
-                <span class="logo-text">KeTu Playhouse</span>
+    <!-- Editorial Studio Header (ChillyRoom Style - 100px) -->
+    <header class="chilly-header">
+        <nav class="header-nav-container">
+            <!-- Studio Branding -->
+            <a href="index.html" class="brand-identity">
+                <img src="assets/logo.png" alt="KeTu Playhouse Logo" class="studio-logo-img">
+                <div class="studio-title-block">
+                    <span class="studio-name">KeTu Playhouse</span>
+                    <span class="studio-tagline" data-i18n="nav-tagline">Indie Game Studio</span>
+                </div>
             </a>
-            <ul class="nav-links">
-                <li><a href="#" onclick="selectGameIndex(0); return false;" class="active" data-i18n="nav-home">Inicio</a></li>
-                <li><a href="mailto:ketusoporte@gmail.com?subject=Soporte%20KeTu%20Playhouse" data-i18n="nav-support">Soporte</a></li>
-                <li><a href="about.html" data-i18n="nav-about">Sobre Nosotros</a></li>
+
+            <!-- Editorial Nav Links -->
+            <ul class="header-links-group">
+                <li class="header-link-item"><a href="#" onclick="selectGameIndex(0); return false;" class="active" data-i18n="nav-home">Inicio</a></li>
+                <li class="header-link-item"><a href="mailto:ketusoporte@gmail.com?subject=Soporte%20KeTu%20Playhouse" data-i18n="nav-support">Soporte</a></li>
+                <li class="header-link-item"><a href="about.html" data-i18n="nav-about">Sobre Nosotros</a></li>
             </ul>
-            <div class="lang-selector">
-                <button onclick="changeLanguage('es')" id="lang-btn-es" class="lang-btn active">
-                    <span class="flag">🇪🇸</span> <span class="lang-code">ES</span>
-                </button>
-                <button onclick="changeLanguage('en')" id="lang-btn-en" class="lang-btn">
-                    <span class="flag">🇺🇸</span> <span class="lang-code">EN</span>
-                </button>
+
+            <!-- Right Actions: Language Dropdown Pill -->
+            <div class="header-actions-right">
+                <div class="lang-dropdown-pill" id="lang-dropdown-pill">
+                    <button class="lang-pill-btn" onclick="toggleLangDropdown(event)" aria-label="Select Language">
+                        <span id="current-lang-text">Español</span>
+                        <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                    </button>
+                    <div class="lang-dropdown-menu" id="lang-dropdown-menu">
+                        <button class="lang-menu-item" onclick="selectLanguage('es')">
+                            <span>🇪🇸 Español</span>
+                        </button>
+                        <button class="lang-menu-item" onclick="selectLanguage('en')">
+                            <span>🇺🇸 English</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
 
-    <!-- MAIN STUDIO HUB CONTENT -->
-    <main class="studio-hub">
-        <!-- COVERFLOW 3D GAME CAROUSEL SECTION -->
-        <section class="coverflow-section">
-            <div class="coverflow-viewport">
-                <!-- Gigantic Directional Arrow Buttons (Chillyroom Style 《 and 》) -->
-                <button class="coverflow-arrow prev" onclick="moveCoverflow(-1)" title="Anterior">
+    <!-- MAIN STUDIO HUB: CINEMATIC SHOWCASE SLIDER -->
+    <main class="studio-hub-container">
+        <section class="chilly-showcase-section">
+            <div class="showcase-slider-viewport" id="slider-viewport">
+                
+                <!-- Minimalist Glass Chevron Arrows -->
+                <button class="slider-arrow-btn prev-arrow" onclick="moveSlide(-1)" title="Anterior" aria-label="Previous Game">
                     <svg viewBox="0 0 24 24">
                         <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
                     </svg>
                 </button>
                 
-                <button class="coverflow-arrow next" onclick="moveCoverflow(1)" title="Siguiente">
+                <button class="slider-arrow-btn next-arrow" onclick="moveSlide(1)" title="Siguiente" aria-label="Next Game">
                     <svg viewBox="0 0 24 24">
                         <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
                     </svg>
                 </button>
 
-                <!-- COVERFLOW CARDS STACK -->
-                <div class="coverflow-cards-wrapper" id="coverflow-wrapper">
-                    <!-- Card 0: Keyboard Escape: Speed Up -->
-                    <div class="coverflow-card active" onclick="selectGameIndex(0)">
-                        <img src="assets/banner.png" alt="Keyboard Escape Banner Art" class="card-banner-img">
-                        <div class="card-title-overlay">
-                            <span class="card-game-badge" data-i18n="game1-tag">🎮 PUBLICADO EN GOOGLE PLAY</span>
-                            <h3 class="card-game-title" data-i18n="game1-title">Keyboard Escape: Speed Up</h3>
+                <!-- CONTINUOUS SLIDER TRACK (3 Game Showcases in 2-Layer Composition) -->
+                <div class="showcase-cards-track" id="showcase-track">
+                    
+                    <!-- Game 0: Keyboard Escape: Speed Up -->
+                    <div class="game-showcase-card active-card" onclick="selectGameIndex(0)" data-index="0">
+                        <div class="card-art-container">
+                            <img src="assets/banner.png" alt="Keyboard Escape Key Art" class="card-art-image">
+                            <div class="card-art-gradient"></div>
+                        </div>
+                        <div class="card-logo-layer">
+                            <div class="game-vector-logo logo-keyboard-escape">
+                                <span class="logo-ke-main">Keyboard Escape</span>
+                                <span class="logo-ke-sub">SPEED UP</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Card 1: EGO BALL Reveal -->
-                    <div class="coverflow-card side-next" onclick="selectGameIndex(1)">
-                        <img src="assets/ego_ball_banner.jpg" alt="EGO BALL Concept Art Banner" class="card-banner-img">
-                        <div class="card-title-overlay">
-                            <span class="card-game-badge" style="background:#ff3b5c;color:#ffffff" data-i18n="game2-tag">⚡ EN DESARROLLO TEMPRANO (UNITY 3D)</span>
-                            <h3 class="card-game-title" style="color:#ff6b8b" data-i18n="game2-title">EGO BALL</h3>
+                    <!-- Game 1: EGO BALL -->
+                    <div class="game-showcase-card" onclick="selectGameIndex(1)" data-index="1">
+                        <div class="card-art-container">
+                            <img src="assets/ego_ball_banner.jpg" alt="EGO BALL Key Art" class="card-art-image">
+                            <div class="card-art-gradient"></div>
+                        </div>
+                        <div class="card-logo-layer">
+                            <div class="game-vector-logo logo-egoball">
+                                <span class="logo-ego-main">EGO BALL</span>
+                                <span class="logo-ego-sub" data-i18n="game2-subtext">BLADE ARENA PVP</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Card 2: Coming Soon Portal -->
-                    <div class="coverflow-card side-prev" onclick="selectGameIndex(2)">
-                        <img src="assets/coming_soon_portal.jpg" alt="Coming Soon Portal" class="card-banner-img portal-card-img">
-                        <div class="card-title-overlay">
-                            <span class="card-game-badge" style="background:#8a2be2;color:#ffffff" data-i18n="game3-tag">🌀 PRÓXIMO PROYECTO SECRET</span>
-                            <h3 class="card-game-title" style="color:#d8b4fe" data-i18n="game3-title">Próximamente...</h3>
+                    <!-- Game 2: Secret Project Portal -->
+                    <div class="game-showcase-card" onclick="selectGameIndex(2)" data-index="2">
+                        <div class="card-art-container">
+                            <img src="assets/coming_soon_portal.jpg" alt="Secret Project Portal Art" class="card-art-image">
+                            <div class="card-art-gradient"></div>
+                        </div>
+                        <div class="card-logo-layer">
+                            <div class="game-vector-logo logo-secret-project">
+                                <span class="logo-secret-main" data-i18n="game3-maintext">Próximamente</span>
+                                <span class="logo-secret-sub" data-i18n="game3-subtext">PROYECTO SECRETO</span>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 
-            <!-- DYNAMIC ACTION BUTTONS BAR (Directly Underneath the Active Center Card) -->
-            <div class="active-actions-bar" id="active-actions-bar">
-                <!-- Actions rendered dynamically based on active card -->
-            </div>
-        </section>
-
-        <!-- DISCREET STUDIO FOOTER (1-Line Bottom Bar) -->
-        <footer class="chillyroom-studio-footer">
-            <div class="footer-studio-line">
-                <span data-i18n="footer-developer">Developer: KeTu Playhouse Inc.</span>
-                <span>|</span>
-                <a href="privacy-policy.html" id="link-privacy" data-i18n="link-privacy">Política de Privacidad</a>
-                <span>|</span>
-                <a href="terms-of-service.html" id="link-terms" data-i18n="link-terms">Términos de Uso</a>
-                <span>|</span>
-                <span data-i18n="footer-copy">&copy; 2026 KeTu Playhouse Inc. Todos los derechos reservados.</span>
-            </div>
-        </footer>
-    </main>
-
-    <!-- FLOATING SOCIAL WIDGET (Bottom-Left Corner) -->
-    <div class="chilly-floating-widget-left">
-        <div class="widget-studio-badge">KeTu</div>
-        <div class="widget-social-icons">
-            <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="widget-social-link" title="Discord">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
-                </svg>
-            </a>
-            <a href="https://youtube.com/@ketuplayhouse" target="_blank" rel="noopener noreferrer" class="widget-social-link" title="YouTube">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-            </a>
-            <a href="https://tiktok.com/@ketuplayhouse" target="_blank" rel="noopener noreferrer" class="widget-social-link" title="TikTok">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.97-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.29-2.87 1.13-5.7 3.58-7.18 1.25-.77 2.72-1.16 4.19-1.14.03 1.41.01 2.82.01 4.23-.97-.01-1.95.27-2.76.81-.88.58-1.47 1.52-1.6 2.58-.23 1.5.52 3.04 1.86 3.73.9.47 1.97.55 2.95.27 1.05-.29 1.95-1.02 2.37-2.02.26-.6.37-1.27.36-1.93-.01-4.38 0-8.77-.01-13.15z"/>
-                </svg>
-            </a>
-            <a href="https://instagram.com/ketuplayhouse" target="_blank" rel="noopener noreferrer" class="widget-social-link" title="Instagram">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-            </a>
-        </div>
-    </div>
-
-    <!-- COVERFLOW 3D SWITCHER SCRIPT -->
-    <script>
-        let activeIndex = 0;
-        const totalGames = 3;
-
-        function moveCoverflow(direction) {
-            let nextIndex = activeIndex + direction;
-            if (nextIndex < 0) nextIndex = totalGames - 1;
-            if (nextIndex >= totalGames) nextIndex = 0;
-            selectGameIndex(nextIndex);
-        }
-
-        function selectGameIndex(index) {
-            activeIndex = index;
-            const cards = document.querySelectorAll('.coverflow-card');
-            
-            cards.forEach((card, idx) => {
-                card.classList.remove('active', 'side-prev', 'side-next');
+            <!-- UNIFIED ACTION BUTTONS HUB (Zero layout flicker, smooth fade) -->
+            <div class="showcase-action-hub">
                 
-                if (idx === index) {
-                    card.classList.add('active');
-                } else if (idx === (index - 1 + totalGames) % totalGames) {
-                    card.classList.add('side-prev');
-                } else {
-                    card.classList.add('side-next');
-                }
-            });
-
-            updateAmbientGlow(index);
-            renderActiveActions(index);
-        }
-
-        function updateAmbientGlow(index) {
-            const glow1 = document.querySelector('.bg-glow-1');
-            const glow2 = document.querySelector('.bg-glow-2');
-            if (!glow1 || !glow2) return;
-
-            if (index === 0) {
-                // Keyboard Escape (KeTu Blue & Pink)
-                glow1.style.background = '#85cbf5';
-                glow2.style.background = '#f481ac';
-            } else if (index === 1) {
-                // EGO BALL (KeTu Purple & Pink)
-                glow1.style.background = '#bf82f4';
-                glow2.style.background = '#f481ac';
-            } else if (index === 2) {
-                // Coming Soon (KeTu Green & Purple)
-                glow1.style.background = '#82d66f';
-                glow2.style.background = '#bf82f4';
-            }
-        }
-
-        function renderActiveActions(index) {
-            const actionsBar = document.getElementById('active-actions-bar');
-            if (!actionsBar) return;
-
-            const lang = localStorage.getItem('ketu_lang') || 'es';
-
-            if (index === 0) {
-                // Keyboard Escape Actions
-                const trailerText = lang === 'es' ? '▶ Ver Tráiler Oficial' : '▶ Watch Official Trailer';
-                actionsBar.innerHTML = `
-                    <a href="https://play.google.com/store/apps/details?id=com.ketuplayhouse.keyboardescape" target="_blank" rel="noopener noreferrer" class="action-btn-store">
-                        <img src="assets/google_play_badge.png" alt="Google Play Store">
+                <!-- Panel 0: Keyboard Escape CTAs -->
+                <div class="cta-action-panel panel-active" id="action-panel-0">
+                    <a href="https://play.google.com/store/apps/details?id=com.ketuplayhouse.keyboardescape" target="_blank" rel="noopener noreferrer" class="cta-store-badge" aria-label="Google Play Store">
+                        <img src="assets/google_play_badge.png" alt="Disponible en Google Play">
                     </a>
-                    <button class="action-btn-secondary" onclick="openYouTubeTrailer()">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <button class="cta-action-btn" onclick="openYouTubeTrailer()">
+                        <svg viewBox="0 0 24 24">
                             <path d="M8 5v14l11-7z"/>
                         </svg>
-                        <span>${trailerText}</span>
+                        <span data-i18n="btn-watch-trailer">Ver Tráiler Oficial</span>
                     </button>
-                `;
-            } else if (index === 1) {
-                // EGO BALL Actions
-                const discordText = lang === 'es' ? '👾 Comunidad Discord (Alpha)' : '👾 Discord Community (Alpha)';
-                const badgeText = lang === 'es' ? '⚡ Prototipo Unity 3D' : '⚡ Early Unity 3D Prototype';
-                actionsBar.innerHTML = `
-                    <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="action-btn-secondary discord-action-btn">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                </div>
+
+                <!-- Panel 1: EGO BALL CTAs -->
+                <div class="cta-action-panel" id="action-panel-1">
+                    <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="cta-action-btn cta-discord-btn">
+                        <svg viewBox="0 0 24 24">
                             <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
                         </svg>
-                        <span>${discordText}</span>
+                        <span data-i18n="btn-discord-alpha">Comunidad Discord (Alpha)</span>
                     </a>
-                    <span style="color:#ff6b8b;font-weight:800;font-size:0.85rem;background:rgba(255,42,95,0.15);padding:6px 14px;border-radius:10px;border:1px solid #ff2a5f">
-                        ${badgeText}
-                    </span>
-                `;
-            } else if (index === 2) {
-                // Coming Soon Actions
-                const discordNewsText = lang === 'es' ? '🔔 Novedades en Discord' : '🔔 News on Discord';
-                const secretBadgeText = lang === 'es' ? '🌀 Proyecto Secreto' : '🌀 Secret Project';
-                actionsBar.innerHTML = `
-                    <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="action-btn-secondary" style="background:#8a2be2;border-color:#b15eff">
-                        <span>${discordNewsText}</span>
-                    </a>
-                    <span style="color:#d8b4fe;font-weight:800;font-size:0.85rem;background:rgba(138,43,226,0.18);padding:6px 14px;border-radius:10px;border:1px solid #8a2be2">
-                        ${secretBadgeText}
-                    </span>
-                `;
-            }
-        }
+                    <div class="cta-status-pill" data-i18n="badge-unity-dev">
+                        ⚡ Prototipo Unity 3D
+                    </div>
+                </div>
 
-        document.addEventListener("DOMContentLoaded", () => {
-            selectGameIndex(0);
-        });
-    </script>
+                <!-- Panel 2: Secret Project CTAs -->
+                <div class="cta-action-panel" id="action-panel-2">
+                    <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="cta-action-btn cta-discord-btn">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                        </svg>
+                        <span data-i18n="btn-discord-news">Novedades en Discord</span>
+                    </a>
+                    <div class="cta-status-pill" data-i18n="badge-secret-project">
+                        🌀 Proyecto Secreto
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- INSTITUTIONAL STUDIO FOOTER (Clean ChillyRoom Format) -->
+    <footer class="studio-institutional-footer">
+        <div class="footer-inner-content">
+            <!-- Studio Legal & Links -->
+            <div class="footer-links-cluster">
+                <span data-i18n="footer-developer">KeTu Playhouse Inc.</span>
+                <span class="footer-divider">|</span>
+                <a href="privacy-policy.html" id="link-privacy" data-i18n="link-privacy">Política de Privacidad</a>
+                <span class="footer-divider">|</span>
+                <a href="terms-of-service.html" id="link-terms" data-i18n="link-terms">Términos de Uso</a>
+                <span class="footer-divider">|</span>
+                <span data-i18n="footer-copy">&copy; 2026 KeTu Playhouse Inc. All rights reserved.</span>
+            </div>
+
+            <!-- Official Studio Social Channels -->
+            <div class="footer-social-strip">
+                <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Discord" aria-label="Discord">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                    </svg>
+                </a>
+                <a href="https://youtube.com/@ketuplayhouse" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="YouTube" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+                <a href="https://tiktok.com/@ketuplayhouse" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="TikTok" aria-label="TikTok">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.97-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.29-2.87 1.13-5.7 3.58-7.18 1.25-.77 2.72-1.16 4.19-1.14.03 1.41.01 2.82.01 4.23-.97-.01-1.95.27-2.76.81-.88.58-1.47 1.52-1.6 2.58-.23 1.5.52 3.04 1.86 3.73.9.47 1.97.55 2.95.27 1.05-.29 1.95-1.02 2.37-2.02.26-.6.37-1.27.36-1.93-.01-4.38 0-8.77-.01-13.15z"/>
+                    </svg>
+                </a>
+                <a href="https://instagram.com/ketuplayhouse" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Instagram" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
