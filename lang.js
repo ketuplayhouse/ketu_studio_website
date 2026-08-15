@@ -1,4 +1,4 @@
-// Centralized Language & Coverflow Controller for KeTu Playhouse
+// Centralized Language & Studio Controller for KeTu Playhouse
 const translations = {
   es: {
     // Navigation
@@ -8,18 +8,18 @@ const translations = {
     "back-btn-text": "← Volver al Inicio",
 
     // Games Data
-    "game1-tag": "🎮 PUBLICADO EN GOOGLE PLAY",
+    "game1-tag": "PUBLICADO EN GOOGLE PLAY",
     "game1-title": "Keyboard Escape: Speed Up",
-    "game1-trailer-btn": "▶ Ver Tráiler Oficial (YouTube)",
+    "game1-trailer-btn": "Ver Tráiler Oficial",
     "badge-alt": "Disponible en Google Play",
 
-    "game2-tag": "⚡ EN DESARROLLO TEMPRANO (UNITY 3D)",
+    "game2-tag": "EN DESARROLLO TEMPRANO (UNITY 3D)",
     "game2-title": "EGO BALL",
-    "game2-discord-btn": "👾 Comunidad Discord (Alpha)",
+    "game2-discord-btn": "Comunidad Discord (Alpha)",
 
-    "game3-tag": "🌀 PRÓXIMO PROYECTO SECRET",
+    "game3-tag": "PRÓXIMO PROYECTO SECRET",
     "game3-title": "Próximamente...",
-    "game3-discord-btn": "🔔 Recibir Novedades en Discord",
+    "game3-discord-btn": "Novedades en Discord",
 
     // About Us Page
     "about-page-title": "Sobre KeTu Playhouse",
@@ -102,81 +102,77 @@ const translations = {
     "back-btn-text": "← Back to Home",
 
     // Games Data
-    "game1-tag": "🎮 PUBLISHED ON GOOGLE PLAY",
+    "game1-tag": "PUBLISHED ON GOOGLE PLAY",
     "game1-title": "Keyboard Escape: Speed Up",
-    "game1-trailer-btn": "▶ Watch Official Trailer (YouTube)",
+    "game1-trailer-btn": "Watch Official Trailer",
     "badge-alt": "Get it on Google Play",
 
-    "game2-tag": "⚡ IN EARLY DEV (UNITY 3D)",
+    "game2-tag": "IN EARLY DEV (UNITY 3D)",
     "game2-title": "EGO BALL",
-    "game2-discord-btn": "👾 Discord Community (Alpha)",
+    "game2-discord-btn": "Discord Community (Alpha)",
 
-    "game3-tag": "🌀 NEXT SECRET PROJECT",
+    "game3-tag": "NEXT SECRET PROJECT",
     "game3-title": "Coming Soon...",
-    "game3-discord-btn": "🔔 Get News on Discord",
+    "game3-discord-btn": "Get News on Discord",
 
     // About Us Page
     "about-page-title": "About KeTu Playhouse",
     "about-page-subtitle": "Indie Mobile Game Development Studio",
-    "about-page-p1": "At <strong>KeTu Playhouse</strong>, we were born with the vision of designing independent mobile experiences that are ultra-fast, dynamic, and addictive right in the palm of your hand.",
+    "about-page-p1": "At <strong>KeTu Playhouse</strong>, we were born with the vision of crafting indie mobile gaming experiences that are ultra-fast, dynamic, and endlessly engaging right in the palm of your hand.",
     "about-page-h2-1": "Our Philosophy",
-    "about-page-p2": "We believe in agile gameplay, millisecond-polished controls, and vibrant visual aesthetics (Candy Neon, Synthwave, and Anime). We want every second you spend in our games to be thrilling.",
+    "about-page-p2": "We believe in agile gameplay, controls tuned to the millisecond, and vibrant visual aesthetics (Candy Neon, Synthwave, and Anime). We want every second you spend in our games to be truly electrifying.",
     "about-page-h2-2": "Our Projects",
     "about-page-h2-3": "Contact & Support",
-    "about-page-p3": "If you want to report a bug, ask us questions, or send us your feedback, write to us directly at our official support email:",
+    "about-page-p3": "If you want to report a bug, ask questions, or send us your feedback, write directly to our official support email:",
 
     // Privacy Policy
     "privacy-header": "Privacy Policy",
     "privacy-last-updated": "Last updated: June 8, 2026",
-    "privacy-intro": "At <strong>KeTu Playhouse</strong>, we value your privacy. This Privacy Policy explains how information is collected, used, and disclosed when you use our mobile game <strong>Keyboard Escape: Speed Up</strong> and any related service.",
+    "privacy-intro": "At <strong>KeTu Playhouse</strong>, we value your privacy. This Privacy Policy explains how information is collected, used, and disclosed when you use our mobile game <strong>Keyboard Escape: Speed Up</strong> and any related services.",
     "privacy-sec1-title": "1. Information Collection",
-    "privacy-sec1-p1": "Our applications are designed not to collect personally identifiable information directly from users. We do not require account registration, names, emails, or phone numbers to play.",
-    "privacy-sec1-p2": "However, to monetize and maintain our free services, we integrate third-party tools that automatically collect technical information.",
+    "privacy-sec1-p1": "Our applications are designed not to collect personally identifiable information directly from users. We do not require account registration, names, email addresses, or phone numbers to play.",
+    "privacy-sec1-p2": "However, to monetize and keep our services free, we integrate third-party services that automatically collect technical data.",
     "privacy-sec2-title": "2. Third-Party Services (Advertising & Monetization)",
-    "privacy-sec2-p1": "This game uses <strong>Google AdMob</strong> to display ads. AdMob may automatically collect and process technical info about you, including:",
-    "privacy-sec2-li1": "Unique advertising identifiers of the device (such as Google Advertising ID or Apple IDFA).",
-    "privacy-sec2-li2": "Device technical data (manufacturer, model, OS, language, screen resolution).",
-    "privacy-sec2-li3": "Ad interaction data (clicks, impressions, and viewability).",
-    "privacy-sec2-li4": "System diagnostic information (crash logs, app performance, and memory usage).",
+    "privacy-sec2-p1": "This game uses <strong>Google AdMob</strong> to display advertisements. AdMob may automatically collect and process information about you. This information includes, among others:",
+    "privacy-sec2-li1": "Unique device advertising identifiers (such as Google Advertising ID or Apple IDFA).",
+    "privacy-sec2-li2": "Device technical data (manufacturer, model, operating system version, language, and screen resolution).",
+    "privacy-sec2-li3": "Ad interaction data (clicks, impressions, views, and engagement metrics).",
+    "privacy-sec2-li4": "System diagnostic information (crash logs, app performance metrics, and memory usage).",
     "privacy-sec2-li5": "Approximate location (city or country level) derived from IP address.",
-    "privacy-sec2-p2": "You can consult Google's advertising privacy policy at the following link: <a href='https://policies.google.com/technologies/ads' target='_blank' rel='noopener noreferrer'>Google Advertising Policies & Principles</a>.",
+    "privacy-sec2-p2": "You can review Google's advertising privacy policy at: <a href='https://policies.google.com/technologies/ads' target='_blank' rel='noopener noreferrer'>Google Advertising Policies & Principles</a>.",
     "privacy-sec3-title": "3. Use of Information",
-    "privacy-sec3-p1": "The automatically collected technical information is used solely to:",
-    "privacy-sec3-li1": "Display personalized or non-personalized ads as appropriate and allowed by your settings.",
-    "privacy-sec3-li2": "Prevent fraud and malicious activities within the ad ecosystem.",
-    "privacy-sec3-li3": "Analyze ad campaign performance.",
-    "privacy-sec3-li4": "Diagnose technical issues, fix system crashes, and optimize gameplay experience.",
-    "privacy-sec4-title": "4. User Privacy Options",
-    "privacy-sec4-p1": "If you wish to limit personalized advertising on your mobile device, you can adjust settings on your phone:",
+    "privacy-sec3-p1": "The automatically collected technical data is solely used to:",
+    "privacy-sec3-li1": "Deliver personalized or non-personalized advertisements as permitted by your device settings.",
+    "privacy-sec3-li2": "Detect and prevent fraud and malicious activity within the advertising ecosystem.",
+    "privacy-sec3-li3": "Measure and analyze the performance of ad campaigns.",
+    "privacy-sec3-li4": "Diagnose technical issues, resolve system crashes, and optimize game performance.",
+    "privacy-sec4-title": "4. User Privacy Choices",
+    "privacy-sec4-p1": "If you wish to limit personalized ads on your mobile device, you can configure your settings:",
     "privacy-sec4-li1": "<strong>On Android:</strong> Open Settings > Privacy > Ads and select 'Reset advertising ID' or 'Opt out of Ads Personalization'.",
-    "privacy-sec4-li2": "<strong>On iOS:</strong> Go to Settings > Privacy > Tracking and toggle off permission for apps to track you.",
+    "privacy-sec4-li2": "<strong>On iOS:</strong> Go to Settings > Privacy > Tracking and disable allow apps to request to track.",
     "privacy-sec5-title": "5. Children's Privacy",
-    "privacy-sec5-p1": "Our games are not intentionally directed to children under 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe we collected information without consent, contact us immediately.",
-    "privacy-sec6-title": "6. Changes to this Policy",
-    "privacy-sec6-p1": "We reserve the right to modify this Privacy Policy at any time. Any changes will be posted on this page with the updated date.",
-    "privacy-sec7-title": "7. Contact",
-    "privacy-sec7-p1": "If you have any questions about this Privacy Policy or data treatment, you can contact us via email:",
+    "privacy-sec5-p1": "Our games are not intentionally directed to children under 13. We do not knowingly collect personal information from children. If you believe your child has provided us with personal information, please contact us immediately.",
+    "privacy-sec6-title": "6. Policy Changes",
+    "privacy-sec6-p1": "We reserve the right to update this Privacy Policy at any time. Changes will be posted on this page with the updated revision date.",
+    "privacy-sec7-title": "7. Contact Us",
+    "privacy-sec7-p1": "If you have any questions regarding this Privacy Policy or our data practices, please reach out to us at:",
 
     // Terms of Service
-    "terms-header": "Terms and Conditions of Use",
+    "terms-header": "Terms of Service",
     "terms-last-updated": "Last updated: June 15, 2026",
-    "terms-intro": "By accessing, downloading, installing, or using the video games (including <strong>Keyboard Escape: Speed Up</strong>), websites, community servers (such as Discord), and services of <strong>KeTu Playhouse</strong>, you agree to be bound by these Terms.",
-    "terms-sec1-title": "1. Limited Use License",
-    "terms-sec1-p1": "KeTu Playhouse grants you a personal, limited, non-exclusive, non-transferable, non-sublicensable, and revocable license to download and play our games for personal non-commercial entertainment.",
+    "terms-intro": "By accessing, downloading, installing, or using games (including <strong>Keyboard Escape: Speed Up</strong>), websites, community servers (such as Discord), and services operated by <strong>KeTu Playhouse</strong>, you agree to be bound by these Terms of Service.",
+    "terms-sec1-title": "1. Limited License",
+    "terms-sec1-p1": "KeTu Playhouse grants you a personal, limited, non-exclusive, non-transferable, revocable license to download and play our games solely for personal, non-commercial entertainment.",
     "terms-sec2-title": "2. Intellectual Property",
-    "terms-sec2-p1": "All rights, title, and interest in our games and services, including source code, graphics, music, character designs, and logos, are the exclusive property of <strong>KeTu Playhouse</strong>.",
-    "terms-sec3-title": "3. Restrictions and Code of Conduct",
-    "terms-sec3-p1": "When using our services, you agree not to undertake or attempt the following actions:",
-    "terms-sec3-li1": "Modify, decompile, reverse engineer, or attempt to extract game source code.",
-    "terms-sec3-li2": "Use cheats, bots, hacks, mods, or unauthorized third-party software.",
-    "terms-sec3-li3": "Use offensive, abusive, or harassing language in our official community channels.",
-    "terms-sec4-title": "4. User Accounts and KeTu ID",
-    "terms-sec4-p1": "In future updates, you may be able to create a user account or global KeTu ID to save your progress online.",
-    "terms-sec5-title": "5. In-App Purchases and Virtual Currency",
-    "terms-sec5-p1": "Our games may include in-app purchases processed securely by the respective app store (such as Google Play Store).",
-    "terms-sec5-p2": "All items and virtual currencies are digital licenses with no real-world monetary value and are non-refundable unless required by law.",
-    "terms-sec6-title": "6. Ads and Third-Party Services",
-    "terms-sec6-p1": "Our free games may contain integrated ads managed through Google AdMob.",
+    "terms-sec2-p1": "All rights, titles, and interests in and to our games and services, including source code, graphics, music, characters, and logos, are the exclusive property of <strong>KeTu Playhouse</strong>.",
+    "terms-sec3-title": "3. Prohibited Conduct",
+    "terms-sec3-p1": "You agree not to modify, reverse engineer, decompile, distribute cheats, bots, hacks, or engage in abusive behavior in official community channels.",
+    "terms-sec4-title": "4. User Accounts & KeTu ID",
+    "terms-sec4-p1": "In future updates, you may be able to register a user profile or KeTu ID to store your progress and rankings securely in the cloud.",
+    "terms-sec5-title": "5. In-App Purchases & Virtual Currency",
+    "terms-sec5-p1": "Our games may offer optional in-app purchases processed through official app stores (such as Google Play). Virtual items hold no real-world monetary value.",
+    "terms-sec6-title": "6. Third-Party Services & Ads",
+    "terms-sec6-p1": "Our free games may include third-party advertising managed via Google AdMob.",
     "terms-sec7-title": "7. Limitation of Liability",
     "terms-sec7-p1": "Our games and services are provided 'as is'. KeTu Playhouse is not responsible for loss of progress or data due to uninstallation or hardware failure.",
     "terms-sec8-title": "8. Technical Support and Contact",
@@ -208,9 +204,16 @@ function updateContent(lang) {
     }
   });
 
-  document.querySelectorAll(".lang-btn").forEach(btn => btn.classList.remove("active"));
-  const activeBtn = document.getElementById(`lang-btn-${lang}`);
-  if (activeBtn) activeBtn.classList.add("active");
+  // Update dropdown label if present
+  const currentLangLabel = document.getElementById("currentLangLabel");
+  if (currentLangLabel) {
+    currentLangLabel.textContent = lang === "es" ? "Español" : "English";
+  }
+
+  // Update dynamic actions bar if carousel function exists
+  if (typeof renderActiveActions === "function" && typeof activeIndex !== "undefined") {
+    renderActiveActions(activeIndex);
+  }
 
   document.documentElement.setAttribute("lang", lang);
 }
@@ -219,51 +222,18 @@ function changeLanguage(lang) {
   if (lang !== "es" && lang !== "en") return;
   localStorage.setItem("ketu_lang", lang);
   updateContent(lang);
-}
 
-function openYouTubeTrailer() {
-  const videoId = "5XQYpU8MBPI";
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
-
-  if (isMobile) {
-    window.location.href = `https://youtu.be/${videoId}`;
-  } else {
-    let modal = document.getElementById('youtube-modal');
-    if (!modal) {
-      modal = document.createElement('div');
-      modal.id = 'youtube-modal';
-      modal.className = 'video-modal-overlay';
-      modal.innerHTML = `
-        <div class="video-modal-card">
-          <button class="video-modal-close" onclick="closeYouTubeTrailer()">&times;</button>
-          <div class="video-iframe-wrapper">
-            <iframe id="youtube-iframe" src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-      `;
-      document.body.appendChild(modal);
-    } else {
-      const iframe = document.getElementById('youtube-iframe');
-      if (iframe) iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-      modal.style.display = 'flex';
-    }
-  }
-}
-
-function closeYouTubeTrailer() {
-  const modal = document.getElementById('youtube-modal');
-  if (modal) {
-    modal.style.display = 'none';
-    const iframe = document.getElementById('youtube-iframe');
-    if (iframe) iframe.src = '';
-  }
+  const menu = document.getElementById("langDropdownMenu");
+  const btn = document.getElementById("langDropdownBtn");
+  if (menu) menu.classList.remove("show");
+  if (btn) btn.setAttribute("aria-expanded", "false");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   let savedLang = localStorage.getItem("ketu_lang");
   if (!savedLang) {
     const browserLang = navigator.language || navigator.userLanguage;
-    savedLang = browserLang.startsWith("es") ? "es" : "en";
+    savedLang = browserLang && browserLang.startsWith("es") ? "es" : "en";
   }
   updateContent(savedLang);
 });

@@ -4,39 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - KeTu Playhouse</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2.4.0">
     <meta name="description" content="Privacy Policy for KeTu Playhouse games and services, including Keyboard Escape: Speed Up.">
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="canonical" href="https://ketuplayhouse.com/privacy-policy.html">
-    <script src="lang.js" defer></script>
+    <script src="lang.js?v=2.4.0" defer></script>
 </head>
 <body class="doc-body-page">
-    <!-- Studio Background Layer -->
+    <!-- Atmospheric Studio Ambient Canvas -->
     <div class="bg-fixed-canvas">
-        <div class="bg-glow bg-glow-1"></div>
-        <div class="bg-glow bg-glow-2"></div>
+        <div class="bg-spotlight"></div>
     </div>
 
-    <!-- Navigation Header -->
-    <header>
-        <nav>
+    <!-- Header Navigation (Chillyroom Style Roof Bar) -->
+    <header class="studio-header">
+        <nav class="studio-nav">
             <a href="index.html" class="logo-container">
                 <img src="assets/logo.png" alt="KeTu Playhouse Logo" class="logo-img">
-                <span class="logo-text">KeTu Playhouse</span>
             </a>
+            
             <ul class="nav-links">
                 <li><a href="index.html" data-i18n="nav-home">Inicio</a></li>
-                <li><a href="mailto:ketusoporte@gmail.com?subject=Soporte%20KeTu%20Playhouse" data-i18n="nav-support">Soporte</a></li>
                 <li><a href="about.html" data-i18n="nav-about">Sobre Nosotros</a></li>
+                <li><a href="mailto:ketusoporte@gmail.com?subject=Soporte%20KeTu%20Playhouse" data-i18n="nav-support">Soporte</a></li>
             </ul>
-            <div class="lang-selector">
-                <button onclick="changeLanguage('es')" id="lang-btn-es" class="lang-btn active">
-                    <span class="flag">🇪🇸</span> <span class="lang-code">ES</span>
+
+            <!-- Minimalist Studio Language Dropdown -->
+            <div class="lang-dropdown-wrapper">
+                <button class="lang-dropdown-btn" id="langDropdownBtn" onclick="toggleLangDropdown(event)" aria-haspopup="true" aria-expanded="false">
+                    <span id="currentLangLabel">Español</span>
+                    <svg class="dropdown-chevron" viewBox="0 0 24 24" width="14" height="14">
+                        <path fill="currentColor" d="M7 10l5 5 5-5z"/>
+                    </svg>
                 </button>
-                <button onclick="changeLanguage('en')" id="lang-btn-en" class="lang-btn">
-                    <span class="flag">🇺🇸</span> <span class="lang-code">EN</span>
-                </button>
+                <div class="lang-dropdown-menu" id="langDropdownMenu">
+                    <button class="lang-option-item" onclick="changeLanguage('es')">
+                        <span>Español</span>
+                        <span class="lang-tag">ES</span>
+                    </button>
+                    <button class="lang-option-item" onclick="changeLanguage('en')">
+                        <span>English</span>
+                        <span class="lang-tag">EN</span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
@@ -59,7 +70,7 @@
                 <h2 data-i18n="privacy-sec1-title">1. Recopilación de Información</h2>
                 <p data-i18n="privacy-sec1-p1">Nuestras aplicaciones están diseñadas para no recopilar información de identificación personal directamente de los usuarios. No solicitamos registros de cuentas, nombres, correos electrónicos ni números de teléfono para jugar.</p>
                 <p data-i18n="privacy-sec1-p2">Sin embargo, para monetizar y mantener nuestros servicios gratuitos, integramos herramientas de terceros que sí recopilan información técnica de manera automática.</p>
-
+                
                 <h2 data-i18n="privacy-sec2-title">2. Servicios de Terceros (Publicidad y Monetización)</h2>
                 <p data-i18n="privacy-sec2-p1">Este juego utiliza <strong>Google AdMob</strong> para mostrar anuncios. AdMob puede recopilar y procesar información sobre ti de forma automática. Esta información incluye, entre otros:</p>
                 <ul>
@@ -70,7 +81,7 @@
                     <li data-i18n="privacy-sec2-li5">Ubicación aproximada (a nivel de ciudad o país) derivada de la dirección IP.</li>
                 </ul>
                 <p data-i18n="privacy-sec2-p2">Puedes consultar la política de privacidad de Google relacionada con la publicidad en el siguiente enlace: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Políticas y Principios de Publicidad de Google</a>.</p>
-
+                
                 <h2 data-i18n="privacy-sec3-title">3. Uso de la Información</h2>
                 <p data-i18n="privacy-sec3-p1">La información técnica recopilada automáticamente se utiliza únicamente para:</p>
                 <ul>
@@ -79,38 +90,66 @@
                     <li data-i18n="privacy-sec3-li3">Analizar el rendimiento de las campañas publicitarias.</li>
                     <li data-i18n="privacy-sec3-li4">Diagnosticar problemas técnicos, corregir fallos del sistema y optimizar la experiencia de juego.</li>
                 </ul>
-
+                
                 <h2 data-i18n="privacy-sec4-title">4. Opciones de Privacidad del Usuario</h2>
                 <p data-i18n="privacy-sec4-p1">Si deseas limitar la publicidad personalizada en tu dispositivo móvil, puedes ajustar la configuración en tu teléfono:</p>
                 <ul>
                     <li data-i18n="privacy-sec4-li1"><strong>En Android:</strong> Abre Ajustes > Privacidad > Anuncios y selecciona "Restablecer ID de publicidad" o "Inhabilitar personalización de anuncios".</li>
                     <li data-i18n="privacy-sec4-li2"><strong>En iOS:</strong> Ve a Ajustes > Privacidad > Rastreo y desactiva la opción de permitir que las aplicaciones soliciten rastrearte.</li>
                 </ul>
-
+                
                 <h2 data-i18n="privacy-sec5-title">5. Privacidad de los Niños</h2>
-                <p data-i18n="privacy-sec5-p1">Nuestros juegos no están dirigidos intencionalmente a niños menores de 13 años. No recopilamos conscientemente información personal de niños. Si eres padre o tutor y crees que hemos recopilado información sin tu consentimiento, por favor contáctanos de inmediato.</p>
-
+                <p data-i18n="privacy-sec5-p1">Nuestros juegos no están dirigidos intencionalmente a niños menores de 13 años. No recopilamos conscientemente información personal de niños. Si eres padre o tutor y crees que hemos recopilado información sin tu consentimiento, por favor contáctanos de inmediato para que podamos eliminarla de nuestros registros.</p>
+                
                 <h2 data-i18n="privacy-sec6-title">6. Cambios en esta Política</h2>
                 <p data-i18n="privacy-sec6-p1">Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Cualquier cambio será publicado en esta página con la fecha de actualización correspondiente.</p>
-
+                
                 <h2 data-i18n="privacy-sec7-title">7. Contacto</h2>
                 <p data-i18n="privacy-sec7-p1">Si tienes alguna pregunta sobre esta Política de Privacidad o el tratamiento de tus datos, puedes ponerte en contacto con nosotros a través del correo electrónico:</p>
-                <p style="font-weight: 700; color: var(--primary); font-size: 1.1rem;">ketusoporte@gmail.com</p>
+                <p style="font-weight: 700; color: #ffffff; font-size: 1.05rem;">ketusoporte@gmail.com</p>
             </div>
         </article>
     </main>
 
-    <!-- Studio Footer -->
-    <footer class="chillyroom-studio-footer">
-        <div class="footer-studio-line">
-            <span data-i18n="footer-developer">Developer: KeTu Playhouse Inc.</span>
-            <span>|</span>
-            <a href="privacy-policy.html" id="link-privacy" data-i18n="link-privacy">Política de Privacidad</a>
-            <span>|</span>
-            <a href="terms-of-service.html" id="link-terms" data-i18n="link-terms">Términos de Uso</a>
-            <span>|</span>
-            <span data-i18n="footer-copy">&copy; 2026 KeTu Playhouse Inc. Todos los derechos reservados.</span>
+    <!-- Refined Studio Footer -->
+    <footer class="studio-footer">
+        <div class="footer-container">
+            <span class="footer-credit" data-i18n="footer-developer">Developer: KeTu Playhouse Inc.</span>
+            <span class="footer-divider">•</span>
+            <a href="about.html" class="footer-link" data-i18n="nav-about">Sobre Nosotros</a>
+            <span class="footer-divider">•</span>
+            <a href="privacy-policy.html" class="footer-link" data-i18n="link-privacy">Política de Privacidad</a>
+            <span class="footer-divider">•</span>
+            <a href="terms-of-service.html" class="footer-link" data-i18n="link-terms">Términos de Uso</a>
+            <span class="footer-divider">•</span>
+            <span class="footer-copy" data-i18n="footer-copy">&copy; 2026 KeTu Playhouse Inc. Todos los derechos reservados.</span>
         </div>
     </footer>
+
+    <script>
+        function toggleLangDropdown(event) {
+            event.stopPropagation();
+            const menu = document.getElementById('langDropdownMenu');
+            const btn = document.getElementById('langDropdownBtn');
+            if (!menu || !btn) return;
+            const isOpen = menu.classList.contains('show');
+            if (isOpen) {
+                menu.classList.remove('show');
+                btn.setAttribute('aria-expanded', 'false');
+            } else {
+                menu.classList.add('show');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('langDropdownMenu');
+            const btn = document.getElementById('langDropdownBtn');
+            if (menu && menu.classList.contains('show') && !menu.contains(e.target) && e.target !== btn) {
+                menu.classList.remove('show');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
 </body>
 </html>

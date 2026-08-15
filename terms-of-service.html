@@ -4,39 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - KeTu Playhouse</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2.4.0">
     <meta name="description" content="Terms of Service and Conditions of Use for KeTu Playhouse games and services, including Keyboard Escape: Speed Up.">
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="canonical" href="https://ketuplayhouse.com/terms-of-service.html">
-    <script src="lang.js" defer></script>
+    <script src="lang.js?v=2.4.0" defer></script>
 </head>
 <body class="doc-body-page">
-    <!-- Studio Background Layer -->
+    <!-- Atmospheric Studio Ambient Canvas -->
     <div class="bg-fixed-canvas">
-        <div class="bg-glow bg-glow-1"></div>
-        <div class="bg-glow bg-glow-2"></div>
+        <div class="bg-spotlight"></div>
     </div>
 
-    <!-- Navigation Header -->
-    <header>
-        <nav>
+    <!-- Header Navigation (Chillyroom Style Roof Bar) -->
+    <header class="studio-header">
+        <nav class="studio-nav">
             <a href="index.html" class="logo-container">
                 <img src="assets/logo.png" alt="KeTu Playhouse Logo" class="logo-img">
-                <span class="logo-text">KeTu Playhouse</span>
             </a>
+            
             <ul class="nav-links">
                 <li><a href="index.html" data-i18n="nav-home">Inicio</a></li>
-                <li><a href="mailto:ketusoporte@gmail.com?subject=Soporte%20KeTu%20Playhouse" data-i18n="nav-support">Soporte</a></li>
                 <li><a href="about.html" data-i18n="nav-about">Sobre Nosotros</a></li>
+                <li><a href="mailto:ketusoporte@gmail.com?subject=Soporte%20KeTu%20Playhouse" data-i18n="nav-support">Soporte</a></li>
             </ul>
-            <div class="lang-selector">
-                <button onclick="changeLanguage('es')" id="lang-btn-es" class="lang-btn active">
-                    <span class="flag">🇪🇸</span> <span class="lang-code">ES</span>
+
+            <!-- Minimalist Studio Language Dropdown -->
+            <div class="lang-dropdown-wrapper">
+                <button class="lang-dropdown-btn" id="langDropdownBtn" onclick="toggleLangDropdown(event)" aria-haspopup="true" aria-expanded="false">
+                    <span id="currentLangLabel">Español</span>
+                    <svg class="dropdown-chevron" viewBox="0 0 24 24" width="14" height="14">
+                        <path fill="currentColor" d="M7 10l5 5 5-5z"/>
+                    </svg>
                 </button>
-                <button onclick="changeLanguage('en')" id="lang-btn-en" class="lang-btn">
-                    <span class="flag">🇺🇸</span> <span class="lang-code">EN</span>
-                </button>
+                <div class="lang-dropdown-menu" id="langDropdownMenu">
+                    <button class="lang-option-item" onclick="changeLanguage('es')">
+                        <span>Español</span>
+                        <span class="lang-tag">ES</span>
+                    </button>
+                    <button class="lang-option-item" onclick="changeLanguage('en')">
+                        <span>English</span>
+                        <span class="lang-tag">EN</span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
@@ -60,47 +71,75 @@
                 <p data-i18n="terms-sec1-p1">KeTu Playhouse te concede una licencia personal, limitada, no exclusiva, no transferible, no sublicenciable y revocable para descargar, instalar y utilizar nuestros juegos y servicios únicamente para tu entretenimiento personal y no comercial en dispositivos compatibles de tu propiedad.</p>
                 
                 <h2 data-i18n="terms-sec2-title">2. Propiedad Intelectual</h2>
-                <p data-i18n="terms-sec2-p1">Todos los derechos, títulos e intereses relacionados con nuestros juegos y servicios, incluyendo el código fuente, gráficos, diseños, música, efectos de sonido, personajes, diálogos, nombres, logotipos y marcas comerciales, son propiedad exclusiva de <strong>KeTu Playhouse</strong>. Está prohibida la copia, reproducción o distribución no autorizada de cualquier recurso de nuestra propiedad.</p>
-
+                <p data-i18n="terms-sec2-p1">Todos los derechos, títulos e intereses relacionados con nuestros juegos y servicios, incluyendo código fuente, gráficos, música, personajes, diseño de niveles, marcas registradas y logotipos, son propiedad exclusiva de <strong>KeTu Playhouse</strong> o de sus respectivos licenciantes y están protegidos por leyes internacionales de derechos de autor y propiedad intelectual.</p>
+                
                 <h2 data-i18n="terms-sec3-title">3. Restricciones y Código de Conducta</h2>
                 <p data-i18n="terms-sec3-p1">Al utilizar nuestros servicios, te comprometes a no realizar ni intentar realizar las siguientes acciones:</p>
                 <ul>
-                    <li data-i18n="terms-sec3-li1">Modificar, descompilar, realizar ingeniería inversa, desensamblar o intentar extraer el código fuente de los juegos o servicios.</li>
-                    <li data-i18n="terms-sec3-li2">Utilizar trampas (cheats), automatizaciones (bots), hacks, mods o cualquier software de terceros no autorizado para alterar o influir en la experiencia de juego.</li>
-                    <li data-i18n="terms-sec3-li3">Utilizar lenguaje ofensivo, abusivo, acosador o inapropiado en nuestros canales de comunidad oficial (como Discord) o sistemas de nombres en el juego.</li>
+                    <li data-i18n="terms-sec3-li1">Modificar, descompilar, realizar ingeniería inversa o desensamblar el código fuente de nuestros juegos.</li>
+                    <li data-i18n="terms-sec3-li2">Utilizar trampas (cheats), bots, hacks, emuladores fraudulentos o cualquier software de terceros no autorizado.</li>
+                    <li data-i18n="terms-sec3-li3">Utilizar lenguaje ofensivo, abusivo, discriminatorio o acosador en nuestros canales de comunidad oficial (como Discord).</li>
                 </ul>
-
+                
                 <h2 data-i18n="terms-sec4-title">4. Cuentas de Usuario y KeTu ID</h2>
-                <p data-i18n="terms-sec4-p1">En futuras actualizaciones, es posible que puedas crear una cuenta de usuario o utilizar un identificador global (KeTu ID) para guardar tu progreso en línea. Eres el único responsable de mantener la seguridad y confidencialidad de tus credenciales de acceso. KeTu Playhouse no se hace responsable de pérdidas resultantes del acceso no autorizado a tu cuenta.</p>
-
+                <p data-i18n="terms-sec4-p1">En futuras actualizaciones, es posible que puedas crear una cuenta de usuario o utilizar un KeTu ID para guardar tu progreso en línea. Eres responsable de mantener la confidencialidad de tus credenciales de acceso y de cualquier actividad que ocurra bajo tu cuenta.</p>
+                
                 <h2 data-i18n="terms-sec5-title">5. Compras Integradas y Moneda Virtual</h2>
-                <p data-i18n="terms-sec5-p1">Nuestros juegos pueden incluir compras dentro de la aplicación (in-app purchases) utilizando dinero real para adquirir monedas virtuales, cosméticos u objetos digitales. Todas las transacciones son procesadas de forma segura por la tienda de aplicaciones correspondiente (como Google Play Store).</p>
-                <p data-i18n="terms-sec5-p2">Todos los artículos y monedas virtuales son licencias de uso digital intangibles, no tienen valor monetario en el mundo real y no son transferibles ni canjeables por dinero real. A menos que lo exija la ley local o las políticas de la tienda de aplicaciones, todas las compras son definitivas y no reembolsables.</p>
-
+                <p data-i18n="terms-sec5-p1">Nuestros juegos pueden incluir compras dentro de la aplicación (In-App Purchases) de artículos virtuales o mejoras. Todas las transacciones se procesan de forma segura a través de la plataforma de distribución correspondiente (como Google Play Store).</p>
+                <p data-i18n="terms-sec5-p2">Los artículos virtuales y monedas del juego son licencias de uso digital intangibles, no tienen valor monetario en el mundo real y no son transferibles ni reembolsables, salvo que la ley aplicable o la tienda de aplicaciones establezca lo contrario.</p>
+                
                 <h2 data-i18n="terms-sec6-title">6. Anuncios y Servicios de Terceros</h2>
-                <p data-i18n="terms-sec6-p1">Nuestros juegos gratuitos pueden contener publicidad integrada gestionada a través de Google AdMob. Estos anuncios pueden interactuar con tu dispositivo según se detalla en nuestra Política de Privacidad. KeTu Playhouse no respalda ni se hace responsable del contenido, productos o servicios ofrecidos por anunciantes externos.</p>
-
+                <p data-i18n="terms-sec6-p1">Nuestros juegos gratuitos pueden contener publicidad integrada gestionada a través de Google AdMob. No nos hacemos responsables del contenido de los anuncios de terceros ni de los sitios o productos que promocionen.</p>
+                
                 <h2 data-i18n="terms-sec7-title">7. Limitación de Responsabilidad</h2>
-                <p data-i18n="terms-sec7-p1">Nuestros juegos y servicios se proporcionan 'tal cual' y 'según disponibilidad'. En modos de juego sin conexión (offline), tu progreso se almacena localmente en tu dispositivo. KeTu Playhouse no se hace responsable de la pérdida de progreso, datos o compras si desinstalas la aplicación, borras la memoria caché, formateas tu dispositivo o si este sufre fallos de hardware.</p>
-
+                <p data-i18n="terms-sec7-p1">Nuestros juegos y servicios se proporcionan 'tal cual' y 'según disponibilidad', sin garantías de ningún tipo. KeTu Playhouse no se hace responsable de daños indirectos, incidentales o derivados del uso o la imposibilidad de uso de nuestros servicios, incluyendo pérdida de datos o fallos de dispositivo.</p>
+                
                 <h2 data-i18n="terms-sec8-title">8. Soporte Técnico y Contacto</h2>
-                <p data-i18n="terms-sec8-p1">Para consultas legales, informes de fallos (bugs), comentarios o solicitudes de soporte técnico, puedes escribirnos directamente a nuestro correo oficial de atención al cliente:</p>
-                <p style="font-weight: 700; color: var(--primary); font-size: 1.1rem;">ketusoporte@gmail.com</p>
+                <p data-i18n="terms-sec8-p1">Para cualquier consulta sobre estos Términos de Servicio, problemas técnicos o reportes de infracciones, contáctanos a:</p>
+                <p style="font-weight: 700; color: #ffffff; font-size: 1.05rem;">ketusoporte@gmail.com</p>
             </div>
         </article>
     </main>
 
-    <!-- Studio Footer -->
-    <footer class="chillyroom-studio-footer">
-        <div class="footer-studio-line">
-            <span data-i18n="footer-developer">Developer: KeTu Playhouse Inc.</span>
-            <span>|</span>
-            <a href="privacy-policy.html" id="link-privacy" data-i18n="link-privacy">Política de Privacidad</a>
-            <span>|</span>
-            <a href="terms-of-service.html" id="link-terms" data-i18n="link-terms">Términos de Uso</a>
-            <span>|</span>
-            <span data-i18n="footer-copy">&copy; 2026 KeTu Playhouse Inc. Todos los derechos reservados.</span>
+    <!-- Refined Studio Footer -->
+    <footer class="studio-footer">
+        <div class="footer-container">
+            <span class="footer-credit" data-i18n="footer-developer">Developer: KeTu Playhouse Inc.</span>
+            <span class="footer-divider">•</span>
+            <a href="about.html" class="footer-link" data-i18n="nav-about">Sobre Nosotros</a>
+            <span class="footer-divider">•</span>
+            <a href="privacy-policy.html" class="footer-link" data-i18n="link-privacy">Política de Privacidad</a>
+            <span class="footer-divider">•</span>
+            <a href="terms-of-service.html" class="footer-link" data-i18n="link-terms">Términos de Uso</a>
+            <span class="footer-divider">•</span>
+            <span class="footer-copy" data-i18n="footer-copy">&copy; 2026 KeTu Playhouse Inc. Todos los derechos reservados.</span>
         </div>
     </footer>
+
+    <script>
+        function toggleLangDropdown(event) {
+            event.stopPropagation();
+            const menu = document.getElementById('langDropdownMenu');
+            const btn = document.getElementById('langDropdownBtn');
+            if (!menu || !btn) return;
+            const isOpen = menu.classList.contains('show');
+            if (isOpen) {
+                menu.classList.remove('show');
+                btn.setAttribute('aria-expanded', 'false');
+            } else {
+                menu.classList.add('show');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('langDropdownMenu');
+            const btn = document.getElementById('langDropdownBtn');
+            if (menu && menu.classList.contains('show') && !menu.contains(e.target) && e.target !== btn) {
+                menu.classList.remove('show');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
 </body>
 </html>
