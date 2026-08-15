@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Teko:wght@700&display=swap">
 
     <!-- Stylesheets & Favicon -->
-    <link rel="stylesheet" href="style.css?v=2.5.3">
+    <link rel="stylesheet" href="style.css?v=2.5.4">
     <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="canonical" href="https://ketuplayhouse.com/">
 
@@ -45,7 +45,7 @@
     </script>
 
     <!-- Language & Logic Script -->
-    <script src="lang.js?v=2.5.3" defer></script>
+    <script src="lang.js?v=2.5.4" defer></script>
 </head>
 <body class="main-hub-body">
     <!-- Atmospheric Studio Ambient Canvas -->
@@ -268,59 +268,67 @@
             const actionsBar = document.getElementById('active-actions-bar');
             if (!actionsBar) return;
 
-            const lang = localStorage.getItem('ketu_lang') || 'es';
+            actionsBar.style.opacity = '0';
+            actionsBar.style.transform = 'translateY(6px)';
 
-            if (index === 0) {
-                // Keyboard Escape Actions
-                const trailerText = lang === 'es' ? 'Ver Tráiler Oficial' : 'Watch Official Trailer';
-                const storeText = lang === 'es' ? 'Google Play' : 'Google Play';
-                actionsBar.innerHTML = `
-                    <a href="https://play.google.com/store/apps/details?id=com.ketuplayhouse.keyboardescape" target="_blank" rel="noopener noreferrer" class="action-btn action-btn-playstore">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M3.609 1.814L13.792 12 3.61 22.186a1.99 1.99 0 0 1-.61-.954V2.768c0-.368.225-.718.609-.954zm11.235 11.238l2.36 2.36-12.08 6.945 9.72-9.305zm0-2.104L5.124 1.643l12.08 6.945-2.36 2.36zm1.464 1.052l3.414 1.96a1.25 1.25 0 0 1 0 2.08l-3.414 1.96-2.106-2.106 2.106-2.094z"/>
-                        </svg>
-                        <span>${storeText}</span>
-                    </a>
-                    <button class="action-btn action-btn-trailer" onclick="openYouTubeTrailer()">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                        <span>${trailerText}</span>
-                    </button>
-                `;
-            } else if (index === 1) {
-                // EGO BALL Actions
-                const discordText = lang === 'es' ? 'Comunidad de Discord (Alpha)' : 'Discord Community (Alpha)';
-                const statusText = lang === 'es' ? 'En Prototipado Unity 3D' : 'Unity 3D Prototyping';
-                actionsBar.innerHTML = `
-                    <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="action-btn action-btn-discord">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
-                        </svg>
-                        <span>${discordText}</span>
-                    </a>
-                    <div class="action-tag-pill tag-prototype">
-                        <span class="tag-dot"></span>
-                        <span>${statusText}</span>
-                    </div>
-                `;
-            } else if (index === 2) {
-                // Coming Soon Actions
-                const discordNewsText = lang === 'es' ? 'Novedades en Discord' : 'Updates on Discord';
-                const secretTagText = lang === 'es' ? 'Proyecto No Revelado' : 'Unannounced Title';
-                actionsBar.innerHTML = `
-                    <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="action-btn action-btn-discord">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
-                        </svg>
-                        <span>${discordNewsText}</span>
-                    </a>
-                    <div class="action-tag-pill tag-secret">
-                        <span class="tag-dot dot-purple"></span>
-                        <span>${secretTagText}</span>
-                    </div>
-                `;
-            }
+            setTimeout(() => {
+                const lang = localStorage.getItem('ketu_lang') || 'es';
+
+                if (index === 0) {
+                    // Keyboard Escape Actions
+                    const trailerText = lang === 'es' ? 'Ver Tráiler Oficial' : 'Watch Official Trailer';
+                    const storeText = lang === 'es' ? 'Google Play' : 'Google Play';
+                    actionsBar.innerHTML = `
+                        <a href="https://play.google.com/store/apps/details?id=com.ketuplayhouse.keyboardescape" target="_blank" rel="noopener noreferrer" class="action-btn action-btn-playstore">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3.609 1.814L13.792 12 3.61 22.186a1.99 1.99 0 0 1-.61-.954V2.768c0-.368.225-.718.609-.954zm11.235 11.238l2.36 2.36-12.08 6.945 9.72-9.305zm0-2.104L5.124 1.643l12.08 6.945-2.36 2.36zm1.464 1.052l3.414 1.96a1.25 1.25 0 0 1 0 2.08l-3.414 1.96-2.106-2.106 2.106-2.094z"/>
+                            </svg>
+                            <span>${storeText}</span>
+                        </a>
+                        <button class="action-btn action-btn-trailer" onclick="openYouTubeTrailer()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <span>${trailerText}</span>
+                        </button>
+                    `;
+                } else if (index === 1) {
+                    // EGO BALL Actions
+                    const discordText = lang === 'es' ? 'Comunidad de Discord (Alpha)' : 'Discord Community (Alpha)';
+                    const statusText = lang === 'es' ? 'En Prototipado Unity 3D' : 'Unity 3D Prototyping';
+                    actionsBar.innerHTML = `
+                        <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="action-btn action-btn-discord">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                            </svg>
+                            <span>${discordText}</span>
+                        </a>
+                        <div class="action-tag-pill tag-prototype">
+                            <span class="tag-dot"></span>
+                            <span>${statusText}</span>
+                        </div>
+                    `;
+                } else if (index === 2) {
+                    // Coming Soon Actions
+                    const discordNewsText = lang === 'es' ? 'Novedades en Discord' : 'Updates on Discord';
+                    const secretTagText = lang === 'es' ? 'Proyecto No Revelado' : 'Unannounced Title';
+                    actionsBar.innerHTML = `
+                        <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="action-btn action-btn-discord">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                            </svg>
+                            <span>${discordNewsText}</span>
+                        </a>
+                        <div class="action-tag-pill tag-secret">
+                            <span class="tag-dot dot-purple"></span>
+                            <span>${secretTagText}</span>
+                        </div>
+                    `;
+                }
+
+                actionsBar.style.opacity = '1';
+                actionsBar.style.transform = 'translateY(0)';
+            }, 180);
         }
 
         // Language Dropdown Controller
