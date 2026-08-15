@@ -4,20 +4,20 @@
       .maze-path {
         fill: none;
         stroke: #ffffff;
-        stroke-width: 6.5;
+        stroke-width: 8;
         stroke-linecap: square;
         stroke-linejoin: miter;
         stroke-miterlimit: 4;
-        opacity: 0.052;
+        opacity: 0.16;
       }
       .maze-cyan-accent {
         fill: none;
         stroke: #85cbf5;
-        stroke-width: 6.5;
+        stroke-width: 8;
         stroke-linecap: square;
         stroke-linejoin: miter;
         stroke-miterlimit: 4;
-        opacity: 0.025;
+        opacity: 0.12;
       }
     </style>
   </defs>
