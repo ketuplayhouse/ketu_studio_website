@@ -54,12 +54,10 @@ body.doc-body-page {
   position: fixed !important;
   top: 0; left: 0; width: 100vw; height: 100vh;
   z-index: -10; pointer-events: none; overflow: hidden;
-  background-color: #0b0912;
-  background-image: 
-    radial-gradient(circle at 50% 50%, rgba(11, 9, 18, 0.1) 0%, rgba(11, 9, 18, 0.72) 100%),
-    url('assets/pattern_kt.svg');
-  background-repeat: no-repeat, repeat;
-  background-size: cover, 160px 160px;
+  background-color: #0b0914;
+  background-image: url('assets/pattern_kt.svg');
+  background-repeat: repeat;
+  background-size: 160px 160px;
 }
 
 .bg-spotlight {

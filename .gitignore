@@ -1,0 +1,6 @@
+# Ignore large executables and local backups
+supabase.exe
+supabase-go.exe
+backup_v1/
+.DS_Store
+Thumbs.db
