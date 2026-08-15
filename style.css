@@ -1,38 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Cinzel:wght@700;900&family=Teko:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Teko:wght@700&family=Cinzel:wght@700;900&display=swap');
 
 :root {
-  /* Obsidian Studio Depth */
-  --bg-abyss: #07050a;
-  --bg-stage: #0c0814;
-  --bg-card: #130d20;
-  --bg-header: rgba(7, 5, 10, 0.85);
+  /* ChillyRoom Obsidian Slate Palette */
+  --bg-deep: #09070e;
+  --bg-surface: #120d1c;
+  --bg-card: #160f24;
+  --bg-header: rgba(9, 7, 14, 0.92);
 
-  /* KeTu Official Logo Signature Tones */
-  --ketu-blue: #85cbf5;   /* 'K' / Cyan Accent */
-  --ketu-pink: #f481ac;   /* 'e' / Primary Energy */
-  --ketu-purple: #bf82f4; /* 'T' / Cosmic Aura */
-  --ketu-green: #82d66f;  /* 'u' / Speed Surge */
+  /* KeTu Official Signature Colors */
+  --ketu-blue: #85cbf5;
+  --ketu-pink: #f481ac;
+  --ketu-purple: #bf82f4;
+  --ketu-green: #82d66f;
 
   --primary: var(--ketu-pink);
   --secondary: var(--ketu-purple);
   --accent: var(--ketu-blue);
-  
+
   --text-white: #ffffff;
-  --text-main: #f0eaf7;
-  --text-dim: #9b8dae;
-  --text-muted: #6e6180;
-  
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-glass: rgba(255, 255, 255, 0.2);
-  --border-active: rgba(255, 255, 255, 0.9);
+  --text-main: #eee6f5;
+  --text-muted: #9587a8;
 
-  /* Studio Glow & Shadow Physics */
-  --shadow-card-ambient: 0 15px 40px rgba(0, 0, 0, 0.85);
-  --shadow-btn: 0 4px 15px rgba(0, 0, 0, 0.5);
+  --border-glass: rgba(255, 255, 255, 0.18);
+  --border-active: rgba(255, 255, 255, 0.85);
 
-  --ease-cinematic: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --shadow-card-ambient: 0 16px 40px rgba(0, 0, 0, 0.8);
+  --shadow-btn: 0 4px 14px rgba(0, 0, 0, 0.6);
+
+  --ease-spring: cubic-bezier(0.25, 0.8, 0.25, 1);
   --transition-fast: 0.2s ease;
-  --transition-smooth: 0.4s var(--ease-cinematic);
+  --transition-smooth: 0.35s var(--ease-spring);
 }
 
 * {
@@ -44,7 +41,7 @@
 html, body {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--bg-abyss);
+  background-color: var(--bg-deep);
   color: var(--text-main);
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.5;
@@ -52,24 +49,24 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Hub Layout */
+/* PC Desktop Hub Lockdown */
 body.main-hub-body {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* Standalone Document & Legal Pages */
+/* Scrollable for Legal and About Pages */
 body.doc-body-page {
   overflow-y: auto !important;
   height: auto !important;
 }
 
 /* ----------------------------------------------------
-   CINEMATIC STUDIO STAGE BACKGROUND
+   CHILLYROOM BACKGROUND WITH PATTERN & AMBIENT SPOTLIGHT
    ---------------------------------------------------- */
-.studio-background {
+.chilly-bg-canvas {
   position: fixed;
   top: 0;
   left: 0;
@@ -78,125 +75,133 @@ body.doc-body-page {
   z-index: -10;
   pointer-events: none;
   overflow: hidden;
-  background: radial-gradient(circle at 50% 45%, #160e26 0%, #09060e 65%, #030205 100%);
+  background-color: #08060b;
 }
 
-.studio-spotlight {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 750px;
-  height: 550px;
-  border-radius: 50%;
-  filter: blur(130px);
-  opacity: 0.28;
-  transition: background var(--transition-smooth), opacity var(--transition-smooth);
-  background: var(--ketu-pink);
-}
-
-.studio-vignette {
+.chilly-bg-overlay {
   position: absolute;
   inset: 0;
-  box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.85);
-  pointer-events: none;
+  background: 
+    radial-gradient(circle at 50% 45%, #180e29 0%, #08060b 70%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.012) 0, rgba(255, 255, 255, 0.012) 1px, transparent 0, transparent 12px),
+    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.012) 0, rgba(255, 255, 255, 0.012) 1px, transparent 0, transparent 12px);
+  opacity: 0.9;
+}
+
+.chilly-spotlight-glow {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 550px;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.26;
+  background: var(--ketu-pink);
+  transition: background var(--transition-smooth);
 }
 
 /* ----------------------------------------------------
-   HEADER (ChillyRoom Style - 90px)
+   HEADER (ChillyRoom Style Roof Bar - 80px)
    ---------------------------------------------------- */
-header.chilly-header {
+header.chilly-navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 90px;
-  background: linear-gradient(180deg, var(--bg-header) 0%, rgba(7, 5, 10, 0.6) 80%, transparent 100%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  height: 80px;
+  background: var(--bg-header);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   z-index: 1000;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-nav.header-nav-container {
-  width: 92%;
-  max-width: 1400px;
+nav.chilly-nav-inner {
+  width: 94%;
+  max-width: 1450px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.brand-identity {
+.brand-block {
   display: flex;
   align-items: center;
   gap: 0.85rem;
   text-decoration: none;
 }
 
-.studio-logo-img {
-  height: 44px;
+.brand-logo-img {
+  height: 42px;
   width: auto;
   display: block;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.7));
   transition: transform var(--transition-fast);
 }
 
-.brand-identity:hover .studio-logo-img {
-  transform: scale(1.04);
+.brand-block:hover .brand-logo-img {
+  transform: scale(1.05);
 }
 
-.studio-title-block {
+.brand-text-block {
   display: flex;
   flex-direction: column;
 }
 
-.studio-name {
+.brand-name {
   font-size: 1.3rem;
   font-weight: 900;
   color: var(--text-white);
-  letter-spacing: 0.5px;
   line-height: 1.1;
+  letter-spacing: 0.3px;
 }
 
-.studio-tagline {
-  font-size: 0.68rem;
-  font-weight: 600;
-  color: var(--text-dim);
+.brand-sub {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-muted);
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
-/* Navigation Links (Desktop) */
-.header-links-group {
+.nav-right-cluster {
   display: flex;
   align-items: center;
   gap: 2.2rem;
+}
+
+.nav-menu-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   list-style: none;
 }
 
-.header-link-item a {
-  color: var(--text-dim);
+.nav-menu-links a {
+  color: var(--text-muted);
   text-decoration: none;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.5px;
-  padding: 0.5rem 0;
+  padding: 0.4rem 0;
   position: relative;
   transition: color var(--transition-fast);
 }
 
-.header-link-item a:hover,
-.header-link-item a.active {
+.nav-menu-links a:hover,
+.nav-menu-links a.active {
   color: var(--text-white);
 }
 
-.header-link-item a.active::after {
+.nav-menu-links a.active::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: -3px;
   left: 0;
   width: 100%;
   height: 2px;
@@ -206,12 +211,6 @@ nav.header-nav-container {
 }
 
 /* Language Dropdown Pill */
-.header-actions-right {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
 .lang-dropdown-pill {
   position: relative;
   user-select: none;
@@ -258,8 +257,8 @@ nav.header-nav-container {
   border: 1px solid var(--border-glass);
   border-radius: 12px;
   padding: 6px;
-  min-width: 120px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  min-width: 125px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(16px);
   opacity: 0;
   visibility: hidden;
@@ -283,7 +282,7 @@ nav.header-nav-container {
   background: transparent;
   border: none;
   border-radius: 8px;
-  color: var(--text-dim);
+  color: var(--text-muted);
   font-size: 0.85rem;
   font-weight: 600;
   font-family: inherit;
@@ -299,23 +298,22 @@ nav.header-nav-container {
 }
 
 /* ----------------------------------------------------
-   SHOWCASE SECTION: EXACT CHILLYROOM COMPOSITION
+   MAIN STUDIO HUB & EXACT CHILLYROOM 3-CARD SHOWCASE
    ---------------------------------------------------- */
-main.studio-hub-container {
+main.chilly-studio-hub {
   flex: 1;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 105px 1rem 25px;
+  padding: 85px 1.5rem 15px;
   position: relative;
 }
 
 .chilly-showcase-section {
   width: 100%;
-  max-width: 850px;
-  margin: 0 auto;
+  max-width: 1450px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -323,96 +321,101 @@ main.studio-hub-container {
   position: relative;
 }
 
-/* Viewport with Side Double Chevron Arrows 《 and 》 */
-.showcase-slider-viewport {
-  position: relative;
+/* Slider Row with Far-Left & Far-Right Double Chevron Arrows */
+.chilly-slider-row {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  touch-action: pan-y;
+  position: relative;
 }
 
-/* Stylized Double Chevron Arrow Buttons */
-.slider-arrow-btn {
+/* Double Chevron Arrow Buttons 《 and 》 */
+.chilly-chevron-arrow {
   background: transparent;
   border: none;
   color: rgba(255, 255, 255, 0.7);
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   padding: 0;
   flex-shrink: 0;
-  transition: color var(--transition-fast), transform var(--transition-fast), opacity var(--transition-fast);
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.8));
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.9));
+  z-index: 50;
 }
 
-.slider-arrow-btn:hover {
+.chilly-chevron-arrow:hover {
   color: #ffffff;
-  transform: scale(1.15);
+  transform: scale(1.18);
 }
 
-.slider-arrow-btn:active {
+.chilly-chevron-arrow:active {
   transform: scale(0.95);
 }
 
-.slider-arrow-btn svg {
-  width: 32px;
-  height: 32px;
+.chilly-chevron-arrow svg {
+  width: 44px;
+  height: 44px;
+  fill: currentColor;
 }
 
-/* Centered Card Stage Container */
-.showcase-card-container {
-  width: 100%;
-  max-width: 480px;
+/* 3 Horizontal Cards Track */
+.chilly-cards-track {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
+  gap: 1.8rem;
+  width: 100%;
+  max-width: 1300px;
+  padding: 20px 0;
 }
 
-/* Individual Game Slide Item */
-.game-slide-item {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  opacity: 0;
-  transform: scale(0.96);
-  transition: opacity 0.35s ease, transform 0.35s ease;
+/* Individual Card (Horizontal / Rounded Rectangles) */
+.chilly-game-card {
+  flex: 0 0 360px;
+  width: 360px;
+  position: relative;
+  cursor: pointer;
+  opacity: 0.68;
+  transform: scale(0.92);
+  transition: transform var(--transition-smooth), opacity var(--transition-smooth);
   user-select: none;
 }
 
-.game-slide-item.active-slide {
-  display: flex;
+.chilly-game-card.active {
+  flex: 0 0 420px;
+  width: 420px;
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1.05);
+  z-index: 30;
 }
 
-/* Horizontal / Landscape Rounded Game Cover Card */
-.game-cover-box {
+.card-media-wrapper {
   width: 100%;
   aspect-ratio: 16 / 11;
-  max-height: 330px;
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
   background: var(--bg-card);
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(255, 255, 255, 0.12);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  border: 2.5px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-card-ambient);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.game-slide-item.active-slide:hover .game-cover-box {
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
+.chilly-game-card.active .card-media-wrapper {
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.92), 0 0 25px rgba(0, 0, 0, 0.6);
 }
 
-.game-cover-img {
+.chilly-game-card:hover .card-media-wrapper {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.card-cover-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -429,77 +432,58 @@ main.studio-hub-container {
   100% { transform: scale(1) rotate(-2deg); }
 }
 
-/* Game Title Lockup (Placed Prominently Below the Card, Exact ChillyRoom Style) */
-.game-title-lockup {
-  margin-top: 14px;
+/* Card Logo / Title Lockup (Positioned at Lower Center, Exact ChillyRoom Style) */
+.card-title-lockup {
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
   text-align: center;
+  z-index: 40;
+  pointer-events: none;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.title-main {
-  font-size: 1.85rem;
+.lockup-main-title {
+  font-size: 1.7rem;
   font-weight: 900;
   color: #ffffff;
-  line-height: 1.1;
-  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.95);
+  line-height: 1;
   letter-spacing: -0.5px;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.95), 0 0 8px rgba(0, 0, 0, 0.8);
 }
 
-.title-sub {
-  font-size: 0.8rem;
+.lockup-sub-title {
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
+  color: var(--ketu-pink);
   text-transform: uppercase;
-  margin-top: 3px;
+  margin-top: 2px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
 }
 
-.ke-title { color: #ffffff; }
-.ke-sub { color: var(--ketu-pink); }
-.ego-title { font-family: 'Teko', sans-serif; font-size: 2.5rem; line-height: 0.9; letter-spacing: 1.5px; }
+.ego-font { font-family: 'Teko', sans-serif; font-size: 2.3rem; line-height: 0.88; letter-spacing: 1px; }
 .ego-sub { color: var(--ketu-blue); }
-.secret-title { font-family: 'Cinzel', serif; font-size: 1.6rem; }
+.secret-font { font-family: 'Cinzel', serif; font-size: 1.4rem; }
 .secret-sub { color: var(--ketu-purple); }
 
 /* ----------------------------------------------------
-   ACTION BUTTONS: EXACT CHILLYROOM 2-ROW GRID
+   CENTER ACTIONS HUB: ONLY UNDER THE ACTIVE CENTER CARD
    ---------------------------------------------------- */
-.showcase-action-hub {
-  margin-top: 18px;
-  width: 100%;
-  max-width: 480px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 40;
-}
-
-.cta-action-panel {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.cta-action-panel.panel-active {
-  display: flex;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Row 1: Side-by-Side 2 Primary Buttons */
-.cta-row-primary {
+.center-actions-hub {
+  margin-top: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
   width: 100%;
+  max-width: 500px;
+  min-height: 48px;
+  z-index: 50;
 }
 
 .cta-store-badge-link {
@@ -527,7 +511,7 @@ main.studio-hub-container {
   gap: 8px;
   height: 44px;
   padding: 0 1.25rem;
-  background: rgba(18, 12, 28, 0.85);
+  background: rgba(18, 12, 28, 0.9);
   border: 1.5px solid var(--border-glass);
   border-radius: 8px;
   color: var(--text-white);
@@ -570,118 +554,53 @@ main.studio-hub-container {
   background: rgba(15, 10, 22, 0.9);
   border: 1.5px solid var(--border-glass);
   border-radius: 8px;
-  color: var(--text-dim);
+  color: var(--text-muted);
   font-size: 0.8rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-/* Row 2: Centered Secondary Pill (e.g., Official Discord / Details) */
-.cta-row-secondary {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.cta-pill-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  height: 38px;
-  padding: 0 1.5rem;
-  background: rgba(15, 10, 22, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 6px;
-  color: var(--text-white);
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
-}
-
-.cta-pill-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.45);
-  transform: translateY(-1px);
-}
-
 /* ----------------------------------------------------
    INSTITUTIONAL STUDIO FOOTER (CHILLYROOM STYLE)
    ---------------------------------------------------- */
-footer.studio-institutional-footer {
+footer.chilly-studio-footer {
   width: 100%;
-  background: rgba(5, 3, 8, 0.94);
+  background: rgba(6, 4, 10, 0.96);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 14px 1.5rem;
+  padding: 12px 1.5rem;
+  text-align: center;
   z-index: 100;
   backdrop-filter: blur(12px);
 }
 
-.footer-inner-content {
-  max-width: 1400px;
-  margin: 0 auto;
+.footer-studio-info-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: center;
+  gap: 0.8rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 3px;
 }
 
-.footer-links-cluster {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 0.8rem;
-  color: var(--text-dim);
-  flex-wrap: wrap;
-}
-
-.footer-links-cluster a {
-  color: var(--text-dim);
+.footer-legal-link {
+  color: var(--text-muted);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
-.footer-links-cluster a:hover {
+.footer-legal-link:hover {
   color: var(--text-white);
 }
 
-.footer-divider {
+.footer-separator {
   color: rgba(255, 255, 255, 0.15);
 }
 
-.footer-social-strip {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.footer-social-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-dim);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
-}
-
-.footer-social-icon:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: var(--text-white);
-  transform: translateY(-2px);
-}
-
-.footer-social-icon svg {
-  width: 14px;
-  height: 14px;
-  fill: currentColor;
+.footer-copyright-text {
+  font-size: 0.75rem;
+  color: #635773;
 }
 
 /* ----------------------------------------------------
@@ -689,12 +608,12 @@ footer.studio-institutional-footer {
    ---------------------------------------------------- */
 .doc-card-container {
   max-width: 850px;
-  margin: 110px auto 50px;
+  margin: 105px auto 50px;
   padding: 2.5rem;
-  background: rgba(18, 12, 28, 0.88);
+  background: rgba(18, 12, 28, 0.92);
   border: 1px solid var(--border-glass);
   border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(20px);
   color: var(--text-main);
 }
@@ -702,7 +621,7 @@ footer.studio-institutional-footer {
 .doc-header {
   margin-bottom: 2rem;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .doc-header h1 {
@@ -816,74 +735,90 @@ footer.studio-institutional-footer {
 }
 
 /* ----------------------------------------------------
-   RESPONSIVE ADAPTATIONS (MOBILE MATCHING IMAGE 3)
+   RESPONSIVE ADAPTATIONS (MOBILE MATCHING CHILLYROOM MOBILE)
    ---------------------------------------------------- */
-@media (max-width: 768px) {
-  header.chilly-header {
-    height: 70px;
+@media (max-width: 960px) {
+  body.main-hub-body {
+    height: auto !important;
+    min-height: 100vh;
+    overflow-y: auto !important;
   }
 
-  .studio-logo-img {
-    height: 36px;
+  header.chilly-navbar {
+    height: 68px;
   }
 
-  .studio-name {
+  .brand-logo-img {
+    height: 34px;
+  }
+
+  .brand-name {
     font-size: 1.15rem;
   }
 
-  .studio-tagline,
-  .header-links-group {
+  .brand-sub,
+  .nav-menu-links {
     display: none;
   }
 
-  main.studio-hub-container {
-    padding: 85px 0.75rem 20px;
+  main.chilly-studio-hub {
+    padding: 85px 0.75rem 25px;
     justify-content: center;
   }
 
-  .showcase-slider-viewport {
-    gap: 0.5rem;
+  .chilly-slider-row {
+    gap: 0.4rem;
   }
 
-  .slider-arrow-btn {
+  .chilly-chevron-arrow {
     width: 38px;
     height: 38px;
   }
 
-  .slider-arrow-btn svg {
-    width: 26px;
-    height: 26px;
+  .chilly-chevron-arrow svg {
+    width: 30px;
+    height: 30px;
   }
 
-  .showcase-card-container {
-    max-width: 290px;
+  .chilly-cards-track {
+    gap: 0;
+    justify-content: center;
+    max-width: 100%;
   }
 
-  .game-cover-box {
+  /* On mobile, only display the active card */
+  .chilly-game-card {
+    display: none;
+  }
+
+  .chilly-game-card.active {
+    display: block;
+    flex: 0 0 290px;
+    width: 290px;
+    transform: none;
+  }
+
+  .card-media-wrapper {
     aspect-ratio: 16 / 11;
     border-radius: 18px;
-    max-height: 210px;
   }
 
-  .title-main {
-    font-size: 1.45rem;
+  .lockup-main-title {
+    font-size: 1.4rem;
   }
 
-  .title-sub {
-    font-size: 0.72rem;
-    letter-spacing: 2px;
+  .lockup-sub-title {
+    font-size: 0.68rem;
   }
 
-  .ego-title {
-    font-size: 2.1rem;
+  .ego-font {
+    font-size: 2rem;
   }
 
-  .showcase-action-hub {
+  .center-actions-hub {
+    margin-top: 24px;
     max-width: 300px;
-    margin-top: 14px;
-  }
-
-  .cta-row-primary {
+    flex-wrap: wrap;
     gap: 8px;
   }
 
@@ -894,39 +829,27 @@ footer.studio-institutional-footer {
   .cta-action-btn,
   .cta-status-pill {
     height: 40px;
-    padding: 0 0.85rem;
-    font-size: 0.8rem;
+    padding: 0 0.9rem;
+    font-size: 0.82rem;
   }
 
-  .cta-pill-btn {
-    height: 34px;
-    padding: 0 1.1rem;
-    font-size: 0.8rem;
-    width: 100%;
+  footer.chilly-studio-footer {
+    padding: 14px 1rem;
+    margin-top: 1.5rem;
   }
 
-  footer.studio-institutional-footer {
-    padding: 16px 1rem;
-  }
-
-  .footer-inner-content {
-    flex-direction: column-reverse;
-    gap: 0.85rem;
-    text-align: center;
-  }
-
-  .footer-links-cluster {
-    justify-content: center;
-    gap: 0.6rem;
+  .footer-studio-info-row {
+    flex-direction: column;
+    gap: 0.35rem;
     font-size: 0.75rem;
   }
 
-  .footer-social-strip {
-    justify-content: center;
+  .footer-separator {
+    display: none;
   }
 
   .doc-card-container {
-    margin: 85px 0.75rem 30px;
+    margin: 80px 0.75rem 30px;
     padding: 1.25rem;
   }
 }

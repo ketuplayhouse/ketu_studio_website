@@ -12,22 +12,22 @@ const translations = {
     "back-btn-text": "← Volver al Inicio",
 
     // Games Subtitles & Badges
-    "game2-subtext": "BLADE ARENA PVP",
-    "game3-maintext": "Próximamente",
-    "game3-subtext": "PROYECTO SECRETO",
+    "game1-sub": "SPEED UP",
+    "game2-sub": "BLADE ARENA PVP",
+    "game3-title": "Próximamente...",
+    "game3-sub": "PROYECTO SECRETO",
 
-    // Action Hub (CTAs)
-    "btn-watch-trailer": "Ver Tráiler",
+    // Action Buttons
+    "btn-watch-trailer": "▶ Ver Tráiler",
     "btn-discord-community": "Discord Oficial",
-    "btn-discord-alpha": "Discord (Alpha)",
+    "btn-discord-alpha": "👾 Discord (Alpha)",
     "badge-unity-dev": "⚡ Unity 3D",
     "btn-game-details": "Detalles del Proyecto",
-    "btn-discord-news": "Novedades",
-    "badge-secret-project": "🌀 Secreto",
-    "btn-discover-more": "Descubrir Más",
+    "btn-discord-news": "🔔 Novedades en Discord",
+    "badge-secret-project": "🌀 Proyecto Secreto",
 
     // Institutional Footer
-    "footer-developer": "KeTu Playhouse Inc.",
+    "footer-developer": "Developer: KeTu Playhouse Inc.",
     "link-privacy": "Política de Privacidad",
     "link-terms": "Términos de Uso",
     "footer-copy": "© 2026 KeTu Playhouse Inc. Todos los derechos reservados.",
@@ -109,22 +109,22 @@ const translations = {
     "back-btn-text": "← Back to Home",
 
     // Games Subtitles & Badges
-    "game2-subtext": "BLADE ARENA PVP",
-    "game3-maintext": "Coming Soon",
-    "game3-subtext": "SECRET PROJECT",
+    "game1-sub": "SPEED UP",
+    "game2-sub": "BLADE ARENA PVP",
+    "game3-title": "Coming Soon...",
+    "game3-sub": "SECRET PROJECT",
 
-    // Action Hub (CTAs)
-    "btn-watch-trailer": "Watch Trailer",
+    // Action Buttons
+    "btn-watch-trailer": "▶ Watch Trailer",
     "btn-discord-community": "Official Discord",
-    "btn-discord-alpha": "Discord (Alpha)",
+    "btn-discord-alpha": "👾 Discord (Alpha)",
     "badge-unity-dev": "⚡ Unity 3D",
     "btn-game-details": "Project Details",
-    "btn-discord-news": "News",
-    "badge-secret-project": "🌀 Secret",
-    "btn-discover-more": "Discover More",
+    "btn-discord-news": "🔔 News on Discord",
+    "badge-secret-project": "🌀 Secret Project",
 
     // Institutional Footer
-    "footer-developer": "KeTu Playhouse Inc.",
+    "footer-developer": "Developer: KeTu Playhouse Inc.",
     "link-privacy": "Privacy Policy",
     "link-terms": "Terms of Service",
     "footer-copy": "© 2026 KeTu Playhouse Inc. All rights reserved.",
@@ -199,51 +199,70 @@ const translations = {
 };
 
 // ==========================================================================
-// CINEMATIC SLIDER & INTERACTION CONTROLLER (CHILLYROOM EXACT)
+// CHILLYROOM 3-CARD SHOWCASE CONTROLLER
 // ==========================================================================
 
 let activeGameIndex = 0;
 const totalGames = 3;
 
-// Game ambient spotlight palette mapping
-const spotlightColors = [
-  "rgba(244, 129, 172, 0.32)",  // Game 0: Keyboard Escape
-  "rgba(191, 130, 244, 0.35)",  // Game 1: EGO BALL
-  "rgba(130, 214, 111, 0.30)"   // Game 2: Secret Portal
+// Ambient spotlight colors
+const spotlightGlows = [
+  "rgba(244, 129, 172, 0.28)",  // Keyboard Escape (Pink)
+  "rgba(191, 130, 244, 0.30)",  // EGO BALL (Purple)
+  "rgba(130, 214, 111, 0.26)"   // Secret Portal (Green)
 ];
 
 function selectGameIndex(index) {
   if (index < 0 || index >= totalGames) return;
   activeGameIndex = index;
 
-  // 1. Update Active Game Slide
+  // 1. Update Card Active States
   for (let i = 0; i < totalGames; i++) {
-    const slide = document.getElementById(`game-slide-${i}`);
-    if (slide) {
+    const card = document.getElementById(`card-${i}`);
+    if (card) {
       if (i === activeGameIndex) {
-        slide.classList.add('active-slide');
+        card.classList.add('active');
       } else {
-        slide.classList.remove('active-slide');
+        card.classList.remove('active');
       }
     }
   }
 
-  // 2. Smooth Ambient Spotlight Transition
-  const spotlight = document.getElementById('studio-spotlight');
-  if (spotlight && spotlightColors[activeGameIndex]) {
-    spotlight.style.background = spotlightColors[activeGameIndex];
+  // 2. Re-order track in Desktop so active card sits nicely in center if desired
+  arrangeCardsOrder(activeGameIndex);
+
+  // 3. Update Ambient Spotlight Glow
+  const spotlight = document.getElementById('chilly-spotlight');
+  if (spotlight && spotlightGlows[activeGameIndex]) {
+    spotlight.style.background = spotlightGlows[activeGameIndex];
   }
 
-  // 3. Smooth Action Panel Switch
-  for (let i = 0; i < totalGames; i++) {
-    const panel = document.getElementById(`action-panel-${i}`);
-    if (panel) {
-      if (i === activeGameIndex) {
-        panel.classList.add('panel-active');
-      } else {
-        panel.classList.remove('panel-active');
-      }
-    }
+  // 4. Render Action Buttons Hub under center card
+  renderActionButtons(activeGameIndex);
+}
+
+function arrangeCardsOrder(activeIndex) {
+  const track = document.getElementById('chilly-cards-track');
+  if (!track) return;
+
+  const card0 = document.getElementById('card-0');
+  const card1 = document.getElementById('card-1');
+  const card2 = document.getElementById('card-2');
+  if (!card0 || !card1 || !card2) return;
+
+  // Order logic: left card (order 1), center active card (order 2), right card (order 3)
+  if (activeIndex === 0) {
+    card2.style.order = '1';
+    card0.style.order = '2';
+    card1.style.order = '3';
+  } else if (activeIndex === 1) {
+    card0.style.order = '1';
+    card1.style.order = '2';
+    card2.style.order = '3';
+  } else if (activeIndex === 2) {
+    card1.style.order = '1';
+    card2.style.order = '2';
+    card0.style.order = '3';
   }
 }
 
@@ -254,68 +273,100 @@ function moveSlide(direction) {
   selectGameIndex(next);
 }
 
-// Touch Gestures & Mouse Drag Support for Mobile & Desktop
+function renderActionButtons(index) {
+  const hub = document.getElementById('center-actions-hub');
+  if (!hub) return;
+
+  const lang = localStorage.getItem('ketu_lang') || 'es';
+  const dict = translations[lang] || translations.es;
+
+  if (index === 0) {
+    // Keyboard Escape: Speed Up
+    hub.innerHTML = `
+      <a href="https://play.google.com/store/apps/details?id=com.ketuplayhouse.keyboardescape" target="_blank" rel="noopener noreferrer" class="cta-store-badge-link" title="Google Play">
+        <img src="assets/google_play_badge.png" alt="Google Play Store" class="store-badge-img">
+      </a>
+      <button class="cta-action-btn" onclick="openYouTubeTrailer()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+        <span>${dict['btn-watch-trailer']}</span>
+      </button>
+      <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="cta-action-btn cta-discord-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+        </svg>
+        <span>${dict['btn-discord-community']}</span>
+      </a>
+    `;
+  } else if (index === 1) {
+    // EGO BALL
+    hub.innerHTML = `
+      <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="cta-action-btn cta-discord-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+        </svg>
+        <span>${dict['btn-discord-alpha']}</span>
+      </a>
+      <span class="cta-status-pill" style="border-color: #ff2a5f; color: #ff6b8b; background: rgba(255, 42, 95, 0.12);">
+        ${dict['badge-unity-dev']}
+      </span>
+      <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="cta-action-btn">
+        <span>${dict['btn-game-details']}</span>
+      </a>
+    `;
+  } else if (index === 2) {
+    // Coming Soon
+    hub.innerHTML = `
+      <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="cta-action-btn" style="background: rgba(138, 43, 226, 0.35); border-color: #b15eff;">
+        <span>${dict['btn-discord-news']}</span>
+      </a>
+      <span class="cta-status-pill" style="border-color: #8a2be2; color: #d8b4fe; background: rgba(138, 43, 226, 0.15);">
+        ${dict['badge-secret-project']}
+      </span>
+    `;
+  }
+}
+
+// Touch Gestures & Keyboard Navigation
 let touchStartX = 0;
 let touchEndX = 0;
 
-function initTouchControls() {
-  const viewport = document.getElementById('slider-viewport');
-  if (!viewport) return;
+function initTouchSwipe() {
+  const track = document.getElementById('chilly-cards-track');
+  if (!track) return;
 
-  viewport.addEventListener('touchstart', (e) => {
+  track.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
   }, { passive: true });
 
-  viewport.addEventListener('touchend', (e) => {
+  track.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].screenX;
     handleSwipe();
   }, { passive: true });
-
-  let isMouseDown = false;
-  viewport.addEventListener('mousedown', (e) => {
-    isMouseDown = true;
-    touchStartX = e.clientX;
-  });
-
-  viewport.addEventListener('mouseup', (e) => {
-    if (!isMouseDown) return;
-    isMouseDown = false;
-    touchEndX = e.clientX;
-    handleSwipe();
-  });
 }
 
 function handleSwipe() {
-  const swipeThreshold = 40;
   const diff = touchEndX - touchStartX;
-  if (Math.abs(diff) > swipeThreshold) {
-    if (diff < 0) {
-      moveSlide(1); // Swipe left -> Next game
-    } else {
-      moveSlide(-1); // Swipe right -> Prev game
-    }
+  if (Math.abs(diff) > 40) {
+    if (diff < 0) moveSlide(1);
+    else moveSlide(-1);
   }
 }
 
-// Keyboard Navigation
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowLeft') {
-    moveSlide(-1);
-  } else if (e.key === 'ArrowRight') {
-    moveSlide(1);
-  }
+  if (e.key === 'ArrowLeft') moveSlide(-1);
+  else if (e.key === 'ArrowRight') moveSlide(1);
 });
 
 // ==========================================================================
-// LANGUAGE SYSTEM & DROPDOWN PILL
+// LANGUAGE ENGINE & PILL DROPDOWN
 // ==========================================================================
 
 function toggleLangDropdown(event) {
   event.stopPropagation();
   const pill = document.getElementById('lang-dropdown-pill');
-  if (pill) {
-    pill.classList.toggle('open');
-  }
+  if (pill) pill.classList.toggle('open');
 }
 
 function selectLanguage(lang) {
@@ -327,7 +378,6 @@ function selectLanguage(lang) {
   if (pill) pill.classList.remove('open');
 }
 
-// Close language dropdown on outside click
 document.addEventListener('click', (e) => {
   const pill = document.getElementById('lang-dropdown-pill');
   if (pill && !pill.contains(e.target)) {
@@ -339,7 +389,6 @@ function updateContent(lang) {
   const dictionary = translations[lang];
   if (!dictionary) return;
 
-  // In-place text injection
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.getAttribute("data-i18n");
     if (dictionary[key] !== undefined) {
@@ -347,13 +396,11 @@ function updateContent(lang) {
     }
   });
 
-  // Current language indicator in dropdown pill
   const currentLangText = document.getElementById('current-lang-text');
   if (currentLangText) {
     currentLangText.textContent = lang === 'es' ? 'Español' : 'English';
   }
 
-  // Update active state in menu items
   const menuItems = document.querySelectorAll('.lang-menu-item');
   menuItems.forEach(item => {
     if (item.getAttribute('onclick') && item.getAttribute('onclick').includes(lang)) {
@@ -364,6 +411,7 @@ function updateContent(lang) {
   });
 
   document.documentElement.setAttribute("lang", lang);
+  renderActionButtons(activeGameIndex);
 }
 
 // ==========================================================================
@@ -384,7 +432,7 @@ function openYouTubeTrailer() {
       modal.className = 'video-modal-overlay';
       modal.innerHTML = `
         <div class="video-modal-card">
-          <button class="video-modal-close" onclick="closeYouTubeTrailer()" aria-label="Cerrar">&times;</button>
+          <button class="video-modal-close" onclick="closeYouTubeTrailer()">&times;</button>
           <div class="video-iframe-wrapper">
             <iframe id="youtube-iframe" src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
@@ -408,7 +456,6 @@ function closeYouTubeTrailer() {
   }
 }
 
-// Close modal on Escape key
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeYouTubeTrailer();
 });
@@ -425,5 +472,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   updateContent(savedLang);
   selectGameIndex(0);
-  initTouchControls();
+  initTouchSwipe();
 });
