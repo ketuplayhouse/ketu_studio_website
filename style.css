@@ -30,9 +30,9 @@ html, body {
   width: 100%;
   min-height: 100vh;
   background-color: #08060c;
-  background-image: url('assets/pattern_kt.svg');
+  background-image: url('assets/pattern_kt.png');
   background-repeat: repeat;
-  background-size: 160px 160px;
+  background-size: 240px 240px;
   background-attachment: fixed;
   color: var(--text-main);
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
