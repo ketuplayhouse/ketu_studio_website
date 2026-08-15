@@ -29,10 +29,10 @@
 html, body {
   width: 100%;
   min-height: 100vh;
-  background-color: #0b0914;
+  background-color: #090710;
   background-image: url('assets/pattern_kt.svg');
   background-repeat: repeat;
-  background-size: 160px 160px;
+  background-size: 240px 240px;
   background-attachment: fixed;
   color: var(--text-main);
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -322,12 +322,17 @@ main.studio-hub {
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  opacity: 0.5;
-  filter: brightness(0.8);
+  opacity: 1; /* 100% sólida y opaca, el fondo nunca la traspasa */
+  filter: brightness(0.65);
   transform: scale(0.88);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   transition: all var(--transition-smooth);
   user-select: none;
+}
+
+.showcase-card:hover:not(.active) {
+  filter: brightness(0.85);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .showcase-card.active {
