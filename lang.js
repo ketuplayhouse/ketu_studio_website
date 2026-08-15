@@ -12,16 +12,19 @@ const translations = {
     "back-btn-text": "← Volver al Inicio",
 
     // Games Subtitles & Badges
-    "game2-subtext": "BLADE ARENA PVP (UNITY 3D)",
+    "game2-subtext": "BLADE ARENA PVP",
     "game3-maintext": "Próximamente",
     "game3-subtext": "PROYECTO SECRETO",
 
     // Action Hub (CTAs)
-    "btn-watch-trailer": "Ver Tráiler Oficial",
-    "btn-discord-alpha": "Comunidad Discord (Alpha)",
-    "badge-unity-dev": "⚡ Prototipo Unity 3D",
-    "btn-discord-news": "Novedades en Discord",
-    "badge-secret-project": "🌀 Proyecto Secreto",
+    "btn-watch-trailer": "Ver Tráiler",
+    "btn-discord-community": "Discord Oficial",
+    "btn-discord-alpha": "Discord (Alpha)",
+    "badge-unity-dev": "⚡ Unity 3D",
+    "btn-game-details": "Detalles del Proyecto",
+    "btn-discord-news": "Novedades",
+    "badge-secret-project": "🌀 Secreto",
+    "btn-discover-more": "Descubrir Más",
 
     // Institutional Footer
     "footer-developer": "KeTu Playhouse Inc.",
@@ -106,16 +109,19 @@ const translations = {
     "back-btn-text": "← Back to Home",
 
     // Games Subtitles & Badges
-    "game2-subtext": "BLADE ARENA PVP (UNITY 3D)",
+    "game2-subtext": "BLADE ARENA PVP",
     "game3-maintext": "Coming Soon",
     "game3-subtext": "SECRET PROJECT",
 
     // Action Hub (CTAs)
-    "btn-watch-trailer": "Watch Official Trailer",
-    "btn-discord-alpha": "Discord Community (Alpha)",
-    "badge-unity-dev": "⚡ Unity 3D Prototype",
-    "btn-discord-news": "Get News on Discord",
-    "badge-secret-project": "🌀 Secret Project",
+    "btn-watch-trailer": "Watch Trailer",
+    "btn-discord-community": "Official Discord",
+    "btn-discord-alpha": "Discord (Alpha)",
+    "badge-unity-dev": "⚡ Unity 3D",
+    "btn-game-details": "Project Details",
+    "btn-discord-news": "News",
+    "badge-secret-project": "🌀 Secret",
+    "btn-discover-more": "Discover More",
 
     // Institutional Footer
     "footer-developer": "KeTu Playhouse Inc.",
@@ -193,7 +199,7 @@ const translations = {
 };
 
 // ==========================================================================
-// CINEMATIC SLIDER & INTERACTION CONTROLLER
+// CINEMATIC SLIDER & INTERACTION CONTROLLER (CHILLYROOM EXACT)
 // ==========================================================================
 
 let activeGameIndex = 0;
@@ -201,37 +207,24 @@ const totalGames = 3;
 
 // Game ambient spotlight palette mapping
 const spotlightColors = [
-  "rgba(244, 129, 172, 0.35)",  // Game 0: KeTu Pink & Cyan Spotlight
-  "rgba(191, 130, 244, 0.40)",  // Game 1: EGO BALL Cosmic Purple / Crimson
-  "rgba(130, 214, 111, 0.35)"   // Game 2: Secret Portal Green Aura
+  "rgba(244, 129, 172, 0.32)",  // Game 0: Keyboard Escape
+  "rgba(191, 130, 244, 0.35)",  // Game 1: EGO BALL
+  "rgba(130, 214, 111, 0.30)"   // Game 2: Secret Portal
 ];
 
 function selectGameIndex(index) {
   if (index < 0 || index >= totalGames) return;
   activeGameIndex = index;
 
-  // 1. Update Card Active States & Smooth Track Translate
-  const cards = document.querySelectorAll('.game-showcase-card');
-  const track = document.getElementById('showcase-track');
-
-  cards.forEach((card, idx) => {
-    if (idx === activeGameIndex) {
-      card.classList.add('active-card');
-    } else {
-      card.classList.remove('active-card');
-    }
-  });
-
-  // Mobile / Desktop Smooth Track Shift
-  if (track) {
-    if (window.innerWidth <= 768) {
-      // Centering offset calculation for mobile
-      const cardWidth = cards[0] ? cards[0].offsetWidth : 280;
-      const gap = 20;
-      const offset = - (activeGameIndex * (cardWidth + gap)) + (window.innerWidth - cardWidth) / 2 - gap;
-      track.style.transform = `translateX(${offset}px)`;
-    } else {
-      track.style.transform = `none`;
+  // 1. Update Active Game Slide
+  for (let i = 0; i < totalGames; i++) {
+    const slide = document.getElementById(`game-slide-${i}`);
+    if (slide) {
+      if (i === activeGameIndex) {
+        slide.classList.add('active-slide');
+      } else {
+        slide.classList.remove('active-slide');
+      }
     }
   }
 
@@ -241,15 +234,17 @@ function selectGameIndex(index) {
     spotlight.style.background = spotlightColors[activeGameIndex];
   }
 
-  // 3. Smooth Action Panel Crossfade
-  const panels = document.querySelectorAll('.cta-action-panel');
-  panels.forEach((panel, idx) => {
-    if (idx === activeGameIndex) {
-      panel.classList.add('panel-active');
-    } else {
-      panel.classList.remove('panel-active');
+  // 3. Smooth Action Panel Switch
+  for (let i = 0; i < totalGames; i++) {
+    const panel = document.getElementById(`action-panel-${i}`);
+    if (panel) {
+      if (i === activeGameIndex) {
+        panel.classList.add('panel-active');
+      } else {
+        panel.classList.remove('panel-active');
+      }
     }
-  });
+  }
 }
 
 function moveSlide(direction) {
@@ -276,7 +271,6 @@ function initTouchControls() {
     handleSwipe();
   }, { passive: true });
 
-  // Mouse Drag Support
   let isMouseDown = false;
   viewport.addEventListener('mousedown', (e) => {
     isMouseDown = true;
@@ -292,7 +286,7 @@ function initTouchControls() {
 }
 
 function handleSwipe() {
-  const swipeThreshold = 45;
+  const swipeThreshold = 40;
   const diff = touchEndX - touchStartX;
   if (Math.abs(diff) > swipeThreshold) {
     if (diff < 0) {
@@ -310,11 +304,6 @@ document.addEventListener('keydown', (e) => {
   } else if (e.key === 'ArrowRight') {
     moveSlide(1);
   }
-});
-
-// Window Resize handling for slider alignment
-window.addEventListener('resize', () => {
-  selectGameIndex(activeGameIndex);
 });
 
 // ==========================================================================
@@ -367,7 +356,7 @@ function updateContent(lang) {
   // Update active state in menu items
   const menuItems = document.querySelectorAll('.lang-menu-item');
   menuItems.forEach(item => {
-    if (item.getAttribute('onclick').includes(lang)) {
+    if (item.getAttribute('onclick') && item.getAttribute('onclick').includes(lang)) {
       item.classList.add('active');
     } else {
       item.classList.remove('active');
