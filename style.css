@@ -29,10 +29,9 @@
 html, body {
   width: 100%;
   min-height: 100vh;
-  background-color: #08060c;
-  background-image: url('assets/pattern_kt.jpg');
+  background-color: #12141a;
+  background-image: url('assets/chilly_bg.png');
   background-repeat: repeat;
-  background-size: 900px auto;
   background-attachment: fixed;
   color: var(--text-main);
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
