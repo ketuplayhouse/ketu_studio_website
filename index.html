@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Teko:wght@700&display=swap">
 
     <!-- Stylesheets & Favicon -->
-    <link rel="stylesheet" href="style.css?v=2.5.2">
+    <link rel="stylesheet" href="style.css?v=2.5.3">
     <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="canonical" href="https://ketuplayhouse.com/">
 
@@ -45,7 +45,7 @@
     </script>
 
     <!-- Language & Logic Script -->
-    <script src="lang.js?v=2.5.2" defer></script>
+    <script src="lang.js?v=2.5.3" defer></script>
 </head>
 <body class="main-hub-body">
     <!-- Atmospheric Studio Ambient Canvas -->
@@ -379,6 +379,32 @@
                 moveCoverflow(1);
             }
         });
+
+        // Touch Swipe Navigation for Mobile / In-App WebViews
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const coverflowEl = document.getElementById('coverflow-wrapper');
+        if (coverflowEl) {
+            coverflowEl.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            coverflowEl.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipeGesture();
+            }, { passive: true });
+        }
+
+        function handleSwipeGesture() {
+            const diffX = touchEndX - touchStartX;
+            if (Math.abs(diffX) > 45) {
+                if (diffX < 0) {
+                    moveCoverflow(1); // Swipe left -> next
+                } else {
+                    moveCoverflow(-1); // Swipe right -> prev
+                }
+            }
+        }
 
         document.addEventListener("DOMContentLoaded", () => {
             selectGameIndex(0);
