@@ -29,8 +29,8 @@
 html, body {
   width: 100%;
   min-height: 100vh;
-  background-color: #12141a;
-  background-image: url('assets/chilly_bg.png');
+  background-color: #0a0810;
+  background-image: url('assets/ketu_bg.png');
   background-repeat: repeat;
   background-attachment: fixed;
   color: var(--text-main);
