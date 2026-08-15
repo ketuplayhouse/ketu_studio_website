@@ -13,13 +13,13 @@ const translations = {
     "game1-trailer-btn": "Ver Tráiler Oficial",
     "badge-alt": "Disponible en Google Play",
 
-    "game2-tag": "EN DESARROLLO TEMPRANO (UNITY 3D)",
+    "game2-tag": "EN DESARROLLO (FASE TEMPRANA)",
     "game2-title": "EGO BALL",
-    "game2-discord-btn": "Comunidad Discord (Alpha)",
+    "game2-discord-btn": "Comunidad de Discord",
 
-    "game3-tag": "PRÓXIMO PROYECTO SECRET",
+    "game3-tag": "PROYECTO NO REVELADO",
     "game3-title": "Próximamente...",
-    "game3-discord-btn": "Novedades en Discord",
+    "game3-discord-btn": "Comunidad de Discord",
 
     // About Us Page
     "about-page-title": "Sobre KeTu Playhouse",
@@ -107,13 +107,13 @@ const translations = {
     "game1-trailer-btn": "Watch Official Trailer",
     "badge-alt": "Get it on Google Play",
 
-    "game2-tag": "IN EARLY DEV (UNITY 3D)",
+    "game2-tag": "IN EARLY DEVELOPMENT",
     "game2-title": "EGO BALL",
-    "game2-discord-btn": "Discord Community (Alpha)",
+    "game2-discord-btn": "Discord Community",
 
-    "game3-tag": "NEXT SECRET PROJECT",
+    "game3-tag": "UNANNOUNCED PROJECT",
     "game3-title": "Coming Soon...",
-    "game3-discord-btn": "Get News on Discord",
+    "game3-discord-btn": "Discord Community",
 
     // About Us Page
     "about-page-title": "About KeTu Playhouse",
