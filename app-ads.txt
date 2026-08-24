@@ -1,5 +1,5 @@
 # KeTu Playhouse - Official app-ads.txt
-# Last Updated: 2026-08-20
+# Last Updated: 2026-08-23
 # Managed networks: Google AdMob, Odeeo, Adverty
 
 google.com, pub-8838761117101664, DIRECT, f08c47fec0942fa0
@@ -710,4 +710,11 @@ media.net,8CUU43MOJ,RESELLER
 theagenticx.ai,729329,RESELLER
 themediagrid.com,RVQDTI,RESELLER,35d5010d7789b49d
 rubiconproject.com,26980,RESELLER,0bfd66d529a55807
+sharethrough.com,4618,RESELLER,d53b998a7bd4ecd2
+media.net,8CUT8CWB6,RESELLER
+improvedigital.com,2226,RESELLER
+adorphic.com,4048,RESELLER
+axonix.com,59219,RESELLER
+smaato.com,1100060308,RESELLER,07bcf65f187117b4
+adagio.io,1454,RESELLER
 #Adverty app-ads.txt END
