@@ -28,6 +28,8 @@ const translations = {
     "about-page-h2-1": "Nuestra Filosofía",
     "about-page-p2": "Creemos en el gameplay ágil, en controles pulidos al milisegundo y en estéticas visuales vibrantes (Candy Neón, Synthwave y Anime). Queremos que cada segundo que pases en nuestros juegos sea electrizante.",
     "about-page-h2-2": "Nuestros Proyectos",
+    "about-proj-1": "<strong style='color:var(--ketu-blue)'>Keyboard Escape: Speed Up:</strong> Nuestro primer título publicado en Google Play Store. Un juego arcade contra el reloj donde debes escapar de un teclado cibernético a velocidad extrema.",
+    "about-proj-2": "<strong style='color:var(--ketu-pink)'>EGO BALL:</strong> Actualmente en etapa temprana de prototipado en Unity 3D. Una arena multijugador arcade de deflexión de pelota con espadas coleccionables y auras neón.",
     "about-page-h2-3": "Contacto & Soporte",
     "about-page-p3": "Si deseas reportar un error, hacernos consultas o enviarnos tus comentarios, escríbenos directamente a nuestro correo oficial de soporte:",
 
@@ -123,6 +125,8 @@ const translations = {
     "about-page-h2-1": "Our Philosophy",
     "about-page-p2": "We believe in agile gameplay, controls tuned to the millisecond, and vibrant visual aesthetics (Candy Neon, Synthwave, and Anime). We want every second you spend in our games to be truly electrifying.",
     "about-page-h2-2": "Our Projects",
+    "about-proj-1": "<strong style='color:var(--ketu-blue)'>Keyboard Escape: Speed Up:</strong> Our debut title published on Google Play Store. A high-speed arcade runner where every second increases your speed across a cybernetic keyboard.",
+    "about-proj-2": "<strong style='color:var(--ketu-pink)'>EGO BALL:</strong> Currently in early 3D prototyping in Unity. A fast-paced multiplayer deflection arena featuring collectible blades and neon anime auras.",
     "about-page-h2-3": "Contact & Support",
     "about-page-p3": "If you want to report a bug, ask questions, or send us your feedback, write directly to our official support email:",
 
@@ -232,6 +236,12 @@ function changeLanguage(lang) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Clean /index.html from browser URL bar automatically for a clean studio URL
+  if (window.location.pathname.endsWith("/index.html")) {
+    const cleanPath = window.location.pathname.replace(/\/index\.html$/, "/") || "/";
+    window.history.replaceState(null, "", cleanPath + window.location.search + window.location.hash);
+  }
+
   let savedLang = localStorage.getItem("ketu_lang");
   if (!savedLang) {
     const browserLang = navigator.language || navigator.userLanguage;

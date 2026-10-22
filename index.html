@@ -2,7 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0d0814">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>KeTu Playhouse - Estudio de Videojuegos Móviles</title>
     
     <!-- SEO Meta Tags -->
@@ -23,8 +26,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Teko:wght@700&display=swap">
 
     <!-- Stylesheets & Favicon -->
-    <link rel="stylesheet" href="style.css?v=2.5.6">
+    <link rel="stylesheet" href="style.css?v=2.6.0">
     <link rel="icon" type="image/png" href="assets/icon.png">
+    <link rel="apple-touch-icon" href="assets/icon.png">
     <link rel="canonical" href="https://ketuplayhouse.com/">
 
     <!-- JSON-LD Structured Data -->
@@ -45,23 +49,46 @@
     </script>
 
     <!-- Language & Logic Script -->
-    <script src="lang.js?v=2.5.6" defer></script>
+    <script src="lang.js?v=2.6.0" defer></script>
 </head>
 <body class="main-hub-body">
-    <!-- Atmospheric Studio Ambient Canvas -->
-    <div class="bg-fixed-canvas">
+    <!-- Atmospheric Studio Ambient Canvas (iOS & Desktop GPU Safe) -->
+    <div class="bg-fixed-canvas" aria-hidden="true">
+        <div class="bg-pattern-layer"></div>
         <div class="bg-spotlight" id="bg-spotlight"></div>
+        <div class="spooky-mist-layer"></div>
+        <div class="spooky-embers">
+            <span class="ember e1"></span>
+            <span class="ember e2"></span>
+            <span class="ember e3"></span>
+            <span class="ember e4"></span>
+            <span class="ember e5"></span>
+            <span class="ember e6"></span>
+        </div>
+        <!-- Subtle Artisan Corner Cobweb Filigree -->
+        <svg class="spooky-corner-web web-left" viewBox="0 0 120 120" fill="none">
+            <path d="M0 0 L110 20 M0 0 L95 55 M0 0 L75 85 M0 0 L45 105 M0 0 L15 115" stroke="currentColor" stroke-width="0.9"/>
+            <path d="M28 5 Q24 14 22 18 Q18 22 12 25 Q6 28 3 28" stroke="currentColor" stroke-width="0.8" fill="none"/>
+            <path d="M55 10 Q48 26 42 36 Q34 46 22 52 Q12 56 6 57" stroke="currentColor" stroke-width="0.8" fill="none"/>
+            <path d="M84 15 Q74 38 62 54 Q48 70 32 78 Q18 85 10 86" stroke="currentColor" stroke-width="0.8" fill="none"/>
+        </svg>
+        <svg class="spooky-corner-web web-right" viewBox="0 0 120 120" fill="none">
+            <path d="M0 0 L110 20 M0 0 L95 55 M0 0 L75 85 M0 0 L45 105 M0 0 L15 115" stroke="currentColor" stroke-width="0.9"/>
+            <path d="M28 5 Q24 14 22 18 Q18 22 12 25 Q6 28 3 28" stroke="currentColor" stroke-width="0.8" fill="none"/>
+            <path d="M55 10 Q48 26 42 36 Q34 46 22 52 Q12 56 6 57" stroke="currentColor" stroke-width="0.8" fill="none"/>
+            <path d="M84 15 Q74 38 62 54 Q48 70 32 78 Q18 85 10 86" stroke="currentColor" stroke-width="0.8" fill="none"/>
+        </svg>
     </div>
 
     <!-- Header Navigation (Chillyroom Style Roof Bar) -->
     <header class="studio-header">
         <nav class="studio-nav">
-            <a href="index.html" class="logo-container">
+            <a href="/" class="logo-container" onclick="if(window.location.pathname==='/'||window.location.pathname.endsWith('index.html')){selectGameIndex(0);return false;}">
                 <img src="assets/logo.png" alt="KeTu Playhouse Logo" class="logo-img" id="nav-logo">
             </a>
             
             <ul class="nav-links">
-                <li><a href="#" onclick="selectGameIndex(0); return false;" class="active" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="/" onclick="selectGameIndex(0); return false;" class="active" data-i18n="nav-home">Inicio</a></li>
                 <li><a href="about.html" data-i18n="nav-about">Sobre Nosotros</a></li>
                 <li><a href="mailto:ketusoporte@gmail.com?subject=Soporte%20KeTu%20Playhouse" data-i18n="nav-support">Soporte</a></li>
             </ul>
@@ -106,13 +133,17 @@
                     </svg>
                 </button>
 
-                <!-- GAME CARDS CONTAINER (16:11 Widescreen Aspect Ratio) -->
+                <!-- Ambient Stage Pedestal Halo Under Active Card -->
+                <div class="showcase-stage-glow" id="showcase-stage-glow" aria-hidden="true"></div>
+
+                <!-- GAME CARDS CONTAINER (16:11 Widescreen Aspect Ratio + 3D Perspective) -->
                 <div class="showcase-cards-wrapper" id="coverflow-wrapper">
                     <!-- Card 0: Keyboard Escape: Speed Up -->
-                    <div class="showcase-card active" onclick="selectGameIndex(0)">
+                    <div class="showcase-card active" data-card-index="0" onclick="selectGameIndex(0)">
                         <div class="card-art-container">
-                            <img src="assets/banner.png" alt="Keyboard Escape Banner Art" class="card-art-img">
+                            <img src="assets/banner.png" alt="Keyboard Escape Banner Art" class="card-art-img" draggable="false">
                             <div class="card-vignette-layer"></div>
+                            <div class="card-shine-sweep"></div>
                             
                             <!-- Official Transparent Game Logo Overlay -->
                             <div class="card-logo-overlay">
@@ -125,10 +156,11 @@
                     </div>
 
                     <!-- Card 1: EGO BALL -->
-                    <div class="showcase-card side-next" onclick="selectGameIndex(1)">
+                    <div class="showcase-card side-next" data-card-index="1" onclick="selectGameIndex(1)">
                         <div class="card-art-container">
-                            <img src="assets/ego_ball_banner.jpg" alt="EGO BALL Banner Art" class="card-art-img">
+                            <img src="assets/ego_ball_banner.jpg" alt="EGO BALL Banner Art" class="card-art-img" draggable="false">
                             <div class="card-vignette-layer"></div>
+                            <div class="card-shine-sweep"></div>
                             
                             <!-- Official Transparent Game Logo Overlay -->
                             <div class="card-logo-overlay">
@@ -141,10 +173,11 @@
                     </div>
 
                     <!-- Card 2: Coming Soon Portal -->
-                    <div class="showcase-card side-prev" onclick="selectGameIndex(2)">
+                    <div class="showcase-card side-prev" data-card-index="2" onclick="selectGameIndex(2)">
                         <div class="card-art-container">
-                            <img src="assets/coming_soon_portal.jpg" alt="Coming Soon Portal" class="card-art-img portal-card-img">
+                            <img src="assets/coming_soon_portal.jpg" alt="Coming Soon Portal" class="card-art-img portal-card-img" draggable="false">
                             <div class="card-vignette-layer"></div>
+                            <div class="card-shine-sweep"></div>
                             
                             <!-- Official Transparent Game Logo Overlay -->
                             <div class="card-logo-overlay">
@@ -156,6 +189,13 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- DIAMOND STAGE INDICATORS -->
+            <div class="showcase-pagination" role="tablist" aria-label="Selector de juegos">
+                <button class="page-diamond active" onclick="selectGameIndex(0)" aria-label="Keyboard Escape: Speed Up"></button>
+                <button class="page-diamond" onclick="selectGameIndex(1)" aria-label="EGO BALL"></button>
+                <button class="page-diamond" onclick="selectGameIndex(2)" aria-label="Coming Soon"></button>
             </div>
 
             <!-- DYNAMIC ACTION BUTTONS BAR (Symmetric Row Directly Below Active Card) -->
@@ -229,19 +269,31 @@
         }
 
         function selectGameIndex(index) {
+            const changed = activeIndex !== index;
             activeIndex = index;
             const cards = document.querySelectorAll('.showcase-card');
+            const diamonds = document.querySelectorAll('.page-diamond');
             
             cards.forEach((card, idx) => {
-                card.classList.remove('active', 'side-prev', 'side-next');
+                card.classList.remove('active', 'side-prev', 'side-next', 'shine-trigger');
+                card.style.removeProperty('--tilt-x');
+                card.style.removeProperty('--tilt-y');
                 
                 if (idx === index) {
                     card.classList.add('active');
+                    if (changed) {
+                        void card.offsetWidth;
+                        card.classList.add('shine-trigger');
+                    }
                 } else if (idx === (index - 1 + totalGames) % totalGames) {
                     card.classList.add('side-prev');
                 } else {
                     card.classList.add('side-next');
                 }
+            });
+
+            diamonds.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === index);
             });
 
             updateSpotlight(index);
@@ -250,17 +302,34 @@
 
         function updateSpotlight(index) {
             const spotlight = document.getElementById('bg-spotlight');
-            if (!spotlight) return;
+            const stageGlow = document.getElementById('showcase-stage-glow');
+            const body = document.body;
+            body.setAttribute('data-active-game', String(index));
 
             if (index === 0) {
-                // Keyboard Escape (Cyan / Blue subtle aura)
-                spotlight.style.background = 'radial-gradient(ellipse at 50% 45%, rgba(133, 203, 245, 0.12) 0%, rgba(244, 129, 172, 0.04) 45%, transparent 70%)';
+                // Keyboard Escape (Cyan / Spooky Twilight Violet & Warm Amber Accent)
+                if (spotlight) {
+                    spotlight.style.background = 'radial-gradient(ellipse at 50% 44%, rgba(133, 203, 245, 0.14) 0%, rgba(191, 130, 244, 0.08) 38%, rgba(255, 138, 61, 0.04) 60%, transparent 75%)';
+                }
+                if (stageGlow) {
+                    stageGlow.style.background = 'radial-gradient(ellipse at 50% 50%, rgba(133, 203, 245, 0.34) 0%, rgba(191, 130, 244, 0.16) 45%, transparent 72%)';
+                }
             } else if (index === 1) {
-                // EGO BALL (Purple / Pink subtle aura)
-                spotlight.style.background = 'radial-gradient(ellipse at 50% 45%, rgba(191, 130, 244, 0.14) 0%, rgba(244, 129, 172, 0.05) 45%, transparent 70%)';
+                // EGO BALL (Pink / Crimson Flame & Spooky Amber Aura)
+                if (spotlight) {
+                    spotlight.style.background = 'radial-gradient(ellipse at 50% 44%, rgba(244, 129, 172, 0.16) 0%, rgba(255, 122, 69, 0.08) 40%, rgba(191, 130, 244, 0.05) 62%, transparent 75%)';
+                }
+                if (stageGlow) {
+                    stageGlow.style.background = 'radial-gradient(ellipse at 50% 50%, rgba(244, 129, 172, 0.36) 0%, rgba(255, 138, 61, 0.18) 45%, transparent 72%)';
+                }
             } else if (index === 2) {
-                // Coming Soon (Green / Purple subtle aura)
-                spotlight.style.background = 'radial-gradient(ellipse at 50% 45%, rgba(130, 214, 111, 0.12) 0%, rgba(191, 130, 244, 0.05) 45%, transparent 70%)';
+                // Coming Soon (Eerie Emerald / Cosmic Violet Portal Aura)
+                if (spotlight) {
+                    spotlight.style.background = 'radial-gradient(ellipse at 50% 44%, rgba(130, 214, 111, 0.14) 0%, rgba(191, 130, 244, 0.1) 42%, rgba(255, 138, 61, 0.04) 62%, transparent 75%)';
+                }
+                if (stageGlow) {
+                    stageGlow.style.background = 'radial-gradient(ellipse at 50% 50%, rgba(130, 214, 111, 0.32) 0%, rgba(191, 130, 244, 0.18) 45%, transparent 72%)';
+                }
             }
         }
 
@@ -277,7 +346,7 @@
                 if (index === 0) {
                     // Keyboard Escape Actions
                     const trailerText = lang === 'es' ? 'Ver Tráiler Oficial' : 'Watch Official Trailer';
-                    const storeText = lang === 'es' ? 'Google Play' : 'Google Play';
+                    const storeText = 'Google Play';
                     actionsBar.innerHTML = `
                         <a href="https://play.google.com/store/apps/details?id=com.ketuplayhouse.keyboardescape" target="_blank" rel="noopener noreferrer" class="action-btn action-btn-playstore">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -309,7 +378,7 @@
                         </div>
                     `;
                 } else if (index === 2) {
-                    // Coming Soon Actions (Only translucent unannounced pill)
+                    // Coming Soon Actions
                     const secretTagText = lang === 'es' ? 'Proyecto No Revelado' : 'Unannounced Project';
                     actionsBar.innerHTML = `
                         <div class="action-tag-pill tag-secret">
@@ -321,7 +390,25 @@
 
                 actionsBar.style.opacity = '1';
                 actionsBar.style.transform = 'translateY(0)';
-            }, 180);
+            }, 150);
+        }
+
+        // Subtle 3D Pointer Parallax on Desktop Hover for Active Card
+        if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            document.querySelectorAll('.showcase-card').forEach((card) => {
+                card.addEventListener('mousemove', (e) => {
+                    if (!card.classList.contains('active')) return;
+                    const rect = card.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width - 0.5;
+                    const y = (e.clientY - rect.top) / rect.height - 0.5;
+                    card.style.setProperty('--tilt-y', `${(x * 7).toFixed(2)}deg`);
+                    card.style.setProperty('--tilt-x', `${(-y * 5.5).toFixed(2)}deg`);
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.removeProperty('--tilt-x');
+                    card.style.removeProperty('--tilt-y');
+                });
+            });
         }
 
         // Language Dropdown Controller
@@ -381,24 +468,29 @@
             }
         });
 
-        // Touch Swipe Navigation for Mobile / In-App WebViews
+        // Touch Swipe Navigation for Mobile, iPhone & Tablets
         let touchStartX = 0;
+        let touchStartY = 0;
         let touchEndX = 0;
+        let touchEndY = 0;
         const coverflowEl = document.getElementById('coverflow-wrapper');
         if (coverflowEl) {
             coverflowEl.addEventListener('touchstart', (e) => {
                 touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
             }, { passive: true });
 
             coverflowEl.addEventListener('touchend', (e) => {
                 touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
                 handleSwipeGesture();
             }, { passive: true });
         }
 
         function handleSwipeGesture() {
             const diffX = touchEndX - touchStartX;
-            if (Math.abs(diffX) > 45) {
+            const diffY = touchEndY - touchStartY;
+            if (Math.abs(diffX) > 36 && Math.abs(diffX) > Math.abs(diffY)) {
                 if (diffX < 0) {
                     moveCoverflow(1); // Swipe left -> next
                 } else {
