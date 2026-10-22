@@ -2,10 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#0d0814">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>KeTu Playhouse - Estudio de Videojuegos Móviles</title>
     
     <!-- SEO Meta Tags -->
@@ -26,7 +24,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Teko:wght@700&display=swap">
 
     <!-- Stylesheets & Favicon -->
-    <link rel="stylesheet" href="style.css?v=2.6.0">
+    <link rel="stylesheet" href="style.css?v=2.6.1">
     <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="apple-touch-icon" href="assets/icon.png">
     <link rel="canonical" href="https://ketuplayhouse.com/">
@@ -49,14 +47,12 @@
     </script>
 
     <!-- Language & Logic Script -->
-    <script src="lang.js?v=2.6.0" defer></script>
+    <script src="lang.js?v=2.6.1" defer></script>
 </head>
 <body class="main-hub-body">
-    <!-- Atmospheric Studio Ambient Canvas (iOS & Desktop GPU Safe) -->
+    <!-- Atmospheric Studio Ambient Canvas (Transparent so ketu_bg.png shines through) -->
     <div class="bg-fixed-canvas" aria-hidden="true">
-        <div class="bg-pattern-layer"></div>
         <div class="bg-spotlight" id="bg-spotlight"></div>
-        <div class="spooky-mist-layer"></div>
         <div class="spooky-embers">
             <span class="ember e1"></span>
             <span class="ember e2"></span>
@@ -136,10 +132,10 @@
                 <!-- Ambient Stage Pedestal Halo Under Active Card -->
                 <div class="showcase-stage-glow" id="showcase-stage-glow" aria-hidden="true"></div>
 
-                <!-- GAME CARDS CONTAINER (16:11 Widescreen Aspect Ratio + 3D Perspective) -->
+                <!-- GAME CARDS CONTAINER (16:11 Widescreen Aspect Ratio - Flat Clean Alignment) -->
                 <div class="showcase-cards-wrapper" id="coverflow-wrapper">
                     <!-- Card 0: Keyboard Escape: Speed Up -->
-                    <div class="showcase-card active" data-card-index="0" onclick="selectGameIndex(0)">
+                    <div class="showcase-card active" onclick="selectGameIndex(0)">
                         <div class="card-art-container">
                             <img src="assets/banner.png" alt="Keyboard Escape Banner Art" class="card-art-img" draggable="false">
                             <div class="card-vignette-layer"></div>
@@ -156,7 +152,7 @@
                     </div>
 
                     <!-- Card 1: EGO BALL -->
-                    <div class="showcase-card side-next" data-card-index="1" onclick="selectGameIndex(1)">
+                    <div class="showcase-card side-next" onclick="selectGameIndex(1)">
                         <div class="card-art-container">
                             <img src="assets/ego_ball_banner.jpg" alt="EGO BALL Banner Art" class="card-art-img" draggable="false">
                             <div class="card-vignette-layer"></div>
@@ -173,7 +169,7 @@
                     </div>
 
                     <!-- Card 2: Coming Soon Portal -->
-                    <div class="showcase-card side-prev" data-card-index="2" onclick="selectGameIndex(2)">
+                    <div class="showcase-card side-prev" onclick="selectGameIndex(2)">
                         <div class="card-art-container">
                             <img src="assets/coming_soon_portal.jpg" alt="Coming Soon Portal" class="card-art-img portal-card-img" draggable="false">
                             <div class="card-vignette-layer"></div>
@@ -276,8 +272,6 @@
             
             cards.forEach((card, idx) => {
                 card.classList.remove('active', 'side-prev', 'side-next', 'shine-trigger');
-                card.style.removeProperty('--tilt-x');
-                card.style.removeProperty('--tilt-y');
                 
                 if (idx === index) {
                     card.classList.add('active');
@@ -303,32 +297,31 @@
         function updateSpotlight(index) {
             const spotlight = document.getElementById('bg-spotlight');
             const stageGlow = document.getElementById('showcase-stage-glow');
-            const body = document.body;
-            body.setAttribute('data-active-game', String(index));
+            document.body.setAttribute('data-active-game', String(index));
 
             if (index === 0) {
-                // Keyboard Escape (Cyan / Spooky Twilight Violet & Warm Amber Accent)
+                // Keyboard Escape (Cyan / Blue subtle aura)
                 if (spotlight) {
-                    spotlight.style.background = 'radial-gradient(ellipse at 50% 44%, rgba(133, 203, 245, 0.14) 0%, rgba(191, 130, 244, 0.08) 38%, rgba(255, 138, 61, 0.04) 60%, transparent 75%)';
+                    spotlight.style.background = 'radial-gradient(ellipse at 50% 45%, rgba(133, 203, 245, 0.12) 0%, rgba(244, 129, 172, 0.04) 45%, transparent 70%)';
                 }
                 if (stageGlow) {
-                    stageGlow.style.background = 'radial-gradient(ellipse at 50% 50%, rgba(133, 203, 245, 0.34) 0%, rgba(191, 130, 244, 0.16) 45%, transparent 72%)';
+                    stageGlow.style.background = 'radial-gradient(ellipse at 50% 50%, rgba(133, 203, 245, 0.28) 0%, rgba(191, 130, 244, 0.12) 48%, transparent 72%)';
                 }
             } else if (index === 1) {
-                // EGO BALL (Pink / Crimson Flame & Spooky Amber Aura)
+                // EGO BALL (Purple / Pink subtle aura)
                 if (spotlight) {
-                    spotlight.style.background = 'radial-gradient(ellipse at 50% 44%, rgba(244, 129, 172, 0.16) 0%, rgba(255, 122, 69, 0.08) 40%, rgba(191, 130, 244, 0.05) 62%, transparent 75%)';
+                    spotlight.style.background = 'radial-gradient(ellipse at 50% 45%, rgba(191, 130, 244, 0.14) 0%, rgba(244, 129, 172, 0.05) 45%, transparent 70%)';
                 }
                 if (stageGlow) {
-                    stageGlow.style.background = 'radial-gradient(ellipse at 50% 50%, rgba(244, 129, 172, 0.36) 0%, rgba(255, 138, 61, 0.18) 45%, transparent 72%)';
+                    stageGlow.style.background = 'radial-gradient(ellipse at 50% 50%, rgba(244, 129, 172, 0.3) 0%, rgba(255, 148, 77, 0.12) 48%, transparent 72%)';
                 }
             } else if (index === 2) {
-                // Coming Soon (Eerie Emerald / Cosmic Violet Portal Aura)
+                // Coming Soon (Green / Purple subtle aura)
                 if (spotlight) {
-                    spotlight.style.background = 'radial-gradient(ellipse at 50% 44%, rgba(130, 214, 111, 0.14) 0%, rgba(191, 130, 244, 0.1) 42%, rgba(255, 138, 61, 0.04) 62%, transparent 75%)';
+                    spotlight.style.background = 'radial-gradient(ellipse at 50% 45%, rgba(130, 214, 111, 0.12) 0%, rgba(191, 130, 244, 0.05) 45%, transparent 70%)';
                 }
                 if (stageGlow) {
-                    stageGlow.style.background = 'radial-gradient(ellipse at 50% 50%, rgba(130, 214, 111, 0.32) 0%, rgba(191, 130, 244, 0.18) 45%, transparent 72%)';
+                    stageGlow.style.background = 'radial-gradient(ellipse at 50% 50%, rgba(130, 214, 111, 0.26) 0%, rgba(191, 130, 244, 0.14) 48%, transparent 72%)';
                 }
             }
         }
@@ -378,7 +371,7 @@
                         </div>
                     `;
                 } else if (index === 2) {
-                    // Coming Soon Actions
+                    // Coming Soon Actions (Only translucent unannounced pill)
                     const secretTagText = lang === 'es' ? 'Proyecto No Revelado' : 'Unannounced Project';
                     actionsBar.innerHTML = `
                         <div class="action-tag-pill tag-secret">
@@ -390,25 +383,7 @@
 
                 actionsBar.style.opacity = '1';
                 actionsBar.style.transform = 'translateY(0)';
-            }, 150);
-        }
-
-        // Subtle 3D Pointer Parallax on Desktop Hover for Active Card
-        if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-            document.querySelectorAll('.showcase-card').forEach((card) => {
-                card.addEventListener('mousemove', (e) => {
-                    if (!card.classList.contains('active')) return;
-                    const rect = card.getBoundingClientRect();
-                    const x = (e.clientX - rect.left) / rect.width - 0.5;
-                    const y = (e.clientY - rect.top) / rect.height - 0.5;
-                    card.style.setProperty('--tilt-y', `${(x * 7).toFixed(2)}deg`);
-                    card.style.setProperty('--tilt-x', `${(-y * 5.5).toFixed(2)}deg`);
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.style.removeProperty('--tilt-x');
-                    card.style.removeProperty('--tilt-y');
-                });
-            });
+            }, 160);
         }
 
         // Language Dropdown Controller
@@ -468,29 +443,24 @@
             }
         });
 
-        // Touch Swipe Navigation for Mobile, iPhone & Tablets
+        // Touch Swipe Navigation for Mobile / In-App WebViews
         let touchStartX = 0;
-        let touchStartY = 0;
         let touchEndX = 0;
-        let touchEndY = 0;
         const coverflowEl = document.getElementById('coverflow-wrapper');
         if (coverflowEl) {
             coverflowEl.addEventListener('touchstart', (e) => {
                 touchStartX = e.changedTouches[0].screenX;
-                touchStartY = e.changedTouches[0].screenY;
             }, { passive: true });
 
             coverflowEl.addEventListener('touchend', (e) => {
                 touchEndX = e.changedTouches[0].screenX;
-                touchEndY = e.changedTouches[0].screenY;
                 handleSwipeGesture();
             }, { passive: true });
         }
 
         function handleSwipeGesture() {
             const diffX = touchEndX - touchStartX;
-            const diffY = touchEndY - touchStartY;
-            if (Math.abs(diffX) > 36 && Math.abs(diffX) > Math.abs(diffY)) {
+            if (Math.abs(diffX) > 45) {
                 if (diffX < 0) {
                     moveCoverflow(1); // Swipe left -> next
                 } else {
