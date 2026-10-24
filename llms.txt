@@ -1,0 +1,32 @@
+# KeTu Playhouse
+
+> KeTu Playhouse (KeTu Playhouse Inc.) es un estudio independiente de videojuegos móviles enfocado en experiencias arcade ultrarrápidas, dinámicas y con estética Candy Neón, Synthwave y Anime.
+> KeTu Playhouse (KeTu Playhouse Inc.) is an indie mobile game development studio crafting ultra-fast, dynamic arcade experiences with Candy Neon, Synthwave, and Anime aesthetics.
+
+## Juegos Oficiales / Official Games
+
+- **Keyboard Escape: Speed Up** (Android — Google Play Store):
+  - ES: Juego móvil arcade de alta velocidad donde cada segundo incrementa tu velocidad (`+1 Speed`) mientras escapas a través de un teclado cibernético gigante.
+  - EN: High-speed arcade mobile runner where every second increases your speed (`+1 Speed`) across a giant cybernetic keyboard.
+  - Google Play Store: https://play.google.com/store/apps/details?id=com.ketuplayhouse.keyboardescape
+  - Official YouTube Trailer: https://www.youtube.com/watch?v=5XQYpU8MBPI
+
+- **EGO BALL** (En Desarrollo / In Early Development):
+  - ES: Arena multijugador arcade 3D de deflexión de pelota con espadas coleccionables y auras neón estilo anime.
+  - EN: Fast-paced 3D multiplayer ball-deflection arcade arena featuring collectible blades and neon anime auras.
+
+## Páginas Oficiales / Official Pages
+
+- [Home / Vitrina de Juegos](https://ketuplayhouse.com/): Interactive game showcase & official studio hub.
+- [Sobre Nosotros / About Us](https://ketuplayhouse.com/about.html): Studio philosophy, vision, and public titles.
+- [Política de Privacidad / Privacy Policy](https://ketuplayhouse.com/privacy-policy.html): GDPR / IAB TCF v2.2 compliance and advertising partners disclosure.
+- [Términos de Uso / Terms of Service](https://ketuplayhouse.com/terms-of-service.html): End-user license agreement and terms of service.
+
+## Comunidad y Contacto / Community & Support
+
+- Website: https://ketuplayhouse.com/
+- Discord: https://discord.gg/FvvgfS37GY
+- YouTube: https://youtube.com/@ketuplayhouse
+- TikTok: https://tiktok.com/@ketuplayhouse
+- Instagram: https://instagram.com/ketuplayhouse
+- Official Support Email: mailto:ketusoporte@gmail.com

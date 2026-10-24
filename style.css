@@ -52,6 +52,96 @@ body.doc-body-page {
   height: auto !important;
 }
 
+/* Visually hidden semantic heading for SEO & screen readers */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* 404 Mechanical Keycap Showcase (Keyboard Escape Motif) */
+.error-keycap-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.keycap-3d {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 64px;
+  height: 64px;
+  padding: 0 1rem;
+  font-family: 'Teko', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-main);
+  background: linear-gradient(180deg, rgba(28, 20, 42, 0.95) 0%, rgba(16, 11, 24, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 4px solid rgba(133, 203, 245, 0.45);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  user-select: none;
+  transition: transform 0.12s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.keycap-3d.key-pink {
+  border-bottom-color: rgba(244, 129, 172, 0.55);
+  color: var(--ketu-pink);
+}
+
+.keycap-3d.key-blue {
+  border-bottom-color: rgba(133, 203, 245, 0.55);
+  color: var(--ketu-blue);
+}
+
+.keycap-3d.key-purple {
+  border-bottom-color: rgba(191, 130, 244, 0.55);
+  color: var(--ketu-purple);
+}
+
+.keycap-3d:hover,
+.keycap-3d.pressed {
+  transform: translateY(3px);
+  border-bottom-width: 2px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5), 0 0 18px rgba(133, 203, 245, 0.22);
+}
+
+.error-esc-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1.25rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 999px;
+}
+
+.error-esc-badge {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  padding: 0.12rem 0.45rem;
+  color: var(--ketu-blue);
+  background: rgba(133, 203, 245, 0.12);
+  border: 1px solid rgba(133, 203, 245, 0.3);
+  border-radius: 5px;
+}
+
 /* ----------------------------------------------------
    STUDIO BACKGROUND ATMOSPHERE (Cinematic Spotlight)
    ---------------------------------------------------- */

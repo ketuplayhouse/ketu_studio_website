@@ -6,6 +6,14 @@ const translations = {
     "nav-support": "Soporte",
     "nav-about": "Sobre Nosotros",
     "back-btn-text": "← Volver al Inicio",
+    "hub-sr-h1": "KeTu Playhouse - Estudio Independiente de Videojuegos Móviles (Keyboard Escape: Speed Up & EGO BALL)",
+
+    // 404 Page
+    "err404-title": "Nivel No Encontrado",
+    "err404-subtitle": "Te saliste del teclado a demasiada velocidad",
+    "err404-desc": "La página o ruta que buscas no existe o fue movida. Regresa a la vitrina principal de KeTu Playhouse para seguir jugando.",
+    "err404-btn": "Volver a la Vitrina de Juegos",
+    "err404-esc-hint": "Presiona ESC o ENTER para escapar al inicio",
 
     // Games Data
     "game1-tag": "PUBLICADO EN GOOGLE PLAY",
@@ -103,6 +111,14 @@ const translations = {
     "nav-support": "Support",
     "nav-about": "About Us",
     "back-btn-text": "← Back to Home",
+    "hub-sr-h1": "KeTu Playhouse - Indie Mobile Game Development Studio (Keyboard Escape: Speed Up & EGO BALL)",
+
+    // 404 Page
+    "err404-title": "Stage Not Found",
+    "err404-subtitle": "You went off-keyboard at extreme speed",
+    "err404-desc": "The page or route you are looking for doesn't exist or has been moved. Return to the main KeTu Playhouse showcase to keep playing.",
+    "err404-btn": "Back to Game Showcase",
+    "err404-esc-hint": "Press ESC or ENTER to escape back home",
 
     // Games Data
     "game1-tag": "PUBLISHED ON GOOGLE PLAY",
@@ -219,6 +235,22 @@ function updateContent(lang) {
   // Update dynamic actions bar if carousel function exists
   if (typeof renderActiveActions === "function" && typeof activeIndex !== "undefined") {
     renderActiveActions(activeIndex);
+  }
+
+  // Update page <title> dynamically by current route while keeping unique titles per page
+  const path = window.location.pathname.toLowerCase();
+  if (path.endsWith("about.html")) {
+    document.title = lang === "es" ? "Sobre Nosotros - KeTu Playhouse" : "About Us - KeTu Playhouse";
+  } else if (path.endsWith("privacy-policy.html")) {
+    document.title = lang === "es" ? "Política de Privacidad - KeTu Playhouse" : "Privacy Policy - KeTu Playhouse";
+  } else if (path.endsWith("terms-of-service.html")) {
+    document.title = lang === "es" ? "Términos de Uso - KeTu Playhouse" : "Terms of Service - KeTu Playhouse";
+  } else if (document.querySelector("[data-i18n='err404-title']")) {
+    document.title = lang === "es" ? "404 — Nivel No Encontrado | KeTu Playhouse" : "404 — Stage Not Found | KeTu Playhouse";
+  } else {
+    document.title = lang === "es"
+      ? "KeTu Playhouse - Estudio de Videojuegos Móviles"
+      : "KeTu Playhouse - Indie Mobile Game Studio";
   }
 
   document.documentElement.setAttribute("lang", lang);

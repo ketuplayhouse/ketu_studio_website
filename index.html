@@ -12,11 +12,27 @@
     <meta name="author" content="KeTu Playhouse">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Facebook / Discord / WhatsApp -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ketuplayhouse.com/">
+    <meta property="og:site_name" content="KeTu Playhouse">
+    <meta property="og:locale" content="es_LA">
+    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:title" content="KeTu Playhouse - Estudio de Videojuegos Móviles">
-    <meta property="og:description" content="Creadores de juegos móviles dinámicos y electrizantes. ¡Prueba Keyboard Escape y descubre EGO BALL!">
-    <meta property="og:image" content="assets/banner.png">
+    <meta property="og:description" content="Creadores de juegos móviles dinámicos y electrizantes. ¡Prueba Keyboard Escape: Speed Up en Google Play y descubre EGO BALL!">
+    <meta property="og:image" content="https://ketuplayhouse.com/assets/banner.png?v=2.6.2">
+    <meta property="og:image:secure_url" content="https://ketuplayhouse.com/assets/banner.png?v=2.6.2">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="500">
+    <meta property="og:image:alt" content="KeTu Playhouse - Keyboard Escape: Speed Up Oficial">
+
+    <!-- Twitter / X Large Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KeTu Playhouse - Estudio de Videojuegos Móviles">
+    <meta name="twitter:description" content="Creadores de juegos móviles dinámicos y electrizantes. ¡Prueba Keyboard Escape: Speed Up en Google Play y descubre EGO BALL!">
+    <meta name="twitter:image" content="https://ketuplayhouse.com/assets/banner.png?v=2.6.2">
+    <meta name="twitter:image:alt" content="KeTu Playhouse - Keyboard Escape: Speed Up Oficial">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,30 +40,104 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Teko:wght@700&display=swap">
 
     <!-- Stylesheets & Favicon -->
-    <link rel="stylesheet" href="style.css?v=2.6.1">
+    <link rel="stylesheet" href="style.css?v=2.6.2">
     <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="apple-touch-icon" href="assets/icon.png">
     <link rel="canonical" href="https://ketuplayhouse.com/">
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data (Organization + WebSite + VideoGames) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "KeTu Playhouse",
-      "url": "https://ketuplayhouse.com",
-      "logo": "https://ketuplayhouse.com/assets/logo.png",
-      "sameAs": [
-        "https://youtube.com/@ketuplayhouse",
-        "https://instagram.com/ketuplayhouse",
-        "https://tiktok.com/@ketuplayhouse",
-        "https://discord.gg/FvvgfS37GY"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://ketuplayhouse.com/#organization",
+          "name": "KeTu Playhouse",
+          "legalName": "KeTu Playhouse Inc.",
+          "url": "https://ketuplayhouse.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://ketuplayhouse.com/assets/logo.png",
+            "width": 1920,
+            "height": 1080
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "ketusoporte@gmail.com",
+            "contactType": "customer support",
+            "availableLanguage": ["Spanish", "English"]
+          },
+          "sameAs": [
+            "https://play.google.com/store/apps/details?id=com.ketuplayhouse.keyboardescape",
+            "https://youtube.com/@ketuplayhouse",
+            "https://instagram.com/ketuplayhouse",
+            "https://tiktok.com/@ketuplayhouse",
+            "https://discord.gg/FvvgfS37GY"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://ketuplayhouse.com/#website",
+          "url": "https://ketuplayhouse.com/",
+          "name": "KeTu Playhouse",
+          "description": "Estudio independiente de videojuegos móviles. Creador de Keyboard Escape: Speed Up y EGO BALL.",
+          "inLanguage": ["es", "en"],
+          "publisher": {
+            "@id": "https://ketuplayhouse.com/#organization"
+          }
+        },
+        {
+          "@type": ["VideoGame", "MobileApplication"],
+          "@id": "https://ketuplayhouse.com/#keyboard-escape",
+          "name": "Keyboard Escape: Speed Up",
+          "url": "https://play.google.com/store/apps/details?id=com.ketuplayhouse.keyboardescape",
+          "installUrl": "https://play.google.com/store/apps/details?id=com.ketuplayhouse.keyboardescape",
+          "image": "https://ketuplayhouse.com/assets/banner.png",
+          "description": "Juego móvil arcade de velocidad extrema donde cada segundo incrementa tu velocidad sobre un teclado cibernético gigante.",
+          "applicationCategory": "GameApplication",
+          "genre": ["Arcade", "Action", "Runner"],
+          "operatingSystem": "Android",
+          "gamePlatform": "Android",
+          "author": {
+            "@id": "https://ketuplayhouse.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://ketuplayhouse.com/#organization"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "trailer": {
+            "@type": "VideoObject",
+            "name": "Every Second +1 Speed! Keyboard Escape: Speed Up! (Official Promo)",
+            "description": "Tráiler oficial de Keyboard Escape: Speed Up en Google Play.",
+            "thumbnailUrl": "https://ketuplayhouse.com/assets/banner.png",
+            "embedUrl": "https://www.youtube.com/embed/5XQYpU8MBPI",
+            "uploadDate": "2026-06-30"
+          }
+        },
+        {
+          "@type": "VideoGame",
+          "@id": "https://ketuplayhouse.com/#ego-ball",
+          "name": "EGO BALL",
+          "image": "https://ketuplayhouse.com/assets/ego_ball_banner.jpg",
+          "description": "Arena multijugador arcade 3D de deflexión de pelota con espadas coleccionables y auras neón.",
+          "genre": ["Arcade", "Action", "Multiplayer"],
+          "gamePlatform": "Android",
+          "author": {
+            "@id": "https://ketuplayhouse.com/#organization"
+          }
+        }
       ]
     }
     </script>
 
     <!-- Language & Logic Script -->
-    <script src="lang.js?v=2.6.1" defer></script>
+    <script src="lang.js?v=2.6.2" defer></script>
 </head>
 <body class="main-hub-body">
     <!-- Atmospheric Studio Ambient Canvas (Transparent so ketu_bg.png shines through) -->
@@ -113,6 +203,7 @@
 
     <!-- MAIN STUDIO HUB CONTENT -->
     <main class="studio-hub">
+        <h1 class="sr-only" data-i18n="hub-sr-h1">KeTu Playhouse - Estudio Independiente de Videojuegos Móviles (Keyboard Escape: Speed Up &amp; EGO BALL)</h1>
         <!-- HORIZONTAL 16:11 GAME SHOWCASE (ChillyRoom Carousel) -->
         <section class="showcase-section">
             <div class="showcase-viewport">

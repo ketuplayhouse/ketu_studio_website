@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0d0814">
+    <title>404 — KeTu Playhouse</title>
+    <meta name="description" content="Página no encontrada - KeTu Playhouse, Estudio Independiente de Videojuegos Móviles.">
+    <meta name="robots" content="noindex, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="KeTu Playhouse">
+    <meta property="og:title" content="KeTu Playhouse - Estudio de Videojuegos Móviles">
+    <meta property="og:description" content="Creadores de juegos móviles dinámicos y electrizantes. ¡Prueba Keyboard Escape: Speed Up en Google Play y descubre EGO BALL!">
+    <meta property="og:image" content="https://ketuplayhouse.com/assets/banner.png?v=2.6.2">
+    <meta property="og:image:secure_url" content="https://ketuplayhouse.com/assets/banner.png?v=2.6.2">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="500">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://ketuplayhouse.com/assets/banner.png?v=2.6.2">
+    <link rel="stylesheet" href="/style.css?v=2.6.2">
+    <link rel="icon" type="image/png" href="/assets/icon.png">
+    <link rel="apple-touch-icon" href="/assets/icon.png">
+    <script src="/lang.js?v=2.6.2" defer></script>
+</head>
+<body class="doc-body-page">
+    <!-- Atmospheric Studio Ambient Canvas -->
+    <div class="bg-fixed-canvas" aria-hidden="true">
+        <div class="bg-spotlight"></div>
+        <div class="spooky-embers">
+            <span class="ember e1"></span>
+            <span class="ember e2"></span>
+            <span class="ember e3"></span>
+            <span class="ember e4"></span>
+            <span class="ember e5"></span>
+            <span class="ember e6"></span>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="studio-header">
+        <nav class="studio-nav">
+            <a href="/" class="logo-container">
+                <img src="/assets/logo.png" alt="KeTu Playhouse Logo" class="logo-img">
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="/" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="/about.html" data-i18n="nav-about">Sobre Nosotros</a></li>
+                <li><a href="mailto:ketusoporte@gmail.com?subject=Soporte%20KeTu%20Playhouse" data-i18n="nav-support">Soporte</a></li>
+            </ul>
+
+            <!-- Minimalist Studio Language Dropdown -->
+            <div class="lang-dropdown-wrapper">
+                <button class="lang-dropdown-btn" id="langDropdownBtn" onclick="toggleLangDropdown(event)" aria-haspopup="true" aria-expanded="false">
+                    <span id="currentLangLabel">Español</span>
+                    <svg class="dropdown-chevron" viewBox="0 0 24 24" width="14" height="14">
+                        <path fill="currentColor" d="M7 10l5 5 5-5z"/>
+                    </svg>
+                </button>
+                <div class="lang-dropdown-menu" id="langDropdownMenu">
+                    <button class="lang-option-item" onclick="changeLanguage('es')">
+                        <span>Español</span>
+                        <span class="lang-tag">ES</span>
+                    </button>
+                    <button class="lang-option-item" onclick="changeLanguage('en')">
+                        <span>English</span>
+                        <span class="lang-tag">EN</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 404 Cyber Keycap Container -->
+    <main class="doc-card-container" style="text-align: center; max-width: 660px;">
+        <article class="doc-content" style="padding: 3rem 2rem 2.6rem;">
+            <!-- Mechanical 3D Keycaps (Keyboard Escape Tribute) -->
+            <div class="error-keycap-row" aria-hidden="true">
+                <span class="keycap-3d key-blue">4</span>
+                <span class="keycap-3d key-pink">0</span>
+                <span class="keycap-3d key-purple">4</span>
+            </div>
+
+            <div class="doc-header" style="border-bottom: none; margin-bottom: 0.85rem; padding-bottom: 0;">
+                <h1 data-i18n="err404-title" style="font-size: 2rem; color: var(--text-main);">Nivel No Encontrado</h1>
+                <div class="doc-meta" data-i18n="err404-subtitle" style="color: var(--ketu-pink); font-weight: 600; margin-top: 0.35rem;">Te saliste del teclado a demasiada velocidad</div>
+            </div>
+            
+            <div class="doc-body" style="margin-bottom: 2rem;">
+                <p data-i18n="err404-desc" style="color: var(--text-muted); font-size: 1rem; max-width: 480px; margin: 0 auto;">
+                    La página o ruta que buscas no existe o fue movida. Regresa a la vitrina principal de KeTu Playhouse para seguir jugando.
+                </p>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.85rem; justify-content: center;">
+                <a href="/" id="returnHomeBtn" class="action-btn action-btn-playstore" style="text-decoration: none;">
+                    <span data-i18n="err404-btn">Volver a la Vitrina de Juegos</span>
+                </a>
+                <a href="https://discord.gg/FvvgfS37GY" target="_blank" rel="noopener noreferrer" class="action-btn action-btn-discord" style="text-decoration: none;">
+                    <span data-i18n="game2-discord-btn">Comunidad de Discord</span>
+                </a>
+            </div>
+
+            <div>
+                <span class="error-esc-hint">
+                    <span class="error-esc-badge">ESC</span>
+                    <span data-i18n="err404-esc-hint">Presiona ESC o ENTER para escapar al inicio</span>
+                </span>
+            </div>
+        </article>
+    </main>
+
+    <!-- Refined Studio Footer -->
+    <footer class="studio-footer">
+        <div class="footer-container">
+            <span class="footer-credit" data-i18n="footer-developer">Developer: KeTu Playhouse Inc.</span>
+            <span class="footer-divider">•</span>
+            <a href="/about.html" class="footer-link" data-i18n="nav-about">Sobre Nosotros</a>
+            <span class="footer-divider">•</span>
+            <a href="/privacy-policy.html" class="footer-link" data-i18n="link-privacy">Política de Privacidad</a>
+            <span class="footer-divider">•</span>
+            <a href="/terms-of-service.html" class="footer-link" data-i18n="link-terms">Términos de Uso</a>
+            <span class="footer-divider">•</span>
+            <span class="footer-copy" data-i18n="footer-copy">&copy; 2026 KeTu Playhouse Inc. Todos los derechos reservados.</span>
+        </div>
+    </footer>
+
+    <script>
+        function toggleLangDropdown(event) {
+            event.stopPropagation();
+            const menu = document.getElementById('langDropdownMenu');
+            const btn = document.getElementById('langDropdownBtn');
+            if (!menu || !btn) return;
+            const isOpen = menu.classList.contains('show');
+            if (isOpen) {
+                menu.classList.remove('show');
+                btn.setAttribute('aria-expanded', 'false');
+            } else {
+                menu.classList.add('show');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('langDropdownMenu');
+            const btn = document.getElementById('langDropdownBtn');
+            if (menu && menu.classList.contains('show') && !menu.contains(e.target) && e.target !== btn) {
+                menu.classList.remove('show');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Keyboard Escape Interactive Shortcut (ESC or Enter returns to main showcase)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' || e.key === 'Enter') {
+                const keys = document.querySelectorAll('.keycap-3d');
+                keys.forEach(k => k.classList.add('pressed'));
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 130);
+            }
+        });
+    </script>
+</body>
+</html>
