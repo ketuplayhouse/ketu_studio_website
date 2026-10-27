@@ -2,5 +2,10 @@
 supabase.exe
 supabase-go.exe
 backup_v1/
+supabase/
+data/
+.env*
+*.key
+*.pem
 .DS_Store
 Thumbs.db
