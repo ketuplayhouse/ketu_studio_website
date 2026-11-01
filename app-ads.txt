@@ -1,5 +1,5 @@
 # KeTu Playhouse - Official app-ads.txt
-# Last Updated: 2026-10-30
+# Last Updated: 2026-10-31
 # Managed networks: Google AdMob, Odeeo, Adverty
 
 google.com, pub-8838761117101664, DIRECT, f08c47fec0942fa0
@@ -760,4 +760,29 @@ insticator.com,1ce4cf56-64ad-49f5-a5df-160922a988db,RESELLER,b3511ffcafb23a32
 e-planning.net,6180126a4324a5d2,RESELLER,c1ba615865ed87b2
 vdo.ai,5995,RESELLER
 adagio.io,1290,RESELLER
+xandr.com,18048,RESELLER
+smartadserver.com,4972,RESELLER,060d053dcf45cbf3
+zetaglobal.net,757,RESELLER
+voisetech.com,1271,RESELLER,9009ef0379162448
+google.com,pub-1682595508078257,RESELLER,f08c47fec0942fa0
+appnexus.com,8233,RESELLER
+freewheel.tv,sg1283329,RESELLER
+alumax.ai,81861240793,RESELLER
+flat-ads.com,108,RESELLER
+truvid.com,2597,RESELLER
+pubnative.net,1018368,RESELLER,d641df8625486a7b
+smartyads.com,980,RESELLER,fd2bde0ff2e62c5d
+lijit.com,259022,RESELLER,fafdf38b16bf6b2b#sovrn
+lkqd.net,1100059574,RESELLER,59c49fa9598a0117
+smaato.com,1100060459,RESELLER,07bcf65f187117b4
+alkimi.org,9925,RESELLER,bbb57ef17895eeff
+richaudience.com,8DQuYgekqp,RESELLER
+adagio.io,1590,RESELLER
+krushmedia.com,AJxF6R231a9M6CaTvK,RESELLER
+triplelift.com,14674,RESELLER,6c33edb13117fd86
+media.net,8CU167Y53,RESELLER
+admanmedia.com,2425,DIRECT
+pubmatic.com,81564,RESELLER,5d62403b186f2ace
+cuedart.com,326042547,RESELLER
+rubiconproject.com,13510,RESELLER
 #Adverty app-ads.txt END
