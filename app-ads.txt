@@ -1,5 +1,5 @@
 # KeTu Playhouse - Official app-ads.txt
-# Last Updated: 2026-11-04
+# Last Updated: 2026-11-13
 # Managed networks: Google AdMob, Odeeo, Adverty
 
 google.com, pub-8838761117101664, DIRECT, f08c47fec0942fa0
@@ -790,4 +790,26 @@ risecodes.com,670135d2e64cee0001b3f010,RESELLER
 apester.com,11103,RESELLER
 smaato.com,1100060573,RESELLER,07bcf65f187117b4
 oxiem.com,7ca9393691,RESELLER,d1a215d9eb5aee9e
+lijit.com,439432,RESELLER,fafdf38b16bf6b2b
+triplelift.com,14883,RESELLER,6c33edb13117fd86
+adtarget.com.tr,778536,RESELLER
+adagio.io,1614,RESELLER
+nexverse.ai,24203,RESELLER
+eskimi.com,2020001214,RESELLER
+omgstudios.com,300520256,RESELLER,f08c47fec0942fa0
+themediagrid.com,64NHQ1,RESELLER,35d5010d7789b49d
+smoot.ai,100076,RESELLER
+adform.com,3327,RESELLER
+ppc.buzz,b7b16ecf8ca53723593894116071700c36912,DIRECT
+adwmg.com,159538,RESELLER,c9688a22012618e7
+inmobi.com,5c118eec1d4743f9b2cd438dd8db3bb1,RESELLER
+onetag.com,976d28232a62632,DIRECT
+adapex.io,s5674,RESELLER
+vdo.ai,20137,RESELLER
+x.adprime.com,AJxF6R94a9M6CaTvK,RESELLER
+improvedigital.com,2557,RESELLER
+smilewanted.com,5902,RESELLER
+mobitech.io,10015,RESELLER
+appnexus.com,14158,RESELLER,f5ab79cb980f11d1
+trustedstack.com,TSWRS3H6P,RESELLER
 #Adverty app-ads.txt END
