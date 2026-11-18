@@ -1,5 +1,5 @@
 # KeTu Playhouse - Official app-ads.txt
-# Last Updated: 2026-11-13
+# Last Updated: 2026-11-18
 # Managed networks: Google AdMob, Odeeo, Adverty
 
 google.com, pub-8838761117101664, DIRECT, f08c47fec0942fa0
@@ -812,4 +812,21 @@ smilewanted.com,5902,RESELLER
 mobitech.io,10015,RESELLER
 appnexus.com,14158,RESELLER,f5ab79cb980f11d1
 trustedstack.com,TSWRS3H6P,RESELLER
+pubmatic.com,167031,RESELLER,5d62403b186f2ace
+adform.com,3076,RESELLER,9f5210a2f0999e32
+truvid.com,2824,RESELLER
+improvedigital.com,2621,RESELLER
+themediagrid.com,YZ62AT,RESELLER,9fac4a4a87c2a44f
+inmobi.com,8af6323ce16b4717b930742b6c9911cd,RESELLER,83e75a7ae333ca9d
+lijit.com,502252,RESELLER,fafdf38b16bf6b2b
+smaato.com,1100047589,RESELLER,07bcf65f187117b4
+rubiconproject.com,17412,RESELLER,0bfd66d529a55807
+pubmatic.com,160851,RESELLER,5d62403b186f2ace
+lijit.com,502252-eb,RESELLER,fafdf38b16bf6b2b
+xad.com,963,RESELLER,81cbf0a75a5e0e9a
+adsyield.com,4977,RESELLER
+appnexus.com,13391,RESELLER,f5ab79cb980f11d1
+video.unrulymedia.com,708556444,RESELLER,98c21ef9a666c68b
+pubmatic.com,166164,RESELLER,5d62403b186f2ace
+smartadserver.com,3356,RESELLER,060d053dcf45cbf3
 #Adverty app-ads.txt END
